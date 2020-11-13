@@ -36,9 +36,12 @@ def process_station(conn, station):
                 fields['updated_at'] = current_time
                 db_manager.update_departure(cur, departure['departureId'], fields)
 
-
-    conn.commit()
-    print(f'🆗 {station}')
+    try:
+        conn.commit()
+        print(f'🆗 {station}')
+    except Exception as e:
+        conn.rollback()
+        print(f'🚫 {station}')
 
 
 db_url = 'postgresql://david.szabo@127.0.0.1/sbahn'
@@ -51,7 +54,7 @@ while True:
         try:
             process_station(conn, station)
         except Exception as e:
-            print(f'🚫 {station}')
+            print(f'❗{station} + {e}')
 
     length = diff_datetime(start, datetime.now())
     print(f'☆☆☆☆☆☆☆☆☆ Round S8 ended in {length} seconds ☆☆☆☆☆☆☆☆☆')
