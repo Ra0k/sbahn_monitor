@@ -12,8 +12,7 @@ only_sbahn = lambda x: [dep for dep in x if dep['product'] == 'SBAHN']
 def process_station(conn, station):
     cur = conn.cursor()
 
-    stations = mvv_reader.find_sbahn_station(station)
-    station_id = stations[0]['id']
+    station_id = db_manager.get_station_id(cur, station)
     info = mvv_reader.departure_information(station_id)
 
     current_time = datetime.now().isoformat()
@@ -44,7 +43,7 @@ def process_station(conn, station):
         print(f'🚫 {station}')
 
 
-db_url = 'postgresql://david.szabo@127.0.0.1/sbahn'
+db_url = get_env('sbhan_db_conn_url')
 conn = db_manager.connect(db_url)
 
 
@@ -54,9 +53,10 @@ while True:
         try:
             process_station(conn, station)
         except Exception as e:
+            conn = db_manager.connect(db_url)
             print(f'❗{station} + {e}')
 
     length = diff_datetime(start, datetime.now())
     print(f'☆☆☆☆☆☆☆☆☆ Round S8 ended in {length} seconds ☆☆☆☆☆☆☆☆☆')
-    if length < 60:
+    if length < ROUND_LENGTH:
         time.sleep(ROUND_LENGTH-length)

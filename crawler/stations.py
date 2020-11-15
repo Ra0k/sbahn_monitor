@@ -31,4 +31,8 @@ Hallbergmoos
 Flughafen Besucherpark
 Flughafen München""".split('\n')
 
+
+S8_STATIONS = S8_stops
+
+
 STATIONS = list(set(S8_stops))
