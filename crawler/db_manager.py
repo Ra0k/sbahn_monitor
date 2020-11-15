@@ -30,6 +30,76 @@ def create_departure_table(cur):
         """)
 
 
+def create_stations_table(cur):
+    cur.execute("""
+        CREATE TABLE IF NOT EXISTS "public"."stations" (
+            "station_id" varchar(32),
+            "station_name" varchar(32),
+            PRIMARY KEY ("station_id")
+        );
+        """)
+
+
+def create_lines_table(cur):
+    cur.execute("""
+        CREATE TABLE IF NOT EXISTS "public"."lines" (
+            "line" varchar(16) NOT NULL,
+            "station_id" varchar(32),
+            "start" varchar(32),
+            "end" varchar(32),
+            "order" int4,
+            PRIMARY KEY ("line", "station_id", "from", "to")
+        );
+        """)
+
+
+def get_station_id(cur, station_name):
+    cur.execute(
+        sql.SQL("""
+        SELECT 
+            station_id,
+            station_name
+        FROM stations WHERE station_name = (%s);
+        """), (station_name, ))
+
+    station = cur.fetchone()
+
+    station_id = None
+    if station and len(station) == 2:
+        (station_id, _) = station
+
+    return station_id
+
+
+def insert_station(cur, station):
+    cur.execute(
+        """
+            INSERT INTO stations (
+                station_id,
+                station_name
+            ) VALUES (%s, %s)
+        """, (
+            station['station_id'], station['station_name']
+        )
+    )
+
+
+def insert_line_station(cur, line, station):
+    cur.execute(
+        """
+            INSERT INTO lines (
+                line,
+                station_id,
+                start,
+                "end",
+                "order"
+            ) VALUES (%s, %s, %s, %s, %s)
+        """, (
+            line['line'], station['station_id'], line['start'], line['end'], station['order']
+        )
+    )
+
+
 def get_departure(cur, departure_id):
     cur.execute(
         sql.SQL("""
