@@ -48,7 +48,7 @@ def create_lines_table(cur):
             "start" varchar(32),
             "end" varchar(32),
             "order" int4,
-            PRIMARY KEY ("line", "station_id", "from", "to")
+            PRIMARY KEY ("line", "station_id", "start", "end")
         );
         """)
 
