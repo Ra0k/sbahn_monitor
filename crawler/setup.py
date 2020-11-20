@@ -5,7 +5,7 @@ import mvv_reader
 import stations
 
 
-db_url = 'postgresql://david.szabo@127.0.0.1/sbahn'#get_env('sbhan_db_conn_url')
+db_url = get_env('sbhan_db_conn_url') #'postgresql://david.szabo@127.0.0.1/sbahn'
 conn = db_manager.connect(db_url)
 
 
