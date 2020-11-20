@@ -19,6 +19,8 @@ db_manager.create_lines_table(cur)
 
 # INSERT STATIONS
 
+print(stations.STATIONS)
+
 for station in stations.STATIONS:
     station_id = db_manager.get_station_id(cur, station)
     if station_id is None:
@@ -33,20 +35,22 @@ for station in stations.STATIONS:
 
 # INSERT LINE INFORMATION
 
-start = stations.S8_STATIONS[0]
-end = stations.S8_STATIONS[-1]
-for idx, station in enumerate(stations.S8_STATIONS):
-    station_id = db_manager.get_station_id(cur, station)
-    line_obj = {
-        'line': 'S8',
-        'start': start,
-        'end': end
-    }
-    station_obj = {
-        'station_id': station_id,
-        'order': idx+1
-    }
-    db_manager.insert_line_station(cur, line_obj, station_obj)
+for line, line_stations in stations.LINES.items():
+    start = line_stations[0]
+    end = line_stations[-1]
+
+    for idx, station in enumerate(line_stations):
+        station_id = db_manager.get_station_id(cur, station)
+        line_obj = {
+            'line': line,
+            'start': start,
+            'end': end
+        }
+        station_obj = {
+            'station_id': station_id,
+            'order': idx+1
+        }
+        db_manager.insert_line_station(cur, line_obj, station_obj)
 
 
 conn.commit()

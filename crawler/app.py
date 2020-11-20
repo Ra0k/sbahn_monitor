@@ -1,3 +1,4 @@
+from multiprocessing import Process
 from utils import get_env, diff_datetime
 from datetime import datetime
 from stations import STATIONS
@@ -43,20 +44,32 @@ def process_station(conn, station):
         print(f'🚫 {station}')
 
 
-db_url = get_env('sbhan_db_conn_url')
-conn = db_manager.connect(db_url)
+def process(processes=4, key=1):
+    db_url = get_env('sbhan_db_conn_url')
+    conn = db_manager.connect(db_url)
 
 
-while True:
-    start = datetime.now()
-    for station in STATIONS:
-        try:
-            process_station(conn, station)
-        except Exception as e:
-            conn = db_manager.connect(db_url)
-            print(f'❗{station} + {e}')
+    while True:
+        start = datetime.now()
+        for station in [station for idx, station in enumerate(STATIONS) if (idx % processes == key)]:
+            try:
+                process_station(conn, station)
+            except Exception as e:
+                conn = db_manager.connect(db_url)
+                print(f'❗{station} + {e}')
 
-    length = diff_datetime(start, datetime.now())
-    print(f'☆☆☆☆☆☆☆☆☆ Round S8 ended in {length} seconds ☆☆☆☆☆☆☆☆☆')
-    if length < ROUND_LENGTH:
-        time.sleep(ROUND_LENGTH-length)
+        length = diff_datetime(start, datetime.now())
+        print(f'☆☆☆☆☆☆☆☆☆ Round ended in {length} seconds ☆☆☆☆☆☆☆☆☆')
+        if length < ROUND_LENGTH:
+            time.sleep(ROUND_LENGTH-length)
+
+
+
+NUM_OF_PROCESSES = 5
+
+processes = [
+    Process(target=process, args=(NUM_OF_PROCESSES, i)) for i in range(NUM_OF_PROCESSES)
+]
+
+for process in processes:
+    process.start()
