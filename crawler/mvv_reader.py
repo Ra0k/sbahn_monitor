@@ -1,10 +1,14 @@
+from pprint import pprint
+from utils import raise_message
+
 import requests
 import json
-from pprint import pprint
+
 
 URL_BASE = 'https://www.mvg.de/api'
 
 
+@raise_message('MVV API CALL: Find Station Failed')
 def find_stations(name):
     if name is None:
         raise Exception('Station name cannot be empty!')
@@ -26,6 +30,7 @@ def find_stations(name):
     return response['locations']
 
 
+@raise_message('MVV API CALL: Find SBahn Station Failed')
 def find_sbahn_station(name):
     response = find_stations(name)
 
@@ -36,6 +41,7 @@ def find_sbahn_station(name):
     return response
 
 
+@raise_message('MVV API CALL: Find SBahn Station In City Failed')
 def find_sbahn_station_in_city(name, city='München'):
     response = find_stations(name)
 
@@ -46,6 +52,7 @@ def find_sbahn_station_in_city(name, city='München'):
     return response
 
 
+@raise_message('MVV API CALL: Departure Information')
 def departure_information(station_id):
     if station_id is None:
         raise Exception('Station id cannot be empty!')

@@ -1,7 +1,8 @@
 from multiprocessing import Process
-from utils import get_env, diff_datetime
+from utils import get_env, diff_datetime, raise_message
 from datetime import datetime
 from stations import STATIONS
+from error_reporter import get_logger, report
 
 import db_manager
 import mvv_reader
@@ -10,6 +11,8 @@ import time
 ROUND_LENGTH = 60
 only_sbahn = lambda x: [dep for dep in x if dep['product'] == 'SBAHN']
 
+
+@raise_message('Processing Station Failed')
 def process_station(conn, station):
     cur = conn.cursor()
 
@@ -44,6 +47,7 @@ def process_station(conn, station):
         print(f'🚫 {station}')
 
 
+@raise_message('A process failed')
 def process(processes=4, key=1):
     db_url = get_env('sbhan_db_conn_url')
     conn = db_manager.connect(db_url)
@@ -64,12 +68,15 @@ def process(processes=4, key=1):
             time.sleep(ROUND_LENGTH-length)
 
 
+@report(get_logger(app_name='Error Reporter'))
+def main():
+    NUM_OF_PROCESSES = 5
 
-NUM_OF_PROCESSES = 5
+    processes = [
+        Process(target=process, args=(NUM_OF_PROCESSES, i)) for i in range(NUM_OF_PROCESSES)
+    ]
 
-processes = [
-    Process(target=process, args=(NUM_OF_PROCESSES, i)) for i in range(NUM_OF_PROCESSES)
-]
+    for process in processes:
+        process.start()
 
-for process in processes:
-    process.start()
+main()
