@@ -1,8 +1,8 @@
 from datetime import datetime
 from psycopg2 import sql
+from utils import convert_timestamp
 import psycopg2
 
-convert_timestamp = lambda x : datetime.fromtimestamp(x / 1e3)
 
 def connect(db_url):
     conn = psycopg2.connect(db_url)

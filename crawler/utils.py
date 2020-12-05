@@ -1,3 +1,5 @@
+from datetime import datetime
+
 def get_env(name):
   import os
   env = os.environ.get(name, None)
@@ -9,6 +11,7 @@ def get_env(name):
 def diff_datetime(datetime1, datetime2):
   return abs(datetime2-datetime1).seconds
 
+convert_timestamp = lambda x : datetime.fromtimestamp(x / 1e3)
 
 def raise_message(message, include_original=True):
   def real_decorator(method):

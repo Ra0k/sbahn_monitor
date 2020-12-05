@@ -1,6 +1,6 @@
 from multiprocessing import Process
-from utils import get_env, diff_datetime, raise_message
-from datetime import datetime
+from utils import get_env, diff_datetime, raise_message, convert_timestamp
+from datetime import datetime, timedelta
 from stations import STATIONS
 from error_reporter import get_logger, report
 
@@ -19,14 +19,14 @@ def process_station(conn, station):
     station_id = db_manager.get_station_id(cur, station)
     info = mvv_reader.departure_information(station_id)
 
-    current_time = datetime.now().isoformat()
+    current_time = datetime.now()
 
     for departure in only_sbahn(info['departures']):
         departure['station'] = station_id
         dep_db = db_manager.get_departure(cur, departure['departureId'])
 
         if not (dep_db and len(dep_db) == 8 and dep_db[5] == departure['destination']):
-            departure['created_at'] = departure['updated_at'] = current_time
+            departure['created_at'] = departure['updated_at'] = current_time.isoformat()
             db_manager.insert_departure(cur, departure)
         else:
             (created_at, updated_at, _, delay, _, destination, platform, cancelled) = dep_db
@@ -34,9 +34,12 @@ def process_station(conn, station):
             if delay != departure['delay']: fields['delay'] =  departure['delay']
             if platform != departure['platform']: fields['platform'] =  departure['platform']
             if cancelled != departure['cancelled']: fields['cancelled'] =  departure['cancelled']
+            
+            delayed_arrival = convert_timestamp(departure['departureTime']) + timedelta(minutes=departure['delay'])
+            if current_time > delayed_arrival: fields['delay'] = abs(current_time - delayed_arrival).minutes
 
             if fields:
-                fields['updated_at'] = current_time
+                fields['updated_at'] = current_time.isoformat()
                 db_manager.update_departure(cur, departure['departureId'], fields)
 
     try:
@@ -48,7 +51,7 @@ def process_station(conn, station):
 
 
 @raise_message('A process failed')
-def process(processes=4, key=1):
+def process_entry(processes=4, key=1):
     db_url = get_env('sbhan_db_conn_url')
     conn = db_manager.connect(db_url)
 
@@ -73,7 +76,7 @@ def main():
     NUM_OF_PROCESSES = 5
 
     processes = [
-        Process(target=process, args=(NUM_OF_PROCESSES, i)) for i in range(NUM_OF_PROCESSES)
+        Process(target=process_entry, args=(NUM_OF_PROCESSES, i)) for i in range(NUM_OF_PROCESSES)
     ]
 
     for process in processes:
