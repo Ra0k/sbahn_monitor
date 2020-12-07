@@ -1,19 +1,28 @@
-from flask import Flask, jsonify
-from mvv_reader import find_sbahn_station
+from fastapi import FastAPI
+from utils import get_env
+
+import db_manager
+
+app = FastAPI()
+
+db_url = get_env('sbhan_db_conn_url')
+conn = db_manager.connect(db_url)
+
+@app.get('/')
+async def root():
+    return {"message": "Hello World"}
 
 
-app = Flask(__name__)
+@app.get('/stations')
+async def get_stations():
+    cur = conn.cursor()
+    return db_manager.get_stations(cur)
 
-@app.route('/station/<station_name>/id', methods=["GET"])
-def get_station_id(station_name):
-    return jsonify({
-        'station_name': station_name,
-        'station_id': 12
-    })
 
-@app.route('/real_station/<station_name>/id', methods=["GET"])
-def get_real_station_id(station_name):
-    return jsonify(find_sbahn_station(station_name))
+@app.get('/departures/station/{station_id}')
+async def get_departures(station_id):
+    cur = conn.cursor()
+    return db_manager.get_incoming_departures_by_station_id(cur, station_id)
 
 
 if __name__ == '__main__':
