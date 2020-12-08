@@ -33,6 +33,43 @@ def get_stations(cur):
     return stations
 
 
+def get_line_stations(cur, line):
+    cur.execute(
+        sql.SQL("""
+        SELECT 
+            l.order,
+            l.line,
+            l.station_id,
+            s.station_name
+        from 
+            lines l
+        LEFT JOIN stations s
+            ON (s.station_id = l.station_id)
+        WHERE
+            line like (%s);
+        """), (line + '%',))
+
+    records = cur.fetchall()
+
+    lines = {
+        'name': line, 
+        'tracks': []
+    }
+    for record in records:
+        order, line, station_id, station_name = record
+        if line not in lines:
+            lines[line] = []
+            lines['tracks'].append(line)
+        
+        lines[line].append({
+            'order': order,
+            'station_id': station_id,
+            'station_name': station_name
+        })
+
+    return lines
+
+
 def get_incoming_departures_by_station_id(cur, station_id):
     cur.execute(
         sql.SQL("""

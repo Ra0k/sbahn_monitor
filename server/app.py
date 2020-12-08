@@ -19,6 +19,12 @@ async def get_stations():
     return db_manager.get_stations(cur)
 
 
+@app.get('/line/{line}/stations')
+async def get_line_stations(line):
+    cur = conn.cursor()
+    return db_manager.get_line_stations(cur, line)
+
+
 @app.get('/departures/station/{station_id}')
 async def get_departures(station_id):
     cur = conn.cursor()
