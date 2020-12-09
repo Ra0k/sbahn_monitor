@@ -68,7 +68,7 @@ def process_entry(processes=4, key=1):
                 print(f'❗{station} + {e}')
 
         length = diff_datetime(start, datetime.now())
-        print(f'☆☆☆☆☆☆☆☆☆ Round ended in {length} seconds ☆☆☆☆☆☆☆☆☆')
+        print(f'☆☆☆☆☆☆☆☆☆ Round ended in of process {key} - {length} seconds ☆☆☆☆☆☆☆☆☆')
         if length < ROUND_LENGTH:
             time.sleep(ROUND_LENGTH-length)
 
