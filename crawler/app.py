@@ -12,7 +12,7 @@ import os
 ROUND_LENGTH = 60
 only_sbahn = lambda x: [dep for dep in x if dep['product'] == 'SBAHN']
 
-logger = get_logger(app_name='SBahn-Bot:')
+logger = get_logger(app_name='SBahn-Bot')
 
 @raise_message('Processing Station Failed')
 def process_station(conn, station):
