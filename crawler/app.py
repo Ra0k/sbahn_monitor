@@ -1,4 +1,4 @@
-from multiprocessing import Process
+from multiprocessing import Process, Event
 from utils import get_env, diff_datetime, raise_message, convert_timestamp
 from datetime import datetime, timedelta
 from stations import STATIONS
@@ -7,11 +7,12 @@ from error_reporter import get_logger, report
 import db_manager
 import mvv_reader
 import time
+import os
 
 ROUND_LENGTH = 60
 only_sbahn = lambda x: [dep for dep in x if dep['product'] == 'SBAHN']
 
-logger = get_logger(app_name='Error Reporter')
+logger = get_logger(app_name='SBahn-Bot:')
 
 @raise_message('Processing Station Failed')
 def process_station(conn, station):
@@ -53,35 +54,46 @@ def process_station(conn, station):
 
 
 @raise_message('A process failed')
-def process_entry(processes=4, key=1):
+def process_entry(processes, key, quit, failed):
     db_url = get_env('sbhan_db_conn_url')
     conn = db_manager.connect(db_url)
 
 
-    while True:
+    while not quit.is_set():
         start = datetime.now()
         for station in [station for idx, station in enumerate(STATIONS) if (idx % processes == key)]:
             try:
                 process_station(conn, station)
+                raise Exception('a')
             except Exception as e:
                 conn = db_manager.connect(db_url)
                 print(f'❗{station} + {e}')
+                failed.set()
+                logger.error(f'Process {key} has stoped because an error happened\n{e}')
+                break
 
         length = diff_datetime(start, datetime.now())
         print(f'☆☆☆☆☆☆☆☆☆ Round ended in of process {key} - {length} seconds ☆☆☆☆☆☆☆☆☆')
         if length < ROUND_LENGTH:
             time.sleep(ROUND_LENGTH-length)
 
-
 @report(logger)
 def main():
+    logger.error('Craweler has been restarted and is working right now')
+
     NUM_OF_PROCESSES = 5
 
+    failed = Event()
+    quit = Event()
+
     processes = [
-        Process(target=process_entry, args=(NUM_OF_PROCESSES, i)) for i in range(NUM_OF_PROCESSES)
+        Process(target=process_entry, args=(NUM_OF_PROCESSES, i, quit, failed)) for i in range(NUM_OF_PROCESSES)
     ]
 
     for process in processes:
         process.start()
+
+    failed.wait()
+    quit.set()
 
 main()
