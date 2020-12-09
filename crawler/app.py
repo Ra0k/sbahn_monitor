@@ -64,12 +64,10 @@ def process_entry(processes, key, quit, failed):
         for station in [station for idx, station in enumerate(STATIONS) if (idx % processes == key)]:
             try:
                 process_station(conn, station)
-                raise Exception('a')
             except Exception as e:
                 conn = db_manager.connect(db_url)
-                print(f'❗{station} + {e}')
                 failed.set()
-                logger.error(f'Process {key} has stoped because an error happened\n{e}')
+                logger.error(f'Process {key} has stoped because an error happened\n❗{station} + {e}')
                 break
 
         length = diff_datetime(start, datetime.now())
