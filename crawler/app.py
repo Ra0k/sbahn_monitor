@@ -11,6 +11,7 @@ import time
 ROUND_LENGTH = 60
 only_sbahn = lambda x: [dep for dep in x if dep['product'] == 'SBAHN']
 
+logger = get_logger(app_name='Error Reporter')
 
 @raise_message('Processing Station Failed')
 def process_station(conn, station):
@@ -36,7 +37,7 @@ def process_station(conn, station):
             if cancelled != departure['cancelled']: fields['cancelled'] =  departure['cancelled']
             
             delayed_arrival = convert_timestamp(departure['departureTime']) + timedelta(minutes=departure['delay'])
-            if current_time > delayed_arrival: fields['delay'] = abs(current_time - delayed_arrival).minutes
+            if current_time > delayed_arrival: fields['delay'] = int(abs(current_time - delayed_arrival).seconds / 60)
 
             if fields:
                 fields['updated_at'] = current_time.isoformat()
@@ -44,9 +45,10 @@ def process_station(conn, station):
 
     try:
         conn.commit()
-        print(f'🆗 {station}')
+        #print(f'🆗 {station}')
     except Exception as e:
         conn.rollback()
+        logger.error(str(e))
         print(f'🚫 {station}')
 
 
@@ -71,7 +73,7 @@ def process_entry(processes=4, key=1):
             time.sleep(ROUND_LENGTH-length)
 
 
-@report(get_logger(app_name='Error Reporter'))
+@report(logger)
 def main():
     NUM_OF_PROCESSES = 5
 
