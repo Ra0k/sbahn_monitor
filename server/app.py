@@ -31,5 +31,27 @@ async def get_departures(station_id):
     return db_manager.get_incoming_departures_by_station_id(cur, station_id)
 
 
+@app.get('/stats/delay/all/{time_interval}/grouped/{grouped_time}')
+async def get_delay_stat(time_interval, grouped_time):
+    cur = conn.cursor()
+    if time_interval not in ['current_week', 'previous_week', 'current_month', 'previous_month', 'this_year']:
+        return {'error': ''}
+    if grouped_time not in ['all', 'hourly', 'daily', 'weekly', 'monthly']:
+        return {'error': ''}
+
+    return db_manager.get_delay_stat(cur, 'all', time_interval, grouped_time)
+
+
+@app.get('/stats/delay/stations/{time_interval}/grouped/{grouped_time}')
+async def get_delay_stat(time_interval, grouped_time):
+    cur = conn.cursor()
+    if time_interval not in ['current_week', 'previous_week', 'current_month', 'previous_month', 'this_year']:
+        return {'error': ''}
+    if grouped_time not in ['all', 'hourly', 'daily', 'weekly', 'monthly']:
+        return {'error': ''}
+
+    return db_manager.get_delay_stat(cur, 'stations', time_interval, grouped_time)
+
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0')
