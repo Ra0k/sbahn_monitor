@@ -94,3 +94,5 @@ where d.station = s.station_id
 AND SUBSTRING(d.product, 7,2) = SUBSTRING(s.line, 1,2)
 AND (d.destination = s.start OR d.destination = s.end)
 ;
+
+select distinct l.line, l.start, l.end from lines as l;

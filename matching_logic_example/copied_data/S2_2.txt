@@ -1,0 +1,74 @@
+16:18
+Erding
+16:19
+Altenerding
+16:22
+Aufhausen
+16:26
+St. Koloman
+16:29
+Ottenhofen
+16:33
+Markt Schwaben
+16:39
+Poing
+16:42
+Grub
+16:44
+Heimstetten
+16:46
+Feldkirchen
+16:50
+Riem
+16:53
+Berg am Laim
+16:55
+Leuchtenbergring
+16:58
+Ostbahnhof München
+17:02
+Rosenheimer Platz
+17:04
+Isartor
+17:06
+Marienplatz
+17:08
+Karlsplatz
+17:09
+Hauptbahnhof
+17:11
+Hackerbrücke
+17:12
+Donnersbergerbrücke
+17:14
+Hirschgarten
+17:16
+Laim
+17:19
+Obermenzing
+17:22
+Untermenzing
+17:24
+Allach
+17:26
+Karlsfeld
+17:31
+Dachau Bahnhof
+17:36
+Dachau Stadt
+17:41
+Bachern
+17:45
+Schwabhausen
+17:48
+Niederroth
+17:52
+Markt Indersdorf
+17:56
+Arnbach
+18:00
+Erdweg
+18:04
+Kleinberghofen
+18:09
+Altomünster
