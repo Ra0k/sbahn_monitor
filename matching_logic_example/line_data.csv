@@ -1,553 +1,553 @@
-line,start,end,from,to,order,delta
-S8,Flughafen München,Herrsching,Flughafen München,Flughafen Besucherpark,1,2
-S8,Flughafen München,Herrsching,Flughafen Besucherpark,Hallbergmoos,2,5
-S8,Flughafen München,Herrsching,Hallbergmoos,Ismaning,3,7
-S8,Flughafen München,Herrsching,Ismaning,Unterföhring,4,4
-S8,Flughafen München,Herrsching,Unterföhring,Johanneskirchen,5,4
-S8,Flughafen München,Herrsching,Johanneskirchen,Englschalking,6,2
-S8,Flughafen München,Herrsching,Englschalking,Daglfing,7,1
-S8,Flughafen München,Herrsching,Daglfing,Leuchtenbergring,8,5
-S8,Flughafen München,Herrsching,Leuchtenbergring,Ostbahnhof München,9,2
-S8,Flughafen München,Herrsching,Ostbahnhof München,Rosenheimer Platz,10,3
-S8,Flughafen München,Herrsching,Rosenheimer Platz,Isartor,11,2
-S8,Flughafen München,Herrsching,Isartor,Marienplatz,12,2
-S8,Flughafen München,Herrsching,Marienplatz,Karlsplatz,13,1
-S8,Flughafen München,Herrsching,Karlsplatz,Hauptbahnhof,14,2
-S8,Flughafen München,Herrsching,Hauptbahnhof,Hackerbrücke,15,2
-S8,Flughafen München,Herrsching,Hackerbrücke,Donnersbergerbrücke,16,1
-S8,Flughafen München,Herrsching,Donnersbergerbrücke,Hirschgarten,17,2
-S8,Flughafen München,Herrsching,Hirschgarten,Laim,18,2
-S8,Flughafen München,Herrsching,Laim,Pasing,19,3
-S8,Flughafen München,Herrsching,Pasing,Westkreuz,20,4
-S8,Flughafen München,Herrsching,Westkreuz,Neuaubing,21,2
-S8,Flughafen München,Herrsching,Neuaubing,Freiham,22,2
-S8,Flughafen München,Herrsching,Freiham,Harthaus,23,2
-S8,Flughafen München,Herrsching,Harthaus,Germering-Unterpfaffenhofen,24,3
-S8,Flughafen München,Herrsching,Germering-Unterpfaffenhofen,Geisenbrunn,25,4
-S8,Flughafen München,Herrsching,Geisenbrunn,Gilching-Argelsried,26,3
-S8,Flughafen München,Herrsching,Gilching-Argelsried,Neugilching,27,2
-S8,Flughafen München,Herrsching,Neugilching,Weßling,28,4
-S8,Flughafen München,Herrsching,Weßling,Steinebach,29,4
-S8,Flughafen München,Herrsching,Steinebach,Seefeld-Hechendorf,30,3
-S8,Flughafen München,Herrsching,Seefeld-Hechendorf,Herrsching,31,7
-S8,Flughafen München,Herrsching,Herrsching,,32,
-S8,Herrsching,Flughafen München,Herrsching,Seefeld-Hechendorf,1,7
-S8,Herrsching,Flughafen München,Seefeld-Hechendorf,Steinebach,2,3
-S8,Herrsching,Flughafen München,Steinebach,Weßling,3,4
-S8,Herrsching,Flughafen München,Weßling,Neugilching,4,4
-S8,Herrsching,Flughafen München,Neugilching,Gilching-Argelsried,5,2
-S8,Herrsching,Flughafen München,Gilching-Argelsried,Geisenbrunn,6,3
-S8,Herrsching,Flughafen München,Geisenbrunn,Germering-Unterpfaffenhofen,7,4
-S8,Herrsching,Flughafen München,Germering-Unterpfaffenhofen,Harthaus,8,3
-S8,Herrsching,Flughafen München,Harthaus,Freiham,9,2
-S8,Herrsching,Flughafen München,Freiham,Neuaubing,10,2
-S8,Herrsching,Flughafen München,Neuaubing,Westkreuz,11,2
-S8,Herrsching,Flughafen München,Westkreuz,Pasing,12,4
-S8,Herrsching,Flughafen München,Pasing,Laim,13,3
-S8,Herrsching,Flughafen München,Laim,Hirschgarten,14,2
-S8,Herrsching,Flughafen München,Hirschgarten,Donnersbergerbrücke,15,2
-S8,Herrsching,Flughafen München,Donnersbergerbrücke,Hackerbrücke,16,1
-S8,Herrsching,Flughafen München,Hackerbrücke,Hauptbahnhof,17,2
-S8,Herrsching,Flughafen München,Hauptbahnhof,Karlsplatz,18,2
-S8,Herrsching,Flughafen München,Karlsplatz,Marienplatz,19,1
-S8,Herrsching,Flughafen München,Marienplatz,Isartor,20,2
-S8,Herrsching,Flughafen München,Isartor,Rosenheimer Platz,21,2
-S8,Herrsching,Flughafen München,Rosenheimer Platz,Ostbahnhof München,22,3
-S8,Herrsching,Flughafen München,Ostbahnhof München,Leuchtenbergring,23,2
-S8,Herrsching,Flughafen München,Leuchtenbergring,Daglfing,24,5
-S8,Herrsching,Flughafen München,Daglfing,Englschalking,25,1
-S8,Herrsching,Flughafen München,Englschalking,Johanneskirchen,26,2
-S8,Herrsching,Flughafen München,Johanneskirchen,Unterföhring,27,4
-S8,Herrsching,Flughafen München,Unterföhring,Ismaning,28,4
-S8,Herrsching,Flughafen München,Ismaning,Hallbergmoos,29,7
-S8,Herrsching,Flughafen München,Hallbergmoos,Flughafen Besucherpark,30,5
-S8,Herrsching,Flughafen München,Flughafen Besucherpark,Flughafen München,31,2
-S8,Herrsching,Flughafen München,Flughafen München,,32,
-S7,Kreuzstraße,Wolfratshausen,Kreuzstraße,Großhelfendorf,1,3
-S7,Kreuzstraße,Wolfratshausen,Großhelfendorf,Peiß,2,2
-S7,Kreuzstraße,Wolfratshausen,Peiß,Aying,3,1
-S7,Kreuzstraße,Wolfratshausen,Aying,Dürrnhaar,4,3
-S7,Kreuzstraße,Wolfratshausen,Dürrnhaar,Höhenkirchen-Siegertsbrunn,5,5
-S7,Kreuzstraße,Wolfratshausen,Höhenkirchen-Siegertsbrunn,Wächterhof,6,5
-S7,Kreuzstraße,Wolfratshausen,Wächterhof,Hohenbrunn,7,2
-S7,Kreuzstraße,Wolfratshausen,Hohenbrunn,Ottobrunn,8,2
-S7,Kreuzstraße,Wolfratshausen,Ottobrunn,Neubiberg,9,3
-S7,Kreuzstraße,Wolfratshausen,Neubiberg,Neuperlach Süd,10,2
-S7,Kreuzstraße,Wolfratshausen,Neuperlach Süd,Perlach,11,2
-S7,Kreuzstraße,Wolfratshausen,Perlach,Giesing,12,4
-S7,Kreuzstraße,Wolfratshausen,Giesing,St.-Martin-Str.,13,2
-S7,Kreuzstraße,Wolfratshausen,St.-Martin-Str.,Ostbahnhof München,14,2
-S7,Kreuzstraße,Wolfratshausen,Ostbahnhof München,Rosenheimer Platz,15,4
-S7,Kreuzstraße,Wolfratshausen,Rosenheimer Platz,Isartor,16,2
-S7,Kreuzstraße,Wolfratshausen,Isartor,Marienplatz,17,2
-S7,Kreuzstraße,Wolfratshausen,Marienplatz,Karlsplatz,18,1
-S7,Kreuzstraße,Wolfratshausen,Karlsplatz,Hauptbahnhof,19,2
-S7,Kreuzstraße,Wolfratshausen,Hauptbahnhof,Hackerbrücke,20,2
-S7,Kreuzstraße,Wolfratshausen,Hackerbrücke,Donnersbergerbrücke,21,1
-S7,Kreuzstraße,Wolfratshausen,Donnersbergerbrücke,Heimeranplatz,22,3
-S7,Kreuzstraße,Wolfratshausen,Heimeranplatz,Harras,23,3
-S7,Kreuzstraße,Wolfratshausen,Harras,Mittersendling,24,1
-S7,Kreuzstraße,Wolfratshausen,Mittersendling,Siemenswerke,25,2
-S7,Kreuzstraße,Wolfratshausen,Siemenswerke,Solln,26,3
-S7,Kreuzstraße,Wolfratshausen,Solln,Großhesselohe Isartalbahnhof,27,2
-S7,Kreuzstraße,Wolfratshausen,Großhesselohe Isartalbahnhof,Pullach,28,2
-S7,Kreuzstraße,Wolfratshausen,Pullach,Höllriegelskreuth,29,2
-S7,Kreuzstraße,Wolfratshausen,Höllriegelskreuth,Buchenhain,30,2
-S7,Kreuzstraße,Wolfratshausen,Buchenhain,Baierbrunn,31,3
-S7,Kreuzstraße,Wolfratshausen,Baierbrunn,Hohenschäftlarn,32,4
-S7,Kreuzstraße,Wolfratshausen,Hohenschäftlarn,Ebenhausen-Schäftlarn,33,2
-S7,Kreuzstraße,Wolfratshausen,Ebenhausen-Schäftlarn,Icking,34,4
-S7,Kreuzstraße,Wolfratshausen,Icking,Wolfratshausen,35,5
-S7,Kreuzstraße,Wolfratshausen,Wolfratshausen,,36,
-S7,Wolfratshausen,Kreuzstraße,Wolfratshausen,Icking,1,5
-S7,Wolfratshausen,Kreuzstraße,Icking,Ebenhausen-Schäftlarn,2,4
-S7,Wolfratshausen,Kreuzstraße,Ebenhausen-Schäftlarn,Hohenschäftlarn,3,2
-S7,Wolfratshausen,Kreuzstraße,Hohenschäftlarn,Baierbrunn,4,4
-S7,Wolfratshausen,Kreuzstraße,Baierbrunn,Buchenhain,5,3
-S7,Wolfratshausen,Kreuzstraße,Buchenhain,Höllriegelskreuth,6,2
-S7,Wolfratshausen,Kreuzstraße,Höllriegelskreuth,Pullach,7,2
-S7,Wolfratshausen,Kreuzstraße,Pullach,Großhesselohe Isartalbahnhof,8,2
-S7,Wolfratshausen,Kreuzstraße,Großhesselohe Isartalbahnhof,Solln,9,2
-S7,Wolfratshausen,Kreuzstraße,Solln,Siemenswerke,10,3
-S7,Wolfratshausen,Kreuzstraße,Siemenswerke,Mittersendling,11,2
-S7,Wolfratshausen,Kreuzstraße,Mittersendling,Harras,12,1
-S7,Wolfratshausen,Kreuzstraße,Harras,Heimeranplatz,13,3
-S7,Wolfratshausen,Kreuzstraße,Heimeranplatz,Donnersbergerbrücke,14,3
-S7,Wolfratshausen,Kreuzstraße,Donnersbergerbrücke,Hackerbrücke,15,1
-S7,Wolfratshausen,Kreuzstraße,Hackerbrücke,Hauptbahnhof,16,2
-S7,Wolfratshausen,Kreuzstraße,Hauptbahnhof,Karlsplatz,17,2
-S7,Wolfratshausen,Kreuzstraße,Karlsplatz,Marienplatz,18,1
-S7,Wolfratshausen,Kreuzstraße,Marienplatz,Isartor,19,2
-S7,Wolfratshausen,Kreuzstraße,Isartor,Rosenheimer Platz,20,2
-S7,Wolfratshausen,Kreuzstraße,Rosenheimer Platz,Ostbahnhof München,21,4
-S7,Wolfratshausen,Kreuzstraße,Ostbahnhof München,St.-Martin-Str.,22,2
-S7,Wolfratshausen,Kreuzstraße,St.-Martin-Str.,Giesing,23,2
-S7,Wolfratshausen,Kreuzstraße,Giesing,Perlach,24,4
-S7,Wolfratshausen,Kreuzstraße,Perlach,Neuperlach Süd,25,2
-S7,Wolfratshausen,Kreuzstraße,Neuperlach Süd,Neubiberg,26,2
-S7,Wolfratshausen,Kreuzstraße,Neubiberg,Ottobrunn,27,3
-S7,Wolfratshausen,Kreuzstraße,Ottobrunn,Hohenbrunn,28,2
-S7,Wolfratshausen,Kreuzstraße,Hohenbrunn,Wächterhof,29,2
-S7,Wolfratshausen,Kreuzstraße,Wächterhof,Höhenkirchen-Siegertsbrunn,30,5
-S7,Wolfratshausen,Kreuzstraße,Höhenkirchen-Siegertsbrunn,Dürrnhaar,31,5
-S7,Wolfratshausen,Kreuzstraße,Dürrnhaar,Aying,32,3
-S7,Wolfratshausen,Kreuzstraße,Aying,Peiß,33,1
-S7,Wolfratshausen,Kreuzstraße,Peiß,Großhelfendorf,34,2
-S7,Wolfratshausen,Kreuzstraße,Großhelfendorf,Kreuzstraße,35,3
-S7,Wolfratshausen,Kreuzstraße,Kreuzstraße,,36,
-S4,Geltendorf,Trudering,Geltendorf,Türkenfeld,1,2
-S4,Geltendorf,Trudering,Türkenfeld,Grafrath,2,5
-S4,Geltendorf,Trudering,Grafrath,Schöngeising,3,3
-S4,Geltendorf,Trudering,Schöngeising,Buchenau,4,2
-S4,Geltendorf,Trudering,Buchenau,Fürstenfeldbruck,5,5
-S4,Geltendorf,Trudering,Fürstenfeldbruck,Eichenau,6,4
-S4,Geltendorf,Trudering,Eichenau,Puchheim,7,2
-S4,Geltendorf,Trudering,Puchheim,Aubing,8,4
-S4,Geltendorf,Trudering,Aubing,Leienfelsstraße,9,2
-S4,Geltendorf,Trudering,Leienfelsstraße,Pasing,10,3
-S4,Geltendorf,Trudering,Pasing,Laim,11,6
-S4,Geltendorf,Trudering,Laim,Hirschgarten,12,2
-S4,Geltendorf,Trudering,Hirschgarten,Donnersbergerbrücke,13,2
-S4,Geltendorf,Trudering,Donnersbergerbrücke,Hackerbrücke,14,1
-S4,Geltendorf,Trudering,Hackerbrücke,Hauptbahnhof,15,2
-S4,Geltendorf,Trudering,Hauptbahnhof,Karlsplatz,16,1
-S4,Geltendorf,Trudering,Karlsplatz,Marienplatz,17,2
-S4,Geltendorf,Trudering,Marienplatz,Isartor,18,2
-S4,Geltendorf,Trudering,Isartor,Rosenheimer Platz,19,2
-S4,Geltendorf,Trudering,Rosenheimer Platz,Ostbahnhof München,20,1
-S4,Geltendorf,Trudering,Ostbahnhof München,Leuchtenbergring,21,2
-S4,Geltendorf,Trudering,Leuchtenbergring,Berg am Laim,22,3
-S4,Geltendorf,Trudering,Berg am Laim,Trudering,23,2
-S4,Geltendorf,Trudering,Trudering,,24,
-S4,Trudering,Geltendorf,Trudering,Berg am Laim,1,2
-S4,Trudering,Geltendorf,Berg am Laim,Leuchtenbergring,2,3
-S4,Trudering,Geltendorf,Leuchtenbergring,Ostbahnhof München,3,2
-S4,Trudering,Geltendorf,Ostbahnhof München,Rosenheimer Platz,4,1
-S4,Trudering,Geltendorf,Rosenheimer Platz,Isartor,5,2
-S4,Trudering,Geltendorf,Isartor,Marienplatz,6,2
-S4,Trudering,Geltendorf,Marienplatz,Karlsplatz,7,2
-S4,Trudering,Geltendorf,Karlsplatz,Hauptbahnhof,8,1
-S4,Trudering,Geltendorf,Hauptbahnhof,Hackerbrücke,9,2
-S4,Trudering,Geltendorf,Hackerbrücke,Donnersbergerbrücke,10,1
-S4,Trudering,Geltendorf,Donnersbergerbrücke,Hirschgarten,11,2
-S4,Trudering,Geltendorf,Hirschgarten,Laim,12,2
-S4,Trudering,Geltendorf,Laim,Pasing,13,6
-S4,Trudering,Geltendorf,Pasing,Leienfelsstraße,14,3
-S4,Trudering,Geltendorf,Leienfelsstraße,Aubing,15,2
-S4,Trudering,Geltendorf,Aubing,Puchheim,16,4
-S4,Trudering,Geltendorf,Puchheim,Eichenau,17,2
-S4,Trudering,Geltendorf,Eichenau,Fürstenfeldbruck,18,4
-S4,Trudering,Geltendorf,Fürstenfeldbruck,Buchenau,19,5
-S4,Trudering,Geltendorf,Buchenau,Schöngeising,20,2
-S4,Trudering,Geltendorf,Schöngeising,Grafrath,21,3
-S4,Trudering,Geltendorf,Grafrath,Türkenfeld,22,5
-S4,Trudering,Geltendorf,Türkenfeld,Geltendorf,23,2
-S4,Trudering,Geltendorf,Geltendorf,,24,
-S1,Flughafen München,Leuchtenbergring,Flughafen München,Flughafen Besucherpark,1,1
-S1,Flughafen München,Leuchtenbergring,Flughafen Besucherpark,Neufahrn,2,7
-S1,Flughafen München,Leuchtenbergring,Neufahrn,Eching,3,8
-S1,Flughafen München,Leuchtenbergring,Eching,Lohhof,4,3
-S1,Flughafen München,Leuchtenbergring,Lohhof,Unterschleißheim,5,2
-S1,Flughafen München,Leuchtenbergring,Unterschleißheim,Oberschleißheim,6,2
-S1,Flughafen München,Leuchtenbergring,Oberschleißheim,Feldmoching,7,4
-S1,Flughafen München,Leuchtenbergring,Feldmoching,Fasanerie,8,3
-S1,Flughafen München,Leuchtenbergring,Fasanerie,Moosach,9,2
-S1,Flughafen München,Leuchtenbergring,Moosach,Laim,10,5
-S1,Flughafen München,Leuchtenbergring,Laim,Hirschgarten,11,4
-S1,Flughafen München,Leuchtenbergring,Hirschgarten,Donnersbergerbrücke,12,2
-S1,Flughafen München,Leuchtenbergring,Donnersbergerbrücke,Hackerbrücke,13,1
-S1,Flughafen München,Leuchtenbergring,Hackerbrücke,Hauptbahnhof,14,2
-S1,Flughafen München,Leuchtenbergring,Hauptbahnhof,Karlsplatz,15,1
-S1,Flughafen München,Leuchtenbergring,Karlsplatz,Marienplatz,16,2
-S1,Flughafen München,Leuchtenbergring,Marienplatz,Isartor,17,2
-S1,Flughafen München,Leuchtenbergring,Isartor,Rosenheimer Platz,18,2
-S1,Flughafen München,Leuchtenbergring,Rosenheimer Platz,Ostbahnhof München,19,2
-S1,Flughafen München,Leuchtenbergring,Ostbahnhof München,Leuchtenbergring,20,2
-S1,Flughafen München,Leuchtenbergring,Leuchtenbergring,,21,
-S1,Leuchtenbergring,Flughafen München,Leuchtenbergring,Ostbahnhof München,1,2
-S1,Leuchtenbergring,Flughafen München,Ostbahnhof München,Rosenheimer Platz,2,2
-S1,Leuchtenbergring,Flughafen München,Rosenheimer Platz,Isartor,3,2
-S1,Leuchtenbergring,Flughafen München,Isartor,Marienplatz,4,2
-S1,Leuchtenbergring,Flughafen München,Marienplatz,Karlsplatz,5,2
-S1,Leuchtenbergring,Flughafen München,Karlsplatz,Hauptbahnhof,6,1
-S1,Leuchtenbergring,Flughafen München,Hauptbahnhof,Hackerbrücke,7,2
-S1,Leuchtenbergring,Flughafen München,Hackerbrücke,Donnersbergerbrücke,8,1
-S1,Leuchtenbergring,Flughafen München,Donnersbergerbrücke,Hirschgarten,9,2
-S1,Leuchtenbergring,Flughafen München,Hirschgarten,Laim,10,4
-S1,Leuchtenbergring,Flughafen München,Laim,Moosach,11,5
-S1,Leuchtenbergring,Flughafen München,Moosach,Fasanerie,12,2
-S1,Leuchtenbergring,Flughafen München,Fasanerie,Feldmoching,13,3
-S1,Leuchtenbergring,Flughafen München,Feldmoching,Oberschleißheim,14,4
-S1,Leuchtenbergring,Flughafen München,Oberschleißheim,Unterschleißheim,15,2
-S1,Leuchtenbergring,Flughafen München,Unterschleißheim,Lohhof,16,2
-S1,Leuchtenbergring,Flughafen München,Lohhof,Eching,17,3
-S1,Leuchtenbergring,Flughafen München,Eching,Neufahrn,18,8
-S1,Leuchtenbergring,Flughafen München,Neufahrn,Flughafen Besucherpark,19,7
-S1,Leuchtenbergring,Flughafen München,Flughafen Besucherpark,Flughafen München,20,1
-S1,Leuchtenbergring,Flughafen München,Flughafen München,,21,
-S2,Erding,Petershausen,Erding,Altenerding,1,1
-S2,Erding,Petershausen,Altenerding,Aufhausen,2,3
-S2,Erding,Petershausen,Aufhausen,St. Koloman,3,4
-S2,Erding,Petershausen,St. Koloman,Ottenhofen,4,3
-S2,Erding,Petershausen,Ottenhofen,Markt Schwaben,5,4
-S2,Erding,Petershausen,Markt Schwaben,Poing,6,6
-S2,Erding,Petershausen,Poing,Grub,7,3
-S2,Erding,Petershausen,Grub,Heimstetten,8,2
-S2,Erding,Petershausen,Heimstetten,Feldkirchen,9,2
-S2,Erding,Petershausen,Feldkirchen,Riem,10,4
-S2,Erding,Petershausen,Riem,Berg am Laim,11,3
-S2,Erding,Petershausen,Berg am Laim,Leuchtenbergring,12,2
-S2,Erding,Petershausen,Leuchtenbergring,Ostbahnhof München,13,3
-S2,Erding,Petershausen,Ostbahnhof München,Rosenheimer Platz,14,4
-S2,Erding,Petershausen,Rosenheimer Platz,Isartor,15,2
-S2,Erding,Petershausen,Isartor,Marienplatz,16,2
-S2,Erding,Petershausen,Marienplatz,Karlsplatz,17,2
-S2,Erding,Petershausen,Karlsplatz,Hauptbahnhof,18,1
-S2,Erding,Petershausen,Hauptbahnhof,Hackerbrücke,19,2
-S2,Erding,Petershausen,Hackerbrücke,Donnersbergerbrücke,20,1
-S2,Erding,Petershausen,Donnersbergerbrücke,Hirschgarten,21,2
-S2,Erding,Petershausen,Hirschgarten,Laim,22,2
-S2,Erding,Petershausen,Laim,Obermenzing,23,3
-S2,Erding,Petershausen,Obermenzing,Untermenzing,24,3
-S2,Erding,Petershausen,Untermenzing,Allach,25,2
-S2,Erding,Petershausen,Allach,Karlsfeld,26,2
-S2,Erding,Petershausen,Karlsfeld,Dachau Bahnhof,27,5
-S2,Erding,Petershausen,Dachau Bahnhof,Hebertshausen,28,4
-S2,Erding,Petershausen,Hebertshausen,Röhrmoos,29,4
-S2,Erding,Petershausen,Röhrmoos,Vierkirchen-Esterhofen,30,3
-S2,Erding,Petershausen,Vierkirchen-Esterhofen,Petershausen,31,5
-S2,Erding,Petershausen,Petershausen,,32,
-S2,Petershausen,Erding,Petershausen,Vierkirchen-Esterhofen,1,5
-S2,Petershausen,Erding,Vierkirchen-Esterhofen,Röhrmoos,2,3
-S2,Petershausen,Erding,Röhrmoos,Hebertshausen,3,4
-S2,Petershausen,Erding,Hebertshausen,Dachau Bahnhof,4,4
-S2,Petershausen,Erding,Dachau Bahnhof,Karlsfeld,5,5
-S2,Petershausen,Erding,Karlsfeld,Allach,6,2
-S2,Petershausen,Erding,Allach,Untermenzing,7,2
-S2,Petershausen,Erding,Untermenzing,Obermenzing,8,3
-S2,Petershausen,Erding,Obermenzing,Laim,9,3
-S2,Petershausen,Erding,Laim,Hirschgarten,10,2
-S2,Petershausen,Erding,Hirschgarten,Donnersbergerbrücke,11,2
-S2,Petershausen,Erding,Donnersbergerbrücke,Hackerbrücke,12,1
-S2,Petershausen,Erding,Hackerbrücke,Hauptbahnhof,13,2
-S2,Petershausen,Erding,Hauptbahnhof,Karlsplatz,14,1
-S2,Petershausen,Erding,Karlsplatz,Marienplatz,15,2
-S2,Petershausen,Erding,Marienplatz,Isartor,16,2
-S2,Petershausen,Erding,Isartor,Rosenheimer Platz,17,2
-S2,Petershausen,Erding,Rosenheimer Platz,Ostbahnhof München,18,4
-S2,Petershausen,Erding,Ostbahnhof München,Leuchtenbergring,19,3
-S2,Petershausen,Erding,Leuchtenbergring,Berg am Laim,20,2
-S2,Petershausen,Erding,Berg am Laim,Riem,21,3
-S2,Petershausen,Erding,Riem,Feldkirchen,22,4
-S2,Petershausen,Erding,Feldkirchen,Heimstetten,23,2
-S2,Petershausen,Erding,Heimstetten,Grub,24,2
-S2,Petershausen,Erding,Grub,Poing,25,3
-S2,Petershausen,Erding,Poing,Markt Schwaben,26,6
-S2,Petershausen,Erding,Markt Schwaben,Ottenhofen,27,4
-S2,Petershausen,Erding,Ottenhofen,St. Koloman,28,3
-S2,Petershausen,Erding,St. Koloman,Aufhausen,29,4
-S2,Petershausen,Erding,Aufhausen,Altenerding,30,3
-S2,Petershausen,Erding,Altenerding,Erding,31,1
-S2,Petershausen,Erding,Erding,,32,
-S2,Heimeranplatz,Höllriegelskreuth,Heimeranplatz,Mittersendling,1,3
-S2,Heimeranplatz,Höllriegelskreuth,Mittersendling,Siemenswerke,2,2
-S2,Heimeranplatz,Höllriegelskreuth,Siemenswerke,Solln,3,2
-S2,Heimeranplatz,Höllriegelskreuth,Solln,Großhesselohe Isartalbahnhof,4,2
-S2,Heimeranplatz,Höllriegelskreuth,Großhesselohe Isartalbahnhof,Pullach,5,2
-S2,Heimeranplatz,Höllriegelskreuth,Pullach,Höllriegelskreuth,6,3
-S2,Heimeranplatz,Höllriegelskreuth,Höllriegelskreuth,,7,
-S2,Höllriegelskreuth,Heimeranplatz,Höllriegelskreuth,Pullach,1,3
-S2,Höllriegelskreuth,Heimeranplatz,Pullach,Großhesselohe Isartalbahnhof,2,2
-S2,Höllriegelskreuth,Heimeranplatz,Großhesselohe Isartalbahnhof,Solln,3,2
-S2,Höllriegelskreuth,Heimeranplatz,Solln,Siemenswerke,4,2
-S2,Höllriegelskreuth,Heimeranplatz,Siemenswerke,Mittersendling,5,2
-S2,Höllriegelskreuth,Heimeranplatz,Mittersendling,Heimeranplatz,6,3
-S2,Höllriegelskreuth,Heimeranplatz,Heimeranplatz,,7,
-S3,Holzkirchen,Mammendorf,Holzkirchen,Otterfing,1,3
-S3,Holzkirchen,Mammendorf,Otterfing,Sauerlach,2,5
-S3,Holzkirchen,Mammendorf,Sauerlach,Deisenhofen,3,5
-S3,Holzkirchen,Mammendorf,Deisenhofen,Furth,4,3
-S3,Holzkirchen,Mammendorf,Furth,Taufkirchen,5,2
-S3,Holzkirchen,Mammendorf,Taufkirchen,Unterhaching,6,2
-S3,Holzkirchen,Mammendorf,Unterhaching,Fasanenpark,7,2
-S3,Holzkirchen,Mammendorf,Fasanenpark,Fasangarten,8,2
-S3,Holzkirchen,Mammendorf,Fasangarten,Giesing,9,3
-S3,Holzkirchen,Mammendorf,Giesing,St.-Martin-Str.,10,2
-S3,Holzkirchen,Mammendorf,St.-Martin-Str.,Ostbahnhof München,11,2
-S3,Holzkirchen,Mammendorf,Ostbahnhof München,Rosenheimer Platz,12,4
-S3,Holzkirchen,Mammendorf,Rosenheimer Platz,Isartor,13,1
-S3,Holzkirchen,Mammendorf,Isartor,Marienplatz,14,2
-S3,Holzkirchen,Mammendorf,Marienplatz,Karlsplatz,15,2
-S3,Holzkirchen,Mammendorf,Karlsplatz,Hauptbahnhof,16,1
-S3,Holzkirchen,Mammendorf,Hauptbahnhof,Hackerbrücke,17,2
-S3,Holzkirchen,Mammendorf,Hackerbrücke,Donnersbergerbrücke,18,2
-S3,Holzkirchen,Mammendorf,Donnersbergerbrücke,Hirschgarten,19,1
-S3,Holzkirchen,Mammendorf,Hirschgarten,Laim,20,2
-S3,Holzkirchen,Mammendorf,Laim,Pasing,21,3
-S3,Holzkirchen,Mammendorf,Pasing,Langwied,22,4
-S3,Holzkirchen,Mammendorf,Langwied,Lochhausen,23,3
-S3,Holzkirchen,Mammendorf,Lochhausen,Gröbenzell,24,3
-S3,Holzkirchen,Mammendorf,Gröbenzell,Olching,25,3
-S3,Holzkirchen,Mammendorf,Olching,Esting,26,2
-S3,Holzkirchen,Mammendorf,Esting,Gernlinden,27,2
-S3,Holzkirchen,Mammendorf,Gernlinden,Maisach,28,3
-S3,Holzkirchen,Mammendorf,Maisach,Malching,29,5
-S3,Holzkirchen,Mammendorf,Malching,Mammendorf,30,4
-S3,Holzkirchen,Mammendorf,Mammendorf,,31,
-S3,Mammendorf,Holzkirchen,Mammendorf,Malching,1,4
-S3,Mammendorf,Holzkirchen,Malching,Maisach,2,5
-S3,Mammendorf,Holzkirchen,Maisach,Gernlinden,3,3
-S3,Mammendorf,Holzkirchen,Gernlinden,Esting,4,2
-S3,Mammendorf,Holzkirchen,Esting,Olching,5,2
-S3,Mammendorf,Holzkirchen,Olching,Gröbenzell,6,3
-S3,Mammendorf,Holzkirchen,Gröbenzell,Lochhausen,7,3
-S3,Mammendorf,Holzkirchen,Lochhausen,Langwied,8,3
-S3,Mammendorf,Holzkirchen,Langwied,Pasing,9,4
-S3,Mammendorf,Holzkirchen,Pasing,Laim,10,3
-S3,Mammendorf,Holzkirchen,Laim,Hirschgarten,11,2
-S3,Mammendorf,Holzkirchen,Hirschgarten,Donnersbergerbrücke,12,1
-S3,Mammendorf,Holzkirchen,Donnersbergerbrücke,Hackerbrücke,13,2
-S3,Mammendorf,Holzkirchen,Hackerbrücke,Hauptbahnhof,14,2
-S3,Mammendorf,Holzkirchen,Hauptbahnhof,Karlsplatz,15,1
-S3,Mammendorf,Holzkirchen,Karlsplatz,Marienplatz,16,2
-S3,Mammendorf,Holzkirchen,Marienplatz,Isartor,17,2
-S3,Mammendorf,Holzkirchen,Isartor,Rosenheimer Platz,18,1
-S3,Mammendorf,Holzkirchen,Rosenheimer Platz,Ostbahnhof München,19,4
-S3,Mammendorf,Holzkirchen,Ostbahnhof München,St.-Martin-Str.,20,2
-S3,Mammendorf,Holzkirchen,St.-Martin-Str.,Giesing,21,2
-S3,Mammendorf,Holzkirchen,Giesing,Fasangarten,22,3
-S3,Mammendorf,Holzkirchen,Fasangarten,Fasanenpark,23,2
-S3,Mammendorf,Holzkirchen,Fasanenpark,Unterhaching,24,2
-S3,Mammendorf,Holzkirchen,Unterhaching,Taufkirchen,25,2
-S3,Mammendorf,Holzkirchen,Taufkirchen,Furth,26,2
-S3,Mammendorf,Holzkirchen,Furth,Deisenhofen,27,3
-S3,Mammendorf,Holzkirchen,Deisenhofen,Sauerlach,28,5
-S3,Mammendorf,Holzkirchen,Sauerlach,Otterfing,29,5
-S3,Mammendorf,Holzkirchen,Otterfing,Holzkirchen,30,3
-S3,Mammendorf,Holzkirchen,Holzkirchen,,31,
-S1,Freising,Leuchtenbergring,Freising,Pulling,1,3
-S1,Freising,Leuchtenbergring,Pulling,Neufahrn,2,5
-S1,Freising,Leuchtenbergring,Neufahrn,Eching,3,5
-S1,Freising,Leuchtenbergring,Eching,Lohhof,4,3
-S1,Freising,Leuchtenbergring,Lohhof,Unterschleißheim,5,2
-S1,Freising,Leuchtenbergring,Unterschleißheim,Oberschleißheim,6,2
-S1,Freising,Leuchtenbergring,Oberschleißheim,Feldmoching,7,4
-S1,Freising,Leuchtenbergring,Feldmoching,Fasanerie,8,3
-S1,Freising,Leuchtenbergring,Fasanerie,Moosach,9,2
-S1,Freising,Leuchtenbergring,Moosach,Laim,10,5
-S1,Freising,Leuchtenbergring,Laim,Hirschgarten,11,4
-S1,Freising,Leuchtenbergring,Hirschgarten,Donnersbergerbrücke,12,2
-S1,Freising,Leuchtenbergring,Donnersbergerbrücke,Hackerbrücke,13,1
-S1,Freising,Leuchtenbergring,Hackerbrücke,Hauptbahnhof,14,2
-S1,Freising,Leuchtenbergring,Hauptbahnhof,Karlsplatz,15,1
-S1,Freising,Leuchtenbergring,Karlsplatz,Marienplatz,16,2
-S1,Freising,Leuchtenbergring,Marienplatz,Isartor,17,2
-S1,Freising,Leuchtenbergring,Isartor,Rosenheimer Platz,18,2
-S1,Freising,Leuchtenbergring,Rosenheimer Platz,Ostbahnhof München,19,2
-S1,Freising,Leuchtenbergring,Ostbahnhof München,Leuchtenbergring,20,2
-S1,Freising,Leuchtenbergring,Leuchtenbergring,,21,
-S1,Leuchtenbergring,Freising,Leuchtenbergring,Ostbahnhof München,1,2
-S1,Leuchtenbergring,Freising,Ostbahnhof München,Rosenheimer Platz,2,2
-S1,Leuchtenbergring,Freising,Rosenheimer Platz,Isartor,3,2
-S1,Leuchtenbergring,Freising,Isartor,Marienplatz,4,2
-S1,Leuchtenbergring,Freising,Marienplatz,Karlsplatz,5,2
-S1,Leuchtenbergring,Freising,Karlsplatz,Hauptbahnhof,6,1
-S1,Leuchtenbergring,Freising,Hauptbahnhof,Hackerbrücke,7,2
-S1,Leuchtenbergring,Freising,Hackerbrücke,Donnersbergerbrücke,8,1
-S1,Leuchtenbergring,Freising,Donnersbergerbrücke,Hirschgarten,9,2
-S1,Leuchtenbergring,Freising,Hirschgarten,Laim,10,4
-S1,Leuchtenbergring,Freising,Laim,Moosach,11,5
-S1,Leuchtenbergring,Freising,Moosach,Fasanerie,12,2
-S1,Leuchtenbergring,Freising,Fasanerie,Feldmoching,13,3
-S1,Leuchtenbergring,Freising,Feldmoching,Oberschleißheim,14,4
-S1,Leuchtenbergring,Freising,Oberschleißheim,Unterschleißheim,15,2
-S1,Leuchtenbergring,Freising,Unterschleißheim,Lohhof,16,2
-S1,Leuchtenbergring,Freising,Lohhof,Eching,17,3
-S1,Leuchtenbergring,Freising,Eching,Neufahrn,18,5
-S1,Leuchtenbergring,Freising,Neufahrn,Pulling,19,5
-S1,Leuchtenbergring,Freising,Pulling,Freising,20,3
-S1,Leuchtenbergring,Freising,Freising,,21,
-S6,Ebersberg,Tutzing,Ebersberg,Grafing Stadt,1,4
-S6,Ebersberg,Tutzing,Grafing Stadt,Grafing,2,3
-S6,Ebersberg,Tutzing,Grafing,Kirchseeon,3,8
-S6,Ebersberg,Tutzing,Kirchseeon,Eglharting,4,2
-S6,Ebersberg,Tutzing,Eglharting,Zorneding,5,3
-S6,Ebersberg,Tutzing,Zorneding,Baldham,6,3
-S6,Ebersberg,Tutzing,Baldham,Vaterstetten,7,2
-S6,Ebersberg,Tutzing,Vaterstetten,Haar,8,3
-S6,Ebersberg,Tutzing,Haar,Gronsdorf,9,2
-S6,Ebersberg,Tutzing,Gronsdorf,Trudering,10,3
-S6,Ebersberg,Tutzing,Trudering,Berg am Laim,11,3
-S6,Ebersberg,Tutzing,Berg am Laim,Leuchtenbergring,12,1
-S6,Ebersberg,Tutzing,Leuchtenbergring,Ostbahnhof München,13,2
-S6,Ebersberg,Tutzing,Ostbahnhof München,Rosenheimer Platz,14,3
-S6,Ebersberg,Tutzing,Rosenheimer Platz,Isartor,15,2
-S6,Ebersberg,Tutzing,Isartor,Marienplatz,16,2
-S6,Ebersberg,Tutzing,Marienplatz,Karlsplatz,17,2
-S6,Ebersberg,Tutzing,Karlsplatz,Hauptbahnhof,18,1
-S6,Ebersberg,Tutzing,Hauptbahnhof,Hackerbrücke,19,2
-S6,Ebersberg,Tutzing,Hackerbrücke,Donnersbergerbrücke,20,1
-S6,Ebersberg,Tutzing,Donnersbergerbrücke,Hirschgarten,21,2
-S6,Ebersberg,Tutzing,Hirschgarten,Laim,22,2
-S6,Ebersberg,Tutzing,Laim,Pasing,23,3
-S6,Ebersberg,Tutzing,Pasing,Westkreuz,24,3
-S6,Ebersberg,Tutzing,Westkreuz,Lochham,25,3
-S6,Ebersberg,Tutzing,Lochham,Gräfelfing,26,2
-S6,Ebersberg,Tutzing,Gräfelfing,Planegg,27,2
-S6,Ebersberg,Tutzing,Planegg,Stockdorf,28,3
-S6,Ebersberg,Tutzing,Stockdorf,Gauting,29,2
-S6,Ebersberg,Tutzing,Gauting,Starnberg Nord,30,6
-S6,Ebersberg,Tutzing,Starnberg Nord,Starnberg,31,2
-S6,Ebersberg,Tutzing,Starnberg,Possenhofen,32,4
-S6,Ebersberg,Tutzing,Possenhofen,Feldafing,33,3
-S6,Ebersberg,Tutzing,Feldafing,Tutzing,34,5
-S6,Ebersberg,Tutzing,Tutzing,,35,
-S6,Tutzing,Ebersberg,Tutzing,Feldafing,1,5
-S6,Tutzing,Ebersberg,Feldafing,Possenhofen,2,3
-S6,Tutzing,Ebersberg,Possenhofen,Starnberg,3,4
-S6,Tutzing,Ebersberg,Starnberg,Starnberg Nord,4,2
-S6,Tutzing,Ebersberg,Starnberg Nord,Gauting,5,6
-S6,Tutzing,Ebersberg,Gauting,Stockdorf,6,2
-S6,Tutzing,Ebersberg,Stockdorf,Planegg,7,3
-S6,Tutzing,Ebersberg,Planegg,Gräfelfing,8,2
-S6,Tutzing,Ebersberg,Gräfelfing,Lochham,9,2
-S6,Tutzing,Ebersberg,Lochham,Westkreuz,10,3
-S6,Tutzing,Ebersberg,Westkreuz,Pasing,11,3
-S6,Tutzing,Ebersberg,Pasing,Laim,12,3
-S6,Tutzing,Ebersberg,Laim,Hirschgarten,13,2
-S6,Tutzing,Ebersberg,Hirschgarten,Donnersbergerbrücke,14,2
-S6,Tutzing,Ebersberg,Donnersbergerbrücke,Hackerbrücke,15,1
-S6,Tutzing,Ebersberg,Hackerbrücke,Hauptbahnhof,16,2
-S6,Tutzing,Ebersberg,Hauptbahnhof,Karlsplatz,17,1
-S6,Tutzing,Ebersberg,Karlsplatz,Marienplatz,18,2
-S6,Tutzing,Ebersberg,Marienplatz,Isartor,19,2
-S6,Tutzing,Ebersberg,Isartor,Rosenheimer Platz,20,2
-S6,Tutzing,Ebersberg,Rosenheimer Platz,Ostbahnhof München,21,3
-S6,Tutzing,Ebersberg,Ostbahnhof München,Leuchtenbergring,22,2
-S6,Tutzing,Ebersberg,Leuchtenbergring,Berg am Laim,23,1
-S6,Tutzing,Ebersberg,Berg am Laim,Trudering,24,3
-S6,Tutzing,Ebersberg,Trudering,Gronsdorf,25,3
-S6,Tutzing,Ebersberg,Gronsdorf,Haar,26,2
-S6,Tutzing,Ebersberg,Haar,Vaterstetten,27,3
-S6,Tutzing,Ebersberg,Vaterstetten,Baldham,28,2
-S6,Tutzing,Ebersberg,Baldham,Zorneding,29,3
-S6,Tutzing,Ebersberg,Zorneding,Eglharting,30,3
-S6,Tutzing,Ebersberg,Eglharting,Kirchseeon,31,2
-S6,Tutzing,Ebersberg,Kirchseeon,Grafing,32,8
-S6,Tutzing,Ebersberg,Grafing,Grafing Stadt,33,3
-S6,Tutzing,Ebersberg,Grafing Stadt,Ebersberg,34,4
-S6,Tutzing,Ebersberg,Ebersberg,,35,
-S2,Erding,Altomünster,Erding,Altenerding,1,1
-S2,Erding,Altomünster,Altenerding,Aufhausen,2,3
-S2,Erding,Altomünster,Aufhausen,St. Koloman,3,4
-S2,Erding,Altomünster,St. Koloman,Ottenhofen,4,3
-S2,Erding,Altomünster,Ottenhofen,Markt Schwaben,5,4
-S2,Erding,Altomünster,Markt Schwaben,Poing,6,6
-S2,Erding,Altomünster,Poing,Grub,7,3
-S2,Erding,Altomünster,Grub,Heimstetten,8,2
-S2,Erding,Altomünster,Heimstetten,Feldkirchen,9,2
-S2,Erding,Altomünster,Feldkirchen,Riem,10,4
-S2,Erding,Altomünster,Riem,Berg am Laim,11,3
-S2,Erding,Altomünster,Berg am Laim,Leuchtenbergring,12,2
-S2,Erding,Altomünster,Leuchtenbergring,Ostbahnhof München,13,3
-S2,Erding,Altomünster,Ostbahnhof München,Rosenheimer Platz,14,4
-S2,Erding,Altomünster,Rosenheimer Platz,Isartor,15,2
-S2,Erding,Altomünster,Isartor,Marienplatz,16,2
-S2,Erding,Altomünster,Marienplatz,Karlsplatz,17,2
-S2,Erding,Altomünster,Karlsplatz,Hauptbahnhof,18,1
-S2,Erding,Altomünster,Hauptbahnhof,Hackerbrücke,19,2
-S2,Erding,Altomünster,Hackerbrücke,Donnersbergerbrücke,20,1
-S2,Erding,Altomünster,Donnersbergerbrücke,Hirschgarten,21,2
-S2,Erding,Altomünster,Hirschgarten,Laim,22,2
-S2,Erding,Altomünster,Laim,Obermenzing,23,3
-S2,Erding,Altomünster,Obermenzing,Untermenzing,24,3
-S2,Erding,Altomünster,Untermenzing,Allach,25,2
-S2,Erding,Altomünster,Allach,Karlsfeld,26,2
-S2,Erding,Altomünster,Karlsfeld,Dachau Bahnhof,27,5
-S2,Erding,Altomünster,Dachau Bahnhof,Dachau Stadt,28,5
-S2,Erding,Altomünster,Dachau Stadt,Bachern,29,5
-S2,Erding,Altomünster,Bachern,Schwabhausen,30,4
-S2,Erding,Altomünster,Schwabhausen,Niederroth,31,3
-S2,Erding,Altomünster,Niederroth,Markt Indersdorf,32,4
-S2,Erding,Altomünster,Markt Indersdorf,Arnbach,33,4
-S2,Erding,Altomünster,Arnbach,Erdweg,34,4
-S2,Erding,Altomünster,Erdweg,Kleinberghofen,35,4
-S2,Erding,Altomünster,Kleinberghofen,Altomünster,36,5
-S2,Erding,Altomünster,Altomünster,,37,
-S2,Altomünster,Erding,Altomünster,Kleinberghofen,1,5
-S2,Altomünster,Erding,Kleinberghofen,Erdweg,2,4
-S2,Altomünster,Erding,Erdweg,Arnbach,3,4
-S2,Altomünster,Erding,Arnbach,Markt Indersdorf,4,4
-S2,Altomünster,Erding,Markt Indersdorf,Niederroth,5,4
-S2,Altomünster,Erding,Niederroth,Schwabhausen,6,3
-S2,Altomünster,Erding,Schwabhausen,Bachern,7,4
-S2,Altomünster,Erding,Bachern,Dachau Stadt,8,5
-S2,Altomünster,Erding,Dachau Stadt,Dachau Bahnhof,9,5
-S2,Altomünster,Erding,Dachau Bahnhof,Karlsfeld,10,5
-S2,Altomünster,Erding,Karlsfeld,Allach,11,2
-S2,Altomünster,Erding,Allach,Untermenzing,12,2
-S2,Altomünster,Erding,Untermenzing,Obermenzing,13,3
-S2,Altomünster,Erding,Obermenzing,Laim,14,3
-S2,Altomünster,Erding,Laim,Hirschgarten,15,2
-S2,Altomünster,Erding,Hirschgarten,Donnersbergerbrücke,16,2
-S2,Altomünster,Erding,Donnersbergerbrücke,Hackerbrücke,17,1
-S2,Altomünster,Erding,Hackerbrücke,Hauptbahnhof,18,2
-S2,Altomünster,Erding,Hauptbahnhof,Karlsplatz,19,1
-S2,Altomünster,Erding,Karlsplatz,Marienplatz,20,2
-S2,Altomünster,Erding,Marienplatz,Isartor,21,2
-S2,Altomünster,Erding,Isartor,Rosenheimer Platz,22,2
-S2,Altomünster,Erding,Rosenheimer Platz,Ostbahnhof München,23,4
-S2,Altomünster,Erding,Ostbahnhof München,Leuchtenbergring,24,3
-S2,Altomünster,Erding,Leuchtenbergring,Berg am Laim,25,2
-S2,Altomünster,Erding,Berg am Laim,Riem,26,3
-S2,Altomünster,Erding,Riem,Feldkirchen,27,4
-S2,Altomünster,Erding,Feldkirchen,Heimstetten,28,2
-S2,Altomünster,Erding,Heimstetten,Grub,29,2
-S2,Altomünster,Erding,Grub,Poing,30,3
-S2,Altomünster,Erding,Poing,Markt Schwaben,31,6
-S2,Altomünster,Erding,Markt Schwaben,Ottenhofen,32,4
-S2,Altomünster,Erding,Ottenhofen,St. Koloman,33,3
-S2,Altomünster,Erding,St. Koloman,Aufhausen,34,4
-S2,Altomünster,Erding,Aufhausen,Altenerding,35,3
-S2,Altomünster,Erding,Altenerding,Erding,36,1
-S2,Altomünster,Erding,Erding,,37,
+line,line_id,start,end,from,to,order,delta
+S8,1,Flughafen München,Herrsching,Flughafen München,Flughafen Besucherpark,1,2
+S8,1,Flughafen München,Herrsching,Flughafen Besucherpark,Hallbergmoos,2,5
+S8,1,Flughafen München,Herrsching,Hallbergmoos,Ismaning,3,7
+S8,1,Flughafen München,Herrsching,Ismaning,Unterföhring,4,4
+S8,1,Flughafen München,Herrsching,Unterföhring,Johanneskirchen,5,4
+S8,1,Flughafen München,Herrsching,Johanneskirchen,Englschalking,6,2
+S8,1,Flughafen München,Herrsching,Englschalking,Daglfing,7,1
+S8,1,Flughafen München,Herrsching,Daglfing,Leuchtenbergring,8,5
+S8,1,Flughafen München,Herrsching,Leuchtenbergring,Ostbahnhof München,9,2
+S8,1,Flughafen München,Herrsching,Ostbahnhof München,Rosenheimer Platz,10,3
+S8,1,Flughafen München,Herrsching,Rosenheimer Platz,Isartor,11,2
+S8,1,Flughafen München,Herrsching,Isartor,Marienplatz,12,2
+S8,1,Flughafen München,Herrsching,Marienplatz,Karlsplatz,13,1
+S8,1,Flughafen München,Herrsching,Karlsplatz,Hauptbahnhof,14,2
+S8,1,Flughafen München,Herrsching,Hauptbahnhof,Hackerbrücke,15,2
+S8,1,Flughafen München,Herrsching,Hackerbrücke,Donnersbergerbrücke,16,1
+S8,1,Flughafen München,Herrsching,Donnersbergerbrücke,Hirschgarten,17,2
+S8,1,Flughafen München,Herrsching,Hirschgarten,Laim,18,2
+S8,1,Flughafen München,Herrsching,Laim,Pasing,19,3
+S8,1,Flughafen München,Herrsching,Pasing,Westkreuz,20,4
+S8,1,Flughafen München,Herrsching,Westkreuz,Neuaubing,21,2
+S8,1,Flughafen München,Herrsching,Neuaubing,Freiham,22,2
+S8,1,Flughafen München,Herrsching,Freiham,Harthaus,23,2
+S8,1,Flughafen München,Herrsching,Harthaus,Germering-Unterpfaffenhofen,24,3
+S8,1,Flughafen München,Herrsching,Germering-Unterpfaffenhofen,Geisenbrunn,25,4
+S8,1,Flughafen München,Herrsching,Geisenbrunn,Gilching-Argelsried,26,3
+S8,1,Flughafen München,Herrsching,Gilching-Argelsried,Neugilching,27,2
+S8,1,Flughafen München,Herrsching,Neugilching,Weßling,28,4
+S8,1,Flughafen München,Herrsching,Weßling,Steinebach,29,4
+S8,1,Flughafen München,Herrsching,Steinebach,Seefeld-Hechendorf,30,3
+S8,1,Flughafen München,Herrsching,Seefeld-Hechendorf,Herrsching,31,7
+S8,1,Flughafen München,Herrsching,Herrsching,,32,
+S8,101,Herrsching,Flughafen München,Herrsching,Seefeld-Hechendorf,1,7
+S8,101,Herrsching,Flughafen München,Seefeld-Hechendorf,Steinebach,2,3
+S8,101,Herrsching,Flughafen München,Steinebach,Weßling,3,4
+S8,101,Herrsching,Flughafen München,Weßling,Neugilching,4,4
+S8,101,Herrsching,Flughafen München,Neugilching,Gilching-Argelsried,5,2
+S8,101,Herrsching,Flughafen München,Gilching-Argelsried,Geisenbrunn,6,3
+S8,101,Herrsching,Flughafen München,Geisenbrunn,Germering-Unterpfaffenhofen,7,4
+S8,101,Herrsching,Flughafen München,Germering-Unterpfaffenhofen,Harthaus,8,3
+S8,101,Herrsching,Flughafen München,Harthaus,Freiham,9,2
+S8,101,Herrsching,Flughafen München,Freiham,Neuaubing,10,2
+S8,101,Herrsching,Flughafen München,Neuaubing,Westkreuz,11,2
+S8,101,Herrsching,Flughafen München,Westkreuz,Pasing,12,4
+S8,101,Herrsching,Flughafen München,Pasing,Laim,13,3
+S8,101,Herrsching,Flughafen München,Laim,Hirschgarten,14,2
+S8,101,Herrsching,Flughafen München,Hirschgarten,Donnersbergerbrücke,15,2
+S8,101,Herrsching,Flughafen München,Donnersbergerbrücke,Hackerbrücke,16,1
+S8,101,Herrsching,Flughafen München,Hackerbrücke,Hauptbahnhof,17,2
+S8,101,Herrsching,Flughafen München,Hauptbahnhof,Karlsplatz,18,2
+S8,101,Herrsching,Flughafen München,Karlsplatz,Marienplatz,19,1
+S8,101,Herrsching,Flughafen München,Marienplatz,Isartor,20,2
+S8,101,Herrsching,Flughafen München,Isartor,Rosenheimer Platz,21,2
+S8,101,Herrsching,Flughafen München,Rosenheimer Platz,Ostbahnhof München,22,3
+S8,101,Herrsching,Flughafen München,Ostbahnhof München,Leuchtenbergring,23,2
+S8,101,Herrsching,Flughafen München,Leuchtenbergring,Daglfing,24,5
+S8,101,Herrsching,Flughafen München,Daglfing,Englschalking,25,1
+S8,101,Herrsching,Flughafen München,Englschalking,Johanneskirchen,26,2
+S8,101,Herrsching,Flughafen München,Johanneskirchen,Unterföhring,27,4
+S8,101,Herrsching,Flughafen München,Unterföhring,Ismaning,28,4
+S8,101,Herrsching,Flughafen München,Ismaning,Hallbergmoos,29,7
+S8,101,Herrsching,Flughafen München,Hallbergmoos,Flughafen Besucherpark,30,5
+S8,101,Herrsching,Flughafen München,Flughafen Besucherpark,Flughafen München,31,2
+S8,101,Herrsching,Flughafen München,Flughafen München,,32,
+S7,2,Kreuzstraße,Wolfratshausen,Kreuzstraße,Großhelfendorf,1,3
+S7,2,Kreuzstraße,Wolfratshausen,Großhelfendorf,Peiß,2,2
+S7,2,Kreuzstraße,Wolfratshausen,Peiß,Aying,3,1
+S7,2,Kreuzstraße,Wolfratshausen,Aying,Dürrnhaar,4,3
+S7,2,Kreuzstraße,Wolfratshausen,Dürrnhaar,Höhenkirchen-Siegertsbrunn,5,5
+S7,2,Kreuzstraße,Wolfratshausen,Höhenkirchen-Siegertsbrunn,Wächterhof,6,5
+S7,2,Kreuzstraße,Wolfratshausen,Wächterhof,Hohenbrunn,7,2
+S7,2,Kreuzstraße,Wolfratshausen,Hohenbrunn,Ottobrunn,8,2
+S7,2,Kreuzstraße,Wolfratshausen,Ottobrunn,Neubiberg,9,3
+S7,2,Kreuzstraße,Wolfratshausen,Neubiberg,Neuperlach Süd,10,2
+S7,2,Kreuzstraße,Wolfratshausen,Neuperlach Süd,Perlach,11,2
+S7,2,Kreuzstraße,Wolfratshausen,Perlach,Giesing,12,4
+S7,2,Kreuzstraße,Wolfratshausen,Giesing,St.-Martin-Str.,13,2
+S7,2,Kreuzstraße,Wolfratshausen,St.-Martin-Str.,Ostbahnhof München,14,2
+S7,2,Kreuzstraße,Wolfratshausen,Ostbahnhof München,Rosenheimer Platz,15,4
+S7,2,Kreuzstraße,Wolfratshausen,Rosenheimer Platz,Isartor,16,2
+S7,2,Kreuzstraße,Wolfratshausen,Isartor,Marienplatz,17,2
+S7,2,Kreuzstraße,Wolfratshausen,Marienplatz,Karlsplatz,18,1
+S7,2,Kreuzstraße,Wolfratshausen,Karlsplatz,Hauptbahnhof,19,2
+S7,2,Kreuzstraße,Wolfratshausen,Hauptbahnhof,Hackerbrücke,20,2
+S7,2,Kreuzstraße,Wolfratshausen,Hackerbrücke,Donnersbergerbrücke,21,1
+S7,2,Kreuzstraße,Wolfratshausen,Donnersbergerbrücke,Heimeranplatz,22,3
+S7,2,Kreuzstraße,Wolfratshausen,Heimeranplatz,Harras,23,3
+S7,2,Kreuzstraße,Wolfratshausen,Harras,Mittersendling,24,1
+S7,2,Kreuzstraße,Wolfratshausen,Mittersendling,Siemenswerke,25,2
+S7,2,Kreuzstraße,Wolfratshausen,Siemenswerke,Solln,26,3
+S7,2,Kreuzstraße,Wolfratshausen,Solln,Großhesselohe Isartalbahnhof,27,2
+S7,2,Kreuzstraße,Wolfratshausen,Großhesselohe Isartalbahnhof,Pullach,28,2
+S7,2,Kreuzstraße,Wolfratshausen,Pullach,Höllriegelskreuth,29,2
+S7,2,Kreuzstraße,Wolfratshausen,Höllriegelskreuth,Buchenhain,30,2
+S7,2,Kreuzstraße,Wolfratshausen,Buchenhain,Baierbrunn,31,3
+S7,2,Kreuzstraße,Wolfratshausen,Baierbrunn,Hohenschäftlarn,32,4
+S7,2,Kreuzstraße,Wolfratshausen,Hohenschäftlarn,Ebenhausen-Schäftlarn,33,2
+S7,2,Kreuzstraße,Wolfratshausen,Ebenhausen-Schäftlarn,Icking,34,4
+S7,2,Kreuzstraße,Wolfratshausen,Icking,Wolfratshausen,35,5
+S7,2,Kreuzstraße,Wolfratshausen,Wolfratshausen,,36,
+S7,102,Wolfratshausen,Kreuzstraße,Wolfratshausen,Icking,1,5
+S7,102,Wolfratshausen,Kreuzstraße,Icking,Ebenhausen-Schäftlarn,2,4
+S7,102,Wolfratshausen,Kreuzstraße,Ebenhausen-Schäftlarn,Hohenschäftlarn,3,2
+S7,102,Wolfratshausen,Kreuzstraße,Hohenschäftlarn,Baierbrunn,4,4
+S7,102,Wolfratshausen,Kreuzstraße,Baierbrunn,Buchenhain,5,3
+S7,102,Wolfratshausen,Kreuzstraße,Buchenhain,Höllriegelskreuth,6,2
+S7,102,Wolfratshausen,Kreuzstraße,Höllriegelskreuth,Pullach,7,2
+S7,102,Wolfratshausen,Kreuzstraße,Pullach,Großhesselohe Isartalbahnhof,8,2
+S7,102,Wolfratshausen,Kreuzstraße,Großhesselohe Isartalbahnhof,Solln,9,2
+S7,102,Wolfratshausen,Kreuzstraße,Solln,Siemenswerke,10,3
+S7,102,Wolfratshausen,Kreuzstraße,Siemenswerke,Mittersendling,11,2
+S7,102,Wolfratshausen,Kreuzstraße,Mittersendling,Harras,12,1
+S7,102,Wolfratshausen,Kreuzstraße,Harras,Heimeranplatz,13,3
+S7,102,Wolfratshausen,Kreuzstraße,Heimeranplatz,Donnersbergerbrücke,14,3
+S7,102,Wolfratshausen,Kreuzstraße,Donnersbergerbrücke,Hackerbrücke,15,1
+S7,102,Wolfratshausen,Kreuzstraße,Hackerbrücke,Hauptbahnhof,16,2
+S7,102,Wolfratshausen,Kreuzstraße,Hauptbahnhof,Karlsplatz,17,2
+S7,102,Wolfratshausen,Kreuzstraße,Karlsplatz,Marienplatz,18,1
+S7,102,Wolfratshausen,Kreuzstraße,Marienplatz,Isartor,19,2
+S7,102,Wolfratshausen,Kreuzstraße,Isartor,Rosenheimer Platz,20,2
+S7,102,Wolfratshausen,Kreuzstraße,Rosenheimer Platz,Ostbahnhof München,21,4
+S7,102,Wolfratshausen,Kreuzstraße,Ostbahnhof München,St.-Martin-Str.,22,2
+S7,102,Wolfratshausen,Kreuzstraße,St.-Martin-Str.,Giesing,23,2
+S7,102,Wolfratshausen,Kreuzstraße,Giesing,Perlach,24,4
+S7,102,Wolfratshausen,Kreuzstraße,Perlach,Neuperlach Süd,25,2
+S7,102,Wolfratshausen,Kreuzstraße,Neuperlach Süd,Neubiberg,26,2
+S7,102,Wolfratshausen,Kreuzstraße,Neubiberg,Ottobrunn,27,3
+S7,102,Wolfratshausen,Kreuzstraße,Ottobrunn,Hohenbrunn,28,2
+S7,102,Wolfratshausen,Kreuzstraße,Hohenbrunn,Wächterhof,29,2
+S7,102,Wolfratshausen,Kreuzstraße,Wächterhof,Höhenkirchen-Siegertsbrunn,30,5
+S7,102,Wolfratshausen,Kreuzstraße,Höhenkirchen-Siegertsbrunn,Dürrnhaar,31,5
+S7,102,Wolfratshausen,Kreuzstraße,Dürrnhaar,Aying,32,3
+S7,102,Wolfratshausen,Kreuzstraße,Aying,Peiß,33,1
+S7,102,Wolfratshausen,Kreuzstraße,Peiß,Großhelfendorf,34,2
+S7,102,Wolfratshausen,Kreuzstraße,Großhelfendorf,Kreuzstraße,35,3
+S7,102,Wolfratshausen,Kreuzstraße,Kreuzstraße,,36,
+S4,3,Geltendorf,Trudering,Geltendorf,Türkenfeld,1,2
+S4,3,Geltendorf,Trudering,Türkenfeld,Grafrath,2,5
+S4,3,Geltendorf,Trudering,Grafrath,Schöngeising,3,3
+S4,3,Geltendorf,Trudering,Schöngeising,Buchenau,4,2
+S4,3,Geltendorf,Trudering,Buchenau,Fürstenfeldbruck,5,5
+S4,3,Geltendorf,Trudering,Fürstenfeldbruck,Eichenau,6,4
+S4,3,Geltendorf,Trudering,Eichenau,Puchheim,7,2
+S4,3,Geltendorf,Trudering,Puchheim,Aubing,8,4
+S4,3,Geltendorf,Trudering,Aubing,Leienfelsstraße,9,2
+S4,3,Geltendorf,Trudering,Leienfelsstraße,Pasing,10,3
+S4,3,Geltendorf,Trudering,Pasing,Laim,11,6
+S4,3,Geltendorf,Trudering,Laim,Hirschgarten,12,2
+S4,3,Geltendorf,Trudering,Hirschgarten,Donnersbergerbrücke,13,2
+S4,3,Geltendorf,Trudering,Donnersbergerbrücke,Hackerbrücke,14,1
+S4,3,Geltendorf,Trudering,Hackerbrücke,Hauptbahnhof,15,2
+S4,3,Geltendorf,Trudering,Hauptbahnhof,Karlsplatz,16,1
+S4,3,Geltendorf,Trudering,Karlsplatz,Marienplatz,17,2
+S4,3,Geltendorf,Trudering,Marienplatz,Isartor,18,2
+S4,3,Geltendorf,Trudering,Isartor,Rosenheimer Platz,19,2
+S4,3,Geltendorf,Trudering,Rosenheimer Platz,Ostbahnhof München,20,1
+S4,3,Geltendorf,Trudering,Ostbahnhof München,Leuchtenbergring,21,2
+S4,3,Geltendorf,Trudering,Leuchtenbergring,Berg am Laim,22,3
+S4,3,Geltendorf,Trudering,Berg am Laim,Trudering,23,2
+S4,3,Geltendorf,Trudering,Trudering,,24,
+S4,103,Trudering,Geltendorf,Trudering,Berg am Laim,1,2
+S4,103,Trudering,Geltendorf,Berg am Laim,Leuchtenbergring,2,3
+S4,103,Trudering,Geltendorf,Leuchtenbergring,Ostbahnhof München,3,2
+S4,103,Trudering,Geltendorf,Ostbahnhof München,Rosenheimer Platz,4,1
+S4,103,Trudering,Geltendorf,Rosenheimer Platz,Isartor,5,2
+S4,103,Trudering,Geltendorf,Isartor,Marienplatz,6,2
+S4,103,Trudering,Geltendorf,Marienplatz,Karlsplatz,7,2
+S4,103,Trudering,Geltendorf,Karlsplatz,Hauptbahnhof,8,1
+S4,103,Trudering,Geltendorf,Hauptbahnhof,Hackerbrücke,9,2
+S4,103,Trudering,Geltendorf,Hackerbrücke,Donnersbergerbrücke,10,1
+S4,103,Trudering,Geltendorf,Donnersbergerbrücke,Hirschgarten,11,2
+S4,103,Trudering,Geltendorf,Hirschgarten,Laim,12,2
+S4,103,Trudering,Geltendorf,Laim,Pasing,13,6
+S4,103,Trudering,Geltendorf,Pasing,Leienfelsstraße,14,3
+S4,103,Trudering,Geltendorf,Leienfelsstraße,Aubing,15,2
+S4,103,Trudering,Geltendorf,Aubing,Puchheim,16,4
+S4,103,Trudering,Geltendorf,Puchheim,Eichenau,17,2
+S4,103,Trudering,Geltendorf,Eichenau,Fürstenfeldbruck,18,4
+S4,103,Trudering,Geltendorf,Fürstenfeldbruck,Buchenau,19,5
+S4,103,Trudering,Geltendorf,Buchenau,Schöngeising,20,2
+S4,103,Trudering,Geltendorf,Schöngeising,Grafrath,21,3
+S4,103,Trudering,Geltendorf,Grafrath,Türkenfeld,22,5
+S4,103,Trudering,Geltendorf,Türkenfeld,Geltendorf,23,2
+S4,103,Trudering,Geltendorf,Geltendorf,,24,
+S1,4,Flughafen München,Leuchtenbergring,Flughafen München,Flughafen Besucherpark,1,1
+S1,4,Flughafen München,Leuchtenbergring,Flughafen Besucherpark,Neufahrn,2,7
+S1,4,Flughafen München,Leuchtenbergring,Neufahrn,Eching,3,8
+S1,4,Flughafen München,Leuchtenbergring,Eching,Lohhof,4,3
+S1,4,Flughafen München,Leuchtenbergring,Lohhof,Unterschleißheim,5,2
+S1,4,Flughafen München,Leuchtenbergring,Unterschleißheim,Oberschleißheim,6,2
+S1,4,Flughafen München,Leuchtenbergring,Oberschleißheim,Feldmoching,7,4
+S1,4,Flughafen München,Leuchtenbergring,Feldmoching,Fasanerie,8,3
+S1,4,Flughafen München,Leuchtenbergring,Fasanerie,Moosach,9,2
+S1,4,Flughafen München,Leuchtenbergring,Moosach,Laim,10,5
+S1,4,Flughafen München,Leuchtenbergring,Laim,Hirschgarten,11,4
+S1,4,Flughafen München,Leuchtenbergring,Hirschgarten,Donnersbergerbrücke,12,2
+S1,4,Flughafen München,Leuchtenbergring,Donnersbergerbrücke,Hackerbrücke,13,1
+S1,4,Flughafen München,Leuchtenbergring,Hackerbrücke,Hauptbahnhof,14,2
+S1,4,Flughafen München,Leuchtenbergring,Hauptbahnhof,Karlsplatz,15,1
+S1,4,Flughafen München,Leuchtenbergring,Karlsplatz,Marienplatz,16,2
+S1,4,Flughafen München,Leuchtenbergring,Marienplatz,Isartor,17,2
+S1,4,Flughafen München,Leuchtenbergring,Isartor,Rosenheimer Platz,18,2
+S1,4,Flughafen München,Leuchtenbergring,Rosenheimer Platz,Ostbahnhof München,19,2
+S1,4,Flughafen München,Leuchtenbergring,Ostbahnhof München,Leuchtenbergring,20,2
+S1,4,Flughafen München,Leuchtenbergring,Leuchtenbergring,,21,
+S1,104,Leuchtenbergring,Flughafen München,Leuchtenbergring,Ostbahnhof München,1,2
+S1,104,Leuchtenbergring,Flughafen München,Ostbahnhof München,Rosenheimer Platz,2,2
+S1,104,Leuchtenbergring,Flughafen München,Rosenheimer Platz,Isartor,3,2
+S1,104,Leuchtenbergring,Flughafen München,Isartor,Marienplatz,4,2
+S1,104,Leuchtenbergring,Flughafen München,Marienplatz,Karlsplatz,5,2
+S1,104,Leuchtenbergring,Flughafen München,Karlsplatz,Hauptbahnhof,6,1
+S1,104,Leuchtenbergring,Flughafen München,Hauptbahnhof,Hackerbrücke,7,2
+S1,104,Leuchtenbergring,Flughafen München,Hackerbrücke,Donnersbergerbrücke,8,1
+S1,104,Leuchtenbergring,Flughafen München,Donnersbergerbrücke,Hirschgarten,9,2
+S1,104,Leuchtenbergring,Flughafen München,Hirschgarten,Laim,10,4
+S1,104,Leuchtenbergring,Flughafen München,Laim,Moosach,11,5
+S1,104,Leuchtenbergring,Flughafen München,Moosach,Fasanerie,12,2
+S1,104,Leuchtenbergring,Flughafen München,Fasanerie,Feldmoching,13,3
+S1,104,Leuchtenbergring,Flughafen München,Feldmoching,Oberschleißheim,14,4
+S1,104,Leuchtenbergring,Flughafen München,Oberschleißheim,Unterschleißheim,15,2
+S1,104,Leuchtenbergring,Flughafen München,Unterschleißheim,Lohhof,16,2
+S1,104,Leuchtenbergring,Flughafen München,Lohhof,Eching,17,3
+S1,104,Leuchtenbergring,Flughafen München,Eching,Neufahrn,18,8
+S1,104,Leuchtenbergring,Flughafen München,Neufahrn,Flughafen Besucherpark,19,7
+S1,104,Leuchtenbergring,Flughafen München,Flughafen Besucherpark,Flughafen München,20,1
+S1,104,Leuchtenbergring,Flughafen München,Flughafen München,,21,
+S2,5,Erding,Petershausen,Erding,Altenerding,1,1
+S2,5,Erding,Petershausen,Altenerding,Aufhausen,2,3
+S2,5,Erding,Petershausen,Aufhausen,St. Koloman,3,4
+S2,5,Erding,Petershausen,St. Koloman,Ottenhofen,4,3
+S2,5,Erding,Petershausen,Ottenhofen,Markt Schwaben,5,4
+S2,5,Erding,Petershausen,Markt Schwaben,Poing,6,6
+S2,5,Erding,Petershausen,Poing,Grub,7,3
+S2,5,Erding,Petershausen,Grub,Heimstetten,8,2
+S2,5,Erding,Petershausen,Heimstetten,Feldkirchen,9,2
+S2,5,Erding,Petershausen,Feldkirchen,Riem,10,4
+S2,5,Erding,Petershausen,Riem,Berg am Laim,11,3
+S2,5,Erding,Petershausen,Berg am Laim,Leuchtenbergring,12,2
+S2,5,Erding,Petershausen,Leuchtenbergring,Ostbahnhof München,13,3
+S2,5,Erding,Petershausen,Ostbahnhof München,Rosenheimer Platz,14,4
+S2,5,Erding,Petershausen,Rosenheimer Platz,Isartor,15,2
+S2,5,Erding,Petershausen,Isartor,Marienplatz,16,2
+S2,5,Erding,Petershausen,Marienplatz,Karlsplatz,17,2
+S2,5,Erding,Petershausen,Karlsplatz,Hauptbahnhof,18,1
+S2,5,Erding,Petershausen,Hauptbahnhof,Hackerbrücke,19,2
+S2,5,Erding,Petershausen,Hackerbrücke,Donnersbergerbrücke,20,1
+S2,5,Erding,Petershausen,Donnersbergerbrücke,Hirschgarten,21,2
+S2,5,Erding,Petershausen,Hirschgarten,Laim,22,2
+S2,5,Erding,Petershausen,Laim,Obermenzing,23,3
+S2,5,Erding,Petershausen,Obermenzing,Untermenzing,24,3
+S2,5,Erding,Petershausen,Untermenzing,Allach,25,2
+S2,5,Erding,Petershausen,Allach,Karlsfeld,26,2
+S2,5,Erding,Petershausen,Karlsfeld,Dachau Bahnhof,27,5
+S2,5,Erding,Petershausen,Dachau Bahnhof,Hebertshausen,28,4
+S2,5,Erding,Petershausen,Hebertshausen,Röhrmoos,29,4
+S2,5,Erding,Petershausen,Röhrmoos,Vierkirchen-Esterhofen,30,3
+S2,5,Erding,Petershausen,Vierkirchen-Esterhofen,Petershausen,31,5
+S2,5,Erding,Petershausen,Petershausen,,32,
+S2,105,Petershausen,Erding,Petershausen,Vierkirchen-Esterhofen,1,5
+S2,105,Petershausen,Erding,Vierkirchen-Esterhofen,Röhrmoos,2,3
+S2,105,Petershausen,Erding,Röhrmoos,Hebertshausen,3,4
+S2,105,Petershausen,Erding,Hebertshausen,Dachau Bahnhof,4,4
+S2,105,Petershausen,Erding,Dachau Bahnhof,Karlsfeld,5,5
+S2,105,Petershausen,Erding,Karlsfeld,Allach,6,2
+S2,105,Petershausen,Erding,Allach,Untermenzing,7,2
+S2,105,Petershausen,Erding,Untermenzing,Obermenzing,8,3
+S2,105,Petershausen,Erding,Obermenzing,Laim,9,3
+S2,105,Petershausen,Erding,Laim,Hirschgarten,10,2
+S2,105,Petershausen,Erding,Hirschgarten,Donnersbergerbrücke,11,2
+S2,105,Petershausen,Erding,Donnersbergerbrücke,Hackerbrücke,12,1
+S2,105,Petershausen,Erding,Hackerbrücke,Hauptbahnhof,13,2
+S2,105,Petershausen,Erding,Hauptbahnhof,Karlsplatz,14,1
+S2,105,Petershausen,Erding,Karlsplatz,Marienplatz,15,2
+S2,105,Petershausen,Erding,Marienplatz,Isartor,16,2
+S2,105,Petershausen,Erding,Isartor,Rosenheimer Platz,17,2
+S2,105,Petershausen,Erding,Rosenheimer Platz,Ostbahnhof München,18,4
+S2,105,Petershausen,Erding,Ostbahnhof München,Leuchtenbergring,19,3
+S2,105,Petershausen,Erding,Leuchtenbergring,Berg am Laim,20,2
+S2,105,Petershausen,Erding,Berg am Laim,Riem,21,3
+S2,105,Petershausen,Erding,Riem,Feldkirchen,22,4
+S2,105,Petershausen,Erding,Feldkirchen,Heimstetten,23,2
+S2,105,Petershausen,Erding,Heimstetten,Grub,24,2
+S2,105,Petershausen,Erding,Grub,Poing,25,3
+S2,105,Petershausen,Erding,Poing,Markt Schwaben,26,6
+S2,105,Petershausen,Erding,Markt Schwaben,Ottenhofen,27,4
+S2,105,Petershausen,Erding,Ottenhofen,St. Koloman,28,3
+S2,105,Petershausen,Erding,St. Koloman,Aufhausen,29,4
+S2,105,Petershausen,Erding,Aufhausen,Altenerding,30,3
+S2,105,Petershausen,Erding,Altenerding,Erding,31,1
+S2,105,Petershausen,Erding,Erding,,32,
+S2,6,Heimeranplatz,Höllriegelskreuth,Heimeranplatz,Mittersendling,1,3
+S2,6,Heimeranplatz,Höllriegelskreuth,Mittersendling,Siemenswerke,2,2
+S2,6,Heimeranplatz,Höllriegelskreuth,Siemenswerke,Solln,3,2
+S2,6,Heimeranplatz,Höllriegelskreuth,Solln,Großhesselohe Isartalbahnhof,4,2
+S2,6,Heimeranplatz,Höllriegelskreuth,Großhesselohe Isartalbahnhof,Pullach,5,2
+S2,6,Heimeranplatz,Höllriegelskreuth,Pullach,Höllriegelskreuth,6,3
+S2,6,Heimeranplatz,Höllriegelskreuth,Höllriegelskreuth,,7,
+S2,106,Höllriegelskreuth,Heimeranplatz,Höllriegelskreuth,Pullach,1,3
+S2,106,Höllriegelskreuth,Heimeranplatz,Pullach,Großhesselohe Isartalbahnhof,2,2
+S2,106,Höllriegelskreuth,Heimeranplatz,Großhesselohe Isartalbahnhof,Solln,3,2
+S2,106,Höllriegelskreuth,Heimeranplatz,Solln,Siemenswerke,4,2
+S2,106,Höllriegelskreuth,Heimeranplatz,Siemenswerke,Mittersendling,5,2
+S2,106,Höllriegelskreuth,Heimeranplatz,Mittersendling,Heimeranplatz,6,3
+S2,106,Höllriegelskreuth,Heimeranplatz,Heimeranplatz,,7,
+S3,7,Holzkirchen,Mammendorf,Holzkirchen,Otterfing,1,3
+S3,7,Holzkirchen,Mammendorf,Otterfing,Sauerlach,2,5
+S3,7,Holzkirchen,Mammendorf,Sauerlach,Deisenhofen,3,5
+S3,7,Holzkirchen,Mammendorf,Deisenhofen,Furth,4,3
+S3,7,Holzkirchen,Mammendorf,Furth,Taufkirchen,5,2
+S3,7,Holzkirchen,Mammendorf,Taufkirchen,Unterhaching,6,2
+S3,7,Holzkirchen,Mammendorf,Unterhaching,Fasanenpark,7,2
+S3,7,Holzkirchen,Mammendorf,Fasanenpark,Fasangarten,8,2
+S3,7,Holzkirchen,Mammendorf,Fasangarten,Giesing,9,3
+S3,7,Holzkirchen,Mammendorf,Giesing,St.-Martin-Str.,10,2
+S3,7,Holzkirchen,Mammendorf,St.-Martin-Str.,Ostbahnhof München,11,2
+S3,7,Holzkirchen,Mammendorf,Ostbahnhof München,Rosenheimer Platz,12,4
+S3,7,Holzkirchen,Mammendorf,Rosenheimer Platz,Isartor,13,1
+S3,7,Holzkirchen,Mammendorf,Isartor,Marienplatz,14,2
+S3,7,Holzkirchen,Mammendorf,Marienplatz,Karlsplatz,15,2
+S3,7,Holzkirchen,Mammendorf,Karlsplatz,Hauptbahnhof,16,1
+S3,7,Holzkirchen,Mammendorf,Hauptbahnhof,Hackerbrücke,17,2
+S3,7,Holzkirchen,Mammendorf,Hackerbrücke,Donnersbergerbrücke,18,2
+S3,7,Holzkirchen,Mammendorf,Donnersbergerbrücke,Hirschgarten,19,1
+S3,7,Holzkirchen,Mammendorf,Hirschgarten,Laim,20,2
+S3,7,Holzkirchen,Mammendorf,Laim,Pasing,21,3
+S3,7,Holzkirchen,Mammendorf,Pasing,Langwied,22,4
+S3,7,Holzkirchen,Mammendorf,Langwied,Lochhausen,23,3
+S3,7,Holzkirchen,Mammendorf,Lochhausen,Gröbenzell,24,3
+S3,7,Holzkirchen,Mammendorf,Gröbenzell,Olching,25,3
+S3,7,Holzkirchen,Mammendorf,Olching,Esting,26,2
+S3,7,Holzkirchen,Mammendorf,Esting,Gernlinden,27,2
+S3,7,Holzkirchen,Mammendorf,Gernlinden,Maisach,28,3
+S3,7,Holzkirchen,Mammendorf,Maisach,Malching,29,5
+S3,7,Holzkirchen,Mammendorf,Malching,Mammendorf,30,4
+S3,7,Holzkirchen,Mammendorf,Mammendorf,,31,
+S3,107,Mammendorf,Holzkirchen,Mammendorf,Malching,1,4
+S3,107,Mammendorf,Holzkirchen,Malching,Maisach,2,5
+S3,107,Mammendorf,Holzkirchen,Maisach,Gernlinden,3,3
+S3,107,Mammendorf,Holzkirchen,Gernlinden,Esting,4,2
+S3,107,Mammendorf,Holzkirchen,Esting,Olching,5,2
+S3,107,Mammendorf,Holzkirchen,Olching,Gröbenzell,6,3
+S3,107,Mammendorf,Holzkirchen,Gröbenzell,Lochhausen,7,3
+S3,107,Mammendorf,Holzkirchen,Lochhausen,Langwied,8,3
+S3,107,Mammendorf,Holzkirchen,Langwied,Pasing,9,4
+S3,107,Mammendorf,Holzkirchen,Pasing,Laim,10,3
+S3,107,Mammendorf,Holzkirchen,Laim,Hirschgarten,11,2
+S3,107,Mammendorf,Holzkirchen,Hirschgarten,Donnersbergerbrücke,12,1
+S3,107,Mammendorf,Holzkirchen,Donnersbergerbrücke,Hackerbrücke,13,2
+S3,107,Mammendorf,Holzkirchen,Hackerbrücke,Hauptbahnhof,14,2
+S3,107,Mammendorf,Holzkirchen,Hauptbahnhof,Karlsplatz,15,1
+S3,107,Mammendorf,Holzkirchen,Karlsplatz,Marienplatz,16,2
+S3,107,Mammendorf,Holzkirchen,Marienplatz,Isartor,17,2
+S3,107,Mammendorf,Holzkirchen,Isartor,Rosenheimer Platz,18,1
+S3,107,Mammendorf,Holzkirchen,Rosenheimer Platz,Ostbahnhof München,19,4
+S3,107,Mammendorf,Holzkirchen,Ostbahnhof München,St.-Martin-Str.,20,2
+S3,107,Mammendorf,Holzkirchen,St.-Martin-Str.,Giesing,21,2
+S3,107,Mammendorf,Holzkirchen,Giesing,Fasangarten,22,3
+S3,107,Mammendorf,Holzkirchen,Fasangarten,Fasanenpark,23,2
+S3,107,Mammendorf,Holzkirchen,Fasanenpark,Unterhaching,24,2
+S3,107,Mammendorf,Holzkirchen,Unterhaching,Taufkirchen,25,2
+S3,107,Mammendorf,Holzkirchen,Taufkirchen,Furth,26,2
+S3,107,Mammendorf,Holzkirchen,Furth,Deisenhofen,27,3
+S3,107,Mammendorf,Holzkirchen,Deisenhofen,Sauerlach,28,5
+S3,107,Mammendorf,Holzkirchen,Sauerlach,Otterfing,29,5
+S3,107,Mammendorf,Holzkirchen,Otterfing,Holzkirchen,30,3
+S3,107,Mammendorf,Holzkirchen,Holzkirchen,,31,
+S1,8,Freising,Leuchtenbergring,Freising,Pulling,1,3
+S1,8,Freising,Leuchtenbergring,Pulling,Neufahrn,2,5
+S1,8,Freising,Leuchtenbergring,Neufahrn,Eching,3,5
+S1,8,Freising,Leuchtenbergring,Eching,Lohhof,4,3
+S1,8,Freising,Leuchtenbergring,Lohhof,Unterschleißheim,5,2
+S1,8,Freising,Leuchtenbergring,Unterschleißheim,Oberschleißheim,6,2
+S1,8,Freising,Leuchtenbergring,Oberschleißheim,Feldmoching,7,4
+S1,8,Freising,Leuchtenbergring,Feldmoching,Fasanerie,8,3
+S1,8,Freising,Leuchtenbergring,Fasanerie,Moosach,9,2
+S1,8,Freising,Leuchtenbergring,Moosach,Laim,10,5
+S1,8,Freising,Leuchtenbergring,Laim,Hirschgarten,11,4
+S1,8,Freising,Leuchtenbergring,Hirschgarten,Donnersbergerbrücke,12,2
+S1,8,Freising,Leuchtenbergring,Donnersbergerbrücke,Hackerbrücke,13,1
+S1,8,Freising,Leuchtenbergring,Hackerbrücke,Hauptbahnhof,14,2
+S1,8,Freising,Leuchtenbergring,Hauptbahnhof,Karlsplatz,15,1
+S1,8,Freising,Leuchtenbergring,Karlsplatz,Marienplatz,16,2
+S1,8,Freising,Leuchtenbergring,Marienplatz,Isartor,17,2
+S1,8,Freising,Leuchtenbergring,Isartor,Rosenheimer Platz,18,2
+S1,8,Freising,Leuchtenbergring,Rosenheimer Platz,Ostbahnhof München,19,2
+S1,8,Freising,Leuchtenbergring,Ostbahnhof München,Leuchtenbergring,20,2
+S1,8,Freising,Leuchtenbergring,Leuchtenbergring,,21,
+S1,108,Leuchtenbergring,Freising,Leuchtenbergring,Ostbahnhof München,1,2
+S1,108,Leuchtenbergring,Freising,Ostbahnhof München,Rosenheimer Platz,2,2
+S1,108,Leuchtenbergring,Freising,Rosenheimer Platz,Isartor,3,2
+S1,108,Leuchtenbergring,Freising,Isartor,Marienplatz,4,2
+S1,108,Leuchtenbergring,Freising,Marienplatz,Karlsplatz,5,2
+S1,108,Leuchtenbergring,Freising,Karlsplatz,Hauptbahnhof,6,1
+S1,108,Leuchtenbergring,Freising,Hauptbahnhof,Hackerbrücke,7,2
+S1,108,Leuchtenbergring,Freising,Hackerbrücke,Donnersbergerbrücke,8,1
+S1,108,Leuchtenbergring,Freising,Donnersbergerbrücke,Hirschgarten,9,2
+S1,108,Leuchtenbergring,Freising,Hirschgarten,Laim,10,4
+S1,108,Leuchtenbergring,Freising,Laim,Moosach,11,5
+S1,108,Leuchtenbergring,Freising,Moosach,Fasanerie,12,2
+S1,108,Leuchtenbergring,Freising,Fasanerie,Feldmoching,13,3
+S1,108,Leuchtenbergring,Freising,Feldmoching,Oberschleißheim,14,4
+S1,108,Leuchtenbergring,Freising,Oberschleißheim,Unterschleißheim,15,2
+S1,108,Leuchtenbergring,Freising,Unterschleißheim,Lohhof,16,2
+S1,108,Leuchtenbergring,Freising,Lohhof,Eching,17,3
+S1,108,Leuchtenbergring,Freising,Eching,Neufahrn,18,5
+S1,108,Leuchtenbergring,Freising,Neufahrn,Pulling,19,5
+S1,108,Leuchtenbergring,Freising,Pulling,Freising,20,3
+S1,108,Leuchtenbergring,Freising,Freising,,21,
+S6,9,Ebersberg,Tutzing,Ebersberg,Grafing Stadt,1,4
+S6,9,Ebersberg,Tutzing,Grafing Stadt,Grafing,2,3
+S6,9,Ebersberg,Tutzing,Grafing,Kirchseeon,3,8
+S6,9,Ebersberg,Tutzing,Kirchseeon,Eglharting,4,2
+S6,9,Ebersberg,Tutzing,Eglharting,Zorneding,5,3
+S6,9,Ebersberg,Tutzing,Zorneding,Baldham,6,3
+S6,9,Ebersberg,Tutzing,Baldham,Vaterstetten,7,2
+S6,9,Ebersberg,Tutzing,Vaterstetten,Haar,8,3
+S6,9,Ebersberg,Tutzing,Haar,Gronsdorf,9,2
+S6,9,Ebersberg,Tutzing,Gronsdorf,Trudering,10,3
+S6,9,Ebersberg,Tutzing,Trudering,Berg am Laim,11,3
+S6,9,Ebersberg,Tutzing,Berg am Laim,Leuchtenbergring,12,1
+S6,9,Ebersberg,Tutzing,Leuchtenbergring,Ostbahnhof München,13,2
+S6,9,Ebersberg,Tutzing,Ostbahnhof München,Rosenheimer Platz,14,3
+S6,9,Ebersberg,Tutzing,Rosenheimer Platz,Isartor,15,2
+S6,9,Ebersberg,Tutzing,Isartor,Marienplatz,16,2
+S6,9,Ebersberg,Tutzing,Marienplatz,Karlsplatz,17,2
+S6,9,Ebersberg,Tutzing,Karlsplatz,Hauptbahnhof,18,1
+S6,9,Ebersberg,Tutzing,Hauptbahnhof,Hackerbrücke,19,2
+S6,9,Ebersberg,Tutzing,Hackerbrücke,Donnersbergerbrücke,20,1
+S6,9,Ebersberg,Tutzing,Donnersbergerbrücke,Hirschgarten,21,2
+S6,9,Ebersberg,Tutzing,Hirschgarten,Laim,22,2
+S6,9,Ebersberg,Tutzing,Laim,Pasing,23,3
+S6,9,Ebersberg,Tutzing,Pasing,Westkreuz,24,3
+S6,9,Ebersberg,Tutzing,Westkreuz,Lochham,25,3
+S6,9,Ebersberg,Tutzing,Lochham,Gräfelfing,26,2
+S6,9,Ebersberg,Tutzing,Gräfelfing,Planegg,27,2
+S6,9,Ebersberg,Tutzing,Planegg,Stockdorf,28,3
+S6,9,Ebersberg,Tutzing,Stockdorf,Gauting,29,2
+S6,9,Ebersberg,Tutzing,Gauting,Starnberg Nord,30,6
+S6,9,Ebersberg,Tutzing,Starnberg Nord,Starnberg,31,2
+S6,9,Ebersberg,Tutzing,Starnberg,Possenhofen,32,4
+S6,9,Ebersberg,Tutzing,Possenhofen,Feldafing,33,3
+S6,9,Ebersberg,Tutzing,Feldafing,Tutzing,34,5
+S6,9,Ebersberg,Tutzing,Tutzing,,35,
+S6,109,Tutzing,Ebersberg,Tutzing,Feldafing,1,5
+S6,109,Tutzing,Ebersberg,Feldafing,Possenhofen,2,3
+S6,109,Tutzing,Ebersberg,Possenhofen,Starnberg,3,4
+S6,109,Tutzing,Ebersberg,Starnberg,Starnberg Nord,4,2
+S6,109,Tutzing,Ebersberg,Starnberg Nord,Gauting,5,6
+S6,109,Tutzing,Ebersberg,Gauting,Stockdorf,6,2
+S6,109,Tutzing,Ebersberg,Stockdorf,Planegg,7,3
+S6,109,Tutzing,Ebersberg,Planegg,Gräfelfing,8,2
+S6,109,Tutzing,Ebersberg,Gräfelfing,Lochham,9,2
+S6,109,Tutzing,Ebersberg,Lochham,Westkreuz,10,3
+S6,109,Tutzing,Ebersberg,Westkreuz,Pasing,11,3
+S6,109,Tutzing,Ebersberg,Pasing,Laim,12,3
+S6,109,Tutzing,Ebersberg,Laim,Hirschgarten,13,2
+S6,109,Tutzing,Ebersberg,Hirschgarten,Donnersbergerbrücke,14,2
+S6,109,Tutzing,Ebersberg,Donnersbergerbrücke,Hackerbrücke,15,1
+S6,109,Tutzing,Ebersberg,Hackerbrücke,Hauptbahnhof,16,2
+S6,109,Tutzing,Ebersberg,Hauptbahnhof,Karlsplatz,17,1
+S6,109,Tutzing,Ebersberg,Karlsplatz,Marienplatz,18,2
+S6,109,Tutzing,Ebersberg,Marienplatz,Isartor,19,2
+S6,109,Tutzing,Ebersberg,Isartor,Rosenheimer Platz,20,2
+S6,109,Tutzing,Ebersberg,Rosenheimer Platz,Ostbahnhof München,21,3
+S6,109,Tutzing,Ebersberg,Ostbahnhof München,Leuchtenbergring,22,2
+S6,109,Tutzing,Ebersberg,Leuchtenbergring,Berg am Laim,23,1
+S6,109,Tutzing,Ebersberg,Berg am Laim,Trudering,24,3
+S6,109,Tutzing,Ebersberg,Trudering,Gronsdorf,25,3
+S6,109,Tutzing,Ebersberg,Gronsdorf,Haar,26,2
+S6,109,Tutzing,Ebersberg,Haar,Vaterstetten,27,3
+S6,109,Tutzing,Ebersberg,Vaterstetten,Baldham,28,2
+S6,109,Tutzing,Ebersberg,Baldham,Zorneding,29,3
+S6,109,Tutzing,Ebersberg,Zorneding,Eglharting,30,3
+S6,109,Tutzing,Ebersberg,Eglharting,Kirchseeon,31,2
+S6,109,Tutzing,Ebersberg,Kirchseeon,Grafing,32,8
+S6,109,Tutzing,Ebersberg,Grafing,Grafing Stadt,33,3
+S6,109,Tutzing,Ebersberg,Grafing Stadt,Ebersberg,34,4
+S6,109,Tutzing,Ebersberg,Ebersberg,,35,
+S2,10,Erding,Altomünster,Erding,Altenerding,1,1
+S2,10,Erding,Altomünster,Altenerding,Aufhausen,2,3
+S2,10,Erding,Altomünster,Aufhausen,St. Koloman,3,4
+S2,10,Erding,Altomünster,St. Koloman,Ottenhofen,4,3
+S2,10,Erding,Altomünster,Ottenhofen,Markt Schwaben,5,4
+S2,10,Erding,Altomünster,Markt Schwaben,Poing,6,6
+S2,10,Erding,Altomünster,Poing,Grub,7,3
+S2,10,Erding,Altomünster,Grub,Heimstetten,8,2
+S2,10,Erding,Altomünster,Heimstetten,Feldkirchen,9,2
+S2,10,Erding,Altomünster,Feldkirchen,Riem,10,4
+S2,10,Erding,Altomünster,Riem,Berg am Laim,11,3
+S2,10,Erding,Altomünster,Berg am Laim,Leuchtenbergring,12,2
+S2,10,Erding,Altomünster,Leuchtenbergring,Ostbahnhof München,13,3
+S2,10,Erding,Altomünster,Ostbahnhof München,Rosenheimer Platz,14,4
+S2,10,Erding,Altomünster,Rosenheimer Platz,Isartor,15,2
+S2,10,Erding,Altomünster,Isartor,Marienplatz,16,2
+S2,10,Erding,Altomünster,Marienplatz,Karlsplatz,17,2
+S2,10,Erding,Altomünster,Karlsplatz,Hauptbahnhof,18,1
+S2,10,Erding,Altomünster,Hauptbahnhof,Hackerbrücke,19,2
+S2,10,Erding,Altomünster,Hackerbrücke,Donnersbergerbrücke,20,1
+S2,10,Erding,Altomünster,Donnersbergerbrücke,Hirschgarten,21,2
+S2,10,Erding,Altomünster,Hirschgarten,Laim,22,2
+S2,10,Erding,Altomünster,Laim,Obermenzing,23,3
+S2,10,Erding,Altomünster,Obermenzing,Untermenzing,24,3
+S2,10,Erding,Altomünster,Untermenzing,Allach,25,2
+S2,10,Erding,Altomünster,Allach,Karlsfeld,26,2
+S2,10,Erding,Altomünster,Karlsfeld,Dachau Bahnhof,27,5
+S2,10,Erding,Altomünster,Dachau Bahnhof,Dachau Stadt,28,5
+S2,10,Erding,Altomünster,Dachau Stadt,Bachern,29,5
+S2,10,Erding,Altomünster,Bachern,Schwabhausen,30,4
+S2,10,Erding,Altomünster,Schwabhausen,Niederroth,31,3
+S2,10,Erding,Altomünster,Niederroth,Markt Indersdorf,32,4
+S2,10,Erding,Altomünster,Markt Indersdorf,Arnbach,33,4
+S2,10,Erding,Altomünster,Arnbach,Erdweg,34,4
+S2,10,Erding,Altomünster,Erdweg,Kleinberghofen,35,4
+S2,10,Erding,Altomünster,Kleinberghofen,Altomünster,36,5
+S2,10,Erding,Altomünster,Altomünster,,37,
+S2,110,Altomünster,Erding,Altomünster,Kleinberghofen,1,5
+S2,110,Altomünster,Erding,Kleinberghofen,Erdweg,2,4
+S2,110,Altomünster,Erding,Erdweg,Arnbach,3,4
+S2,110,Altomünster,Erding,Arnbach,Markt Indersdorf,4,4
+S2,110,Altomünster,Erding,Markt Indersdorf,Niederroth,5,4
+S2,110,Altomünster,Erding,Niederroth,Schwabhausen,6,3
+S2,110,Altomünster,Erding,Schwabhausen,Bachern,7,4
+S2,110,Altomünster,Erding,Bachern,Dachau Stadt,8,5
+S2,110,Altomünster,Erding,Dachau Stadt,Dachau Bahnhof,9,5
+S2,110,Altomünster,Erding,Dachau Bahnhof,Karlsfeld,10,5
+S2,110,Altomünster,Erding,Karlsfeld,Allach,11,2
+S2,110,Altomünster,Erding,Allach,Untermenzing,12,2
+S2,110,Altomünster,Erding,Untermenzing,Obermenzing,13,3
+S2,110,Altomünster,Erding,Obermenzing,Laim,14,3
+S2,110,Altomünster,Erding,Laim,Hirschgarten,15,2
+S2,110,Altomünster,Erding,Hirschgarten,Donnersbergerbrücke,16,2
+S2,110,Altomünster,Erding,Donnersbergerbrücke,Hackerbrücke,17,1
+S2,110,Altomünster,Erding,Hackerbrücke,Hauptbahnhof,18,2
+S2,110,Altomünster,Erding,Hauptbahnhof,Karlsplatz,19,1
+S2,110,Altomünster,Erding,Karlsplatz,Marienplatz,20,2
+S2,110,Altomünster,Erding,Marienplatz,Isartor,21,2
+S2,110,Altomünster,Erding,Isartor,Rosenheimer Platz,22,2
+S2,110,Altomünster,Erding,Rosenheimer Platz,Ostbahnhof München,23,4
+S2,110,Altomünster,Erding,Ostbahnhof München,Leuchtenbergring,24,3
+S2,110,Altomünster,Erding,Leuchtenbergring,Berg am Laim,25,2
+S2,110,Altomünster,Erding,Berg am Laim,Riem,26,3
+S2,110,Altomünster,Erding,Riem,Feldkirchen,27,4
+S2,110,Altomünster,Erding,Feldkirchen,Heimstetten,28,2
+S2,110,Altomünster,Erding,Heimstetten,Grub,29,2
+S2,110,Altomünster,Erding,Grub,Poing,30,3
+S2,110,Altomünster,Erding,Poing,Markt Schwaben,31,6
+S2,110,Altomünster,Erding,Markt Schwaben,Ottenhofen,32,4
+S2,110,Altomünster,Erding,Ottenhofen,St. Koloman,33,3
+S2,110,Altomünster,Erding,St. Koloman,Aufhausen,34,4
+S2,110,Altomünster,Erding,Aufhausen,Altenerding,35,3
+S2,110,Altomünster,Erding,Altenerding,Erding,36,1
+S2,110,Altomünster,Erding,Erding,,37,
