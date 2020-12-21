@@ -75,8 +75,8 @@ S7,2,Kreuzstraße,Wolfratshausen,Ottobrunn,Neubiberg,9,3
 S7,2,Kreuzstraße,Wolfratshausen,Neubiberg,Neuperlach Süd,10,2
 S7,2,Kreuzstraße,Wolfratshausen,Neuperlach Süd,Perlach,11,2
 S7,2,Kreuzstraße,Wolfratshausen,Perlach,Giesing,12,4
-S7,2,Kreuzstraße,Wolfratshausen,Giesing,St.-Martin-Str.,13,2
-S7,2,Kreuzstraße,Wolfratshausen,St.-Martin-Str.,Ostbahnhof München,14,2
+S7,2,Kreuzstraße,Wolfratshausen,Giesing,St.-Martin-Straße,13,2
+S7,2,Kreuzstraße,Wolfratshausen,St.-Martin-Straße,Ostbahnhof München,14,2
 S7,2,Kreuzstraße,Wolfratshausen,Ostbahnhof München,Rosenheimer Platz,15,4
 S7,2,Kreuzstraße,Wolfratshausen,Rosenheimer Platz,Isartor,16,2
 S7,2,Kreuzstraße,Wolfratshausen,Isartor,Marienplatz,17,2
@@ -120,8 +120,8 @@ S7,102,Wolfratshausen,Kreuzstraße,Karlsplatz,Marienplatz,18,1
 S7,102,Wolfratshausen,Kreuzstraße,Marienplatz,Isartor,19,2
 S7,102,Wolfratshausen,Kreuzstraße,Isartor,Rosenheimer Platz,20,2
 S7,102,Wolfratshausen,Kreuzstraße,Rosenheimer Platz,Ostbahnhof München,21,4
-S7,102,Wolfratshausen,Kreuzstraße,Ostbahnhof München,St.-Martin-Str.,22,2
-S7,102,Wolfratshausen,Kreuzstraße,St.-Martin-Str.,Giesing,23,2
+S7,102,Wolfratshausen,Kreuzstraße,Ostbahnhof München,St.-Martin-Straße,22,2
+S7,102,Wolfratshausen,Kreuzstraße,St.-Martin-Straße,Giesing,23,2
 S7,102,Wolfratshausen,Kreuzstraße,Giesing,Perlach,24,4
 S7,102,Wolfratshausen,Kreuzstraße,Perlach,Neuperlach Süd,25,2
 S7,102,Wolfratshausen,Kreuzstraße,Neuperlach Süd,Neubiberg,26,2
@@ -184,8 +184,8 @@ S4,103,Trudering,Geltendorf,Grafrath,Türkenfeld,22,5
 S4,103,Trudering,Geltendorf,Türkenfeld,Geltendorf,23,2
 S4,103,Trudering,Geltendorf,Geltendorf,,24,
 S1,4,Flughafen München,Leuchtenbergring,Flughafen München,Flughafen Besucherpark,1,1
-S1,4,Flughafen München,Leuchtenbergring,Flughafen Besucherpark,Neufahrn,2,7
-S1,4,Flughafen München,Leuchtenbergring,Neufahrn,Eching,3,8
+S1,4,Flughafen München,Leuchtenbergring,Flughafen Besucherpark,Neufahrn,2,12
+S1,4,Flughafen München,Leuchtenbergring,Neufahrn,Eching,3,3
 S1,4,Flughafen München,Leuchtenbergring,Eching,Lohhof,4,3
 S1,4,Flughafen München,Leuchtenbergring,Lohhof,Unterschleißheim,5,2
 S1,4,Flughafen München,Leuchtenbergring,Unterschleißheim,Oberschleißheim,6,2
@@ -221,8 +221,8 @@ S1,104,Leuchtenbergring,Flughafen München,Feldmoching,Oberschleißheim,14,4
 S1,104,Leuchtenbergring,Flughafen München,Oberschleißheim,Unterschleißheim,15,2
 S1,104,Leuchtenbergring,Flughafen München,Unterschleißheim,Lohhof,16,2
 S1,104,Leuchtenbergring,Flughafen München,Lohhof,Eching,17,3
-S1,104,Leuchtenbergring,Flughafen München,Eching,Neufahrn,18,8
-S1,104,Leuchtenbergring,Flughafen München,Neufahrn,Flughafen Besucherpark,19,7
+S1,104,Leuchtenbergring,Flughafen München,Eching,Neufahrn,18,3
+S1,104,Leuchtenbergring,Flughafen München,Neufahrn,Flughafen Besucherpark,19,12
 S1,104,Leuchtenbergring,Flughafen München,Flughafen Besucherpark,Flughafen München,20,1
 S1,104,Leuchtenbergring,Flughafen München,Flughafen München,,21,
 S2,5,Erding,Petershausen,Erding,Altenerding,1,1
@@ -251,8 +251,8 @@ S2,5,Erding,Petershausen,Laim,Obermenzing,23,3
 S2,5,Erding,Petershausen,Obermenzing,Untermenzing,24,3
 S2,5,Erding,Petershausen,Untermenzing,Allach,25,2
 S2,5,Erding,Petershausen,Allach,Karlsfeld,26,2
-S2,5,Erding,Petershausen,Karlsfeld,Dachau Bahnhof,27,5
-S2,5,Erding,Petershausen,Dachau Bahnhof,Hebertshausen,28,4
+S2,5,Erding,Petershausen,Karlsfeld,Dachau,27,5
+S2,5,Erding,Petershausen,Dachau,Hebertshausen,28,4
 S2,5,Erding,Petershausen,Hebertshausen,Röhrmoos,29,4
 S2,5,Erding,Petershausen,Röhrmoos,Vierkirchen-Esterhofen,30,3
 S2,5,Erding,Petershausen,Vierkirchen-Esterhofen,Petershausen,31,5
@@ -260,8 +260,8 @@ S2,5,Erding,Petershausen,Petershausen,,32,
 S2,105,Petershausen,Erding,Petershausen,Vierkirchen-Esterhofen,1,5
 S2,105,Petershausen,Erding,Vierkirchen-Esterhofen,Röhrmoos,2,3
 S2,105,Petershausen,Erding,Röhrmoos,Hebertshausen,3,4
-S2,105,Petershausen,Erding,Hebertshausen,Dachau Bahnhof,4,4
-S2,105,Petershausen,Erding,Dachau Bahnhof,Karlsfeld,5,5
+S2,105,Petershausen,Erding,Hebertshausen,Dachau,4,4
+S2,105,Petershausen,Erding,Dachau,Karlsfeld,5,5
 S2,105,Petershausen,Erding,Karlsfeld,Allach,6,2
 S2,105,Petershausen,Erding,Allach,Untermenzing,7,2
 S2,105,Petershausen,Erding,Untermenzing,Obermenzing,8,3
@@ -312,8 +312,8 @@ S3,7,Holzkirchen,Mammendorf,Taufkirchen,Unterhaching,6,2
 S3,7,Holzkirchen,Mammendorf,Unterhaching,Fasanenpark,7,2
 S3,7,Holzkirchen,Mammendorf,Fasanenpark,Fasangarten,8,2
 S3,7,Holzkirchen,Mammendorf,Fasangarten,Giesing,9,3
-S3,7,Holzkirchen,Mammendorf,Giesing,St.-Martin-Str.,10,2
-S3,7,Holzkirchen,Mammendorf,St.-Martin-Str.,Ostbahnhof München,11,2
+S3,7,Holzkirchen,Mammendorf,Giesing,St.-Martin-Straße,10,2
+S3,7,Holzkirchen,Mammendorf,St.-Martin-Straße,Ostbahnhof München,11,2
 S3,7,Holzkirchen,Mammendorf,Ostbahnhof München,Rosenheimer Platz,12,4
 S3,7,Holzkirchen,Mammendorf,Rosenheimer Platz,Isartor,13,1
 S3,7,Holzkirchen,Mammendorf,Isartor,Marienplatz,14,2
@@ -353,8 +353,8 @@ S3,107,Mammendorf,Holzkirchen,Karlsplatz,Marienplatz,16,2
 S3,107,Mammendorf,Holzkirchen,Marienplatz,Isartor,17,2
 S3,107,Mammendorf,Holzkirchen,Isartor,Rosenheimer Platz,18,1
 S3,107,Mammendorf,Holzkirchen,Rosenheimer Platz,Ostbahnhof München,19,4
-S3,107,Mammendorf,Holzkirchen,Ostbahnhof München,St.-Martin-Str.,20,2
-S3,107,Mammendorf,Holzkirchen,St.-Martin-Str.,Giesing,21,2
+S3,107,Mammendorf,Holzkirchen,Ostbahnhof München,St.-Martin-Straße,20,2
+S3,107,Mammendorf,Holzkirchen,St.-Martin-Straße,Giesing,21,2
 S3,107,Mammendorf,Holzkirchen,Giesing,Fasangarten,22,3
 S3,107,Mammendorf,Holzkirchen,Fasangarten,Fasanenpark,23,2
 S3,107,Mammendorf,Holzkirchen,Fasanenpark,Unterhaching,24,2
@@ -503,8 +503,8 @@ S2,10,Erding,Altomünster,Laim,Obermenzing,23,3
 S2,10,Erding,Altomünster,Obermenzing,Untermenzing,24,3
 S2,10,Erding,Altomünster,Untermenzing,Allach,25,2
 S2,10,Erding,Altomünster,Allach,Karlsfeld,26,2
-S2,10,Erding,Altomünster,Karlsfeld,Dachau Bahnhof,27,5
-S2,10,Erding,Altomünster,Dachau Bahnhof,Dachau Stadt,28,5
+S2,10,Erding,Altomünster,Karlsfeld,Dachau,27,5
+S2,10,Erding,Altomünster,Dachau,Dachau Stadt,28,5
 S2,10,Erding,Altomünster,Dachau Stadt,Bachern,29,5
 S2,10,Erding,Altomünster,Bachern,Schwabhausen,30,4
 S2,10,Erding,Altomünster,Schwabhausen,Niederroth,31,3
@@ -522,8 +522,8 @@ S2,110,Altomünster,Erding,Markt Indersdorf,Niederroth,5,4
 S2,110,Altomünster,Erding,Niederroth,Schwabhausen,6,3
 S2,110,Altomünster,Erding,Schwabhausen,Bachern,7,4
 S2,110,Altomünster,Erding,Bachern,Dachau Stadt,8,5
-S2,110,Altomünster,Erding,Dachau Stadt,Dachau Bahnhof,9,5
-S2,110,Altomünster,Erding,Dachau Bahnhof,Karlsfeld,10,5
+S2,110,Altomünster,Erding,Dachau Stadt,Dachau,9,5
+S2,110,Altomünster,Erding,Dachau,Karlsfeld,10,5
 S2,110,Altomünster,Erding,Karlsfeld,Allach,11,2
 S2,110,Altomünster,Erding,Allach,Untermenzing,12,2
 S2,110,Altomünster,Erding,Untermenzing,Obermenzing,13,3
