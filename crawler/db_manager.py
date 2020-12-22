@@ -1,6 +1,5 @@
-from datetime import datetime
 from psycopg2 import sql
-from utils import convert_timestamp
+from crawler.utils import convert_timestamp
 import psycopg2
 
 
