@@ -1,12 +1,29 @@
 from fastapi import FastAPI
-from utils import get_env
 
-import db_manager
+from server import db_manager
+
+
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 
-db_url = get_env('sbhan_db_conn_url')
+origins = [
+    "http://localhost:8081",
+    "http://localhost:8080"
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+
+db_url = 'postgresql://root:rootpassword1234@167.99.243.10/sbahn'
 conn = db_manager.connect(db_url)
+
 
 @app.get('/')
 async def root():

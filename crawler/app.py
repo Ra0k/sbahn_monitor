@@ -1,18 +1,18 @@
 from multiprocessing import Process, Event
-from utils import get_env, diff_datetime, raise_message, convert_timestamp
-from datetime import datetime, timedelta
-from stations import STATIONS
-from error_reporter import get_logger, report
 
-import db_manager
-import mvv_reader
+from crawler import db_manager, mvv_reader
+from crawler.utils import get_env, diff_datetime, raise_message, convert_timestamp
+from datetime import datetime, timedelta
+from crawler.stations import STATIONS
+from crawler.error_reporter import get_logger, report
+
 import time
-import os
 
 ROUND_LENGTH = 60
 only_sbahn = lambda x: [dep for dep in x if dep['product'] == 'SBAHN']
 
 logger = get_logger(app_name='SBahn-Bot')
+
 
 @raise_message('Processing Station Failed')
 def process_station(conn, station):
@@ -33,10 +33,10 @@ def process_station(conn, station):
         else:
             (created_at, updated_at, _, delay, _, destination, platform, cancelled) = dep_db
             fields = {}
-            if delay != departure['delay']: fields['delay'] =  departure['delay']
-            if platform != departure['platform']: fields['platform'] =  departure['platform']
-            if cancelled != departure['cancelled']: fields['cancelled'] =  departure['cancelled']
-            
+            if delay != departure['delay']: fields['delay'] = departure['delay']
+            if platform != departure['platform']: fields['platform'] = departure['platform']
+            if cancelled != departure['cancelled']: fields['cancelled'] = departure['cancelled']
+
             delayed_arrival = convert_timestamp(departure['departureTime']) + timedelta(minutes=departure['delay'])
             if current_time > delayed_arrival: fields['delay'] = int(abs(current_time - delayed_arrival).seconds / 60)
 
@@ -46,7 +46,7 @@ def process_station(conn, station):
 
     try:
         conn.commit()
-        #print(f'🆗 {station}')
+        # print(f'🆗 {station}')
     except Exception as e:
         conn.rollback()
         logger.error(str(e))
@@ -57,7 +57,6 @@ def process_station(conn, station):
 def process_entry(processes, key, quit, failed):
     db_url = get_env('sbhan_db_conn_url')
     conn = db_manager.connect(db_url)
-
 
     while not quit.is_set():
         start = datetime.now()
@@ -73,7 +72,8 @@ def process_entry(processes, key, quit, failed):
         length = diff_datetime(start, datetime.now())
         print(f'☆☆☆☆☆☆☆☆☆ Round ended in of process {key} - {length} seconds ☆☆☆☆☆☆☆☆☆')
         if length < ROUND_LENGTH:
-            time.sleep(ROUND_LENGTH-length)
+            time.sleep(ROUND_LENGTH - length)
+
 
 @report(logger)
 def main():
@@ -93,5 +93,6 @@ def main():
 
     failed.wait()
     quit.set()
+
 
 main()

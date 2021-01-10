@@ -1,5 +1,5 @@
 from pprint import pprint
-from utils import raise_message
+from crawler.utils import raise_message
 
 import requests
 import json
