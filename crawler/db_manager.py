@@ -1,5 +1,5 @@
 from psycopg2 import sql
-from crawler.utils import convert_timestamp
+from utils import convert_timestamp
 import psycopg2
 
 

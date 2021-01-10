@@ -1,11 +1,11 @@
 from multiprocessing import Process, Event
 
-from crawler import db_manager, mvv_reader
-from crawler.utils import get_env, diff_datetime, raise_message, convert_timestamp
+from utils import get_env, diff_datetime, raise_message, convert_timestamp
 from datetime import datetime, timedelta
-from crawler.stations import STATIONS
-from crawler.error_reporter import get_logger, report
+from stations import STATIONS
+from error_reporter import get_logger, report
 
+import db_manager, mvv_reader
 import time
 
 ROUND_LENGTH = 60

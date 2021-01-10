@@ -1,5 +1,4 @@
 from datetime import datetime
-from typing import Any, Callable
 
 
 def get_env(name):
@@ -14,7 +13,7 @@ def diff_datetime(datetime1, datetime2):
     return abs(datetime2 - datetime1).seconds
 
 
-convert_timestamp: Callable[[Any], datetime] = lambda x: datetime.fromtimestamp(x / 1e3)
+convert_timestamp = lambda x: datetime.fromtimestamp(x / 1e3)
 
 
 def raise_message(message, include_original=True):
