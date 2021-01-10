@@ -1,6 +1,6 @@
 from datetime import datetime
 from psycopg2 import sql
-from server.utils import convert_timestamp
+from utils import convert_timestamp
 import psycopg2
 
 

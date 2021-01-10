@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 
-from server import db_manager
+import db_manager
+import mvv_reader
 
 
 from fastapi.middleware.cors import CORSMiddleware
@@ -34,6 +35,11 @@ async def root():
 async def get_stations():
     cur = conn.cursor()
     return db_manager.get_stations(cur)
+
+
+@app.get('/route/from/{from_station_id}/to/{to_station_id}')
+async def get_routes(from_station_id, to_station_id):
+    return mvv_reader.find_route(from_station_id, to_station_id)
 
 
 @app.get('/line/{line}/stations')
