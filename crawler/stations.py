@@ -42,7 +42,6 @@ Rosenheimer Platz
 Ostbahnhof München
 Leuchtenbergring""".split('\n')
 
-
 S2_stops_1 = """Altomünster
 Kleinberghofen
 Erdweg
@@ -296,7 +295,6 @@ Großhesselohe Isartalbahnhof
 Pullach
 Höllriegelskreuth""".split('\n')
 
-
 S1_STATIONS_1 = S1_stops_1
 S1_STATIONS_2 = S1_stops_2
 S2_STATIONS_1 = S2_stops_1
@@ -321,8 +319,7 @@ LINES = {
     'S20': S20_STATIONS
 }
 
-
 STATIONS = sorted(list(set(
-    S1_stops_1 + S1_stops_2 + S2_stops_1 + S2_stops_2 + S3_stops + S4_stops + S6_stops + 
+    S1_stops_1 + S1_stops_2 + S2_stops_1 + S2_stops_2 + S3_stops + S4_stops + S6_stops +
     S7_stops + S8_stops + S20_stops
 )))

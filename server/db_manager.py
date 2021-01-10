@@ -1,6 +1,6 @@
 from datetime import datetime
 from psycopg2 import sql
-from utils import convert_timestamp
+from server.utils import convert_timestamp
 import psycopg2
 
 
@@ -52,7 +52,7 @@ def get_line_stations(cur, line):
     records = cur.fetchall()
 
     lines = {
-        'name': line, 
+        'name': line,
         'tracks': []
     }
     for record in records:
@@ -60,7 +60,7 @@ def get_line_stations(cur, line):
         if line not in lines:
             lines[line] = []
             lines['tracks'].append(line)
-        
+
         lines[line].append({
             'order': order,
             'station_id': station_id,
@@ -92,7 +92,7 @@ def get_incoming_departures_by_station_id(cur, station_id):
         WHERE 
             station = (%s) and 
             departure_time + delay * interval '1 minutes' > now();
-        """), (station_id, ))
+        """), (station_id,))
 
     records = cur.fetchall()
 
@@ -158,7 +158,7 @@ def get_delay_stat(cur, over_type, time_interval, grouped_time):
         if text != '':
             return f'GROUP BY {text}'[:-2]
         return ''
-    
+
     def gen_order_by(*variables):
         text = ''
         for var in variables:
@@ -201,7 +201,7 @@ def get_delay_stat(cur, over_type, time_interval, grouped_time):
         delays = {}
         for record in records:
             grouped_time, target_value, avg_delay, max_delay, nAll, nDelayed, ratio = record
-            
+
             if grouped_time not in delays:
                 delays[grouped_time] = []
 
@@ -226,7 +226,7 @@ def get_delay_stat(cur, over_type, time_interval, grouped_time):
         delays = []
         for record in records:
             target_value, avg_delay, max_delay, nAll, nDelayed, ratio = record
-            
+
             delay = {
                 'avg_delay': avg_delay,
                 'max_delay': max_delay,

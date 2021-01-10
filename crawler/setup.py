@@ -1,8 +1,9 @@
-from utils import get_env
+from crawler import db_manager, stations, mvv_reader
+from crawler.utils import get_env
 
-import db_manager
-import mvv_reader
-import stations
+import crawler.db_manager
+import crawler.mvv_reader
+import crawler.stations
 
 
 db_url = get_env('sbhan_db_conn_url')
