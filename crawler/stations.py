@@ -17,7 +17,8 @@ Karlsplatz
 Marienplatz
 Isartor
 Rosenheimer Platz
-Ostbahnhof München""".split('\n')
+Ostbahnhof München
+Leuchtenbergring""".split('\n')
 
 S1_stops_2 = """Freising
 Pulling
@@ -38,7 +39,8 @@ Karlsplatz
 Marienplatz
 Isartor
 Rosenheimer Platz
-Ostbahnhof München""".split('\n')
+Ostbahnhof München
+Leuchtenbergring""".split('\n')
 
 
 S2_stops_1 = """Altomünster
