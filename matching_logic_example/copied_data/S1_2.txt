@@ -1,0 +1,42 @@
+16:11
+Flughafen München
+16:12
+Flughafen Besucherpark
+16:24
+Neufahrn
+16:27
+Eching
+16:30
+Lohhof
+16:32
+Unterschleißheim
+16:34
+Oberschleißheim
+16:38
+Feldmoching
+16:41
+Fasanerie
+16:43
+Moosach
+16:48
+Laim
+16:52
+Hirschgarten
+16:54
+Donnersbergerbrücke
+16:55
+Hackerbrücke
+16:57
+Hauptbahnhof
+16:58
+Karlsplatz
+17:00
+Marienplatz
+17:02
+Isartor
+17:04
+Rosenheimer Platz
+17:06
+Ostbahnhof München
+17:08
+Leuchtenbergring
