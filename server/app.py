@@ -1,7 +1,8 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
 
 import db_manager
 import mvv_reader
+from validators import Station, Line
 
 
 from fastapi.middleware.cors import CORSMiddleware
@@ -25,6 +26,8 @@ app.add_middleware(
 db_url = 'postgresql://root:rootpassword1234@167.99.243.10/sbahn'
 conn = db_manager.connect(db_url)
 
+STATION_IDS = [obj['station_id'] for obj in db_manager.get_stations(conn.cursor())]
+LINES = ['S6','S20','S7','S1', 'S4', 'S8', 'S2', 'S3']
 
 @app.get('/')
 async def root():
@@ -74,6 +77,23 @@ async def get_delay_stat(time_interval, grouped_time):
         return {'error': ''}
 
     return db_manager.get_delay_stat(cur, 'stations', time_interval, grouped_time)
+
+
+@app.get('/stats/delay/{line}/{from_station}/{to_station}')
+async def get_stat_line_delay(line, from_station, to_station):
+    """
+    Returns:
+
+    - **avg_duration**: in seconds
+    - **avg_delay**: in seconds
+    - **percent_delayed**: percentage of trips with a nonzero delay
+    """
+    if from_station not in STATION_IDS or to_station not in STATION_IDS:
+        raise HTTPException(status_code=422, detail="Station not found")
+    if line not in LINES:
+        raise HTTPException(status_code=422, detail="Invalid line")
+    cur = conn.cursor()
+    return db_manager.get_historical_delay_stats(cur, line, from_station, to_station)
 
 
 if __name__ == '__main__':
