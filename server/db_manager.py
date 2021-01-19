@@ -241,3 +241,37 @@ def get_delay_stat(cur, over_type, time_interval, grouped_time):
             delays[grouped_time].append(delay)
 
     return delays
+
+
+def get_historical_delay_stats(cur, line, from_station, to_station):
+    query = f"""
+    select avg(arr.departure_time - dep.departure_time), 
+        avg(arr.delay * interval '1' MINUTE),
+        sum((arr.delay > 0)::int),
+        count(*)
+    from (
+        select d.departure_time, s.station_name, d.trip_id, d.delay
+        from departures as d, stations as s
+        where d.station = s.station_id
+        and SUBSTRING(d.product, 7,2) = '{line}'
+        and d.trip_matched = true
+        and s.station_id ='{from_station}'
+        ) as dep,
+        (
+        select d.departure_time, s.station_name, d.trip_id, d.delay
+        from departures as d, stations as s
+        where d.station = s.station_id
+        and SUBSTRING(d.product, 7,2) = '{line}'
+        and d.trip_matched = true
+        and s.station_id ='{to_station}'
+        ) as arr
+    where dep.trip_id = arr.trip_id
+    and dep.departure_time < arr.departure_time;"""
+
+    cur.execute(sql.SQL(query))
+    results = cur.fetchall()
+    if len(results) == 0:
+        return None
+    else:
+        avg_duration, avg_delay, n_delayed, n = results[0]
+    return {'avg_duration': avg_duration, 'avg_delay': avg_delay, 'percen_delayed': n_delayed / n * 100}
