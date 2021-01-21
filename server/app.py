@@ -79,7 +79,18 @@ async def get_delay_stat(time_interval, grouped_time):
     return db_manager.get_delay_stat(cur, 'stations', time_interval, grouped_time)
 
 
-@app.get('/stats/delay/{line}/{from_station}/{to_station}')
+@app.get('/stats/delay/station/{station_id}/{time_interval}/grouped/{grouped_time}')
+async def get_delay_stat(station_id, time_interval, grouped_time):
+    cur = conn.cursor()
+    if time_interval not in ['current_week', 'previous_week', 'current_month', 'previous_month', 'this_year']:
+        return {'error': ''}
+    if grouped_time not in ['all', 'hourly', 'daily', 'weekly', 'monthly']:
+        return {'error': ''}
+
+    return db_manager.get_delay_stat(cur, 'stations', time_interval, grouped_time, station_id=station_id)
+
+
+@app.get('/stats/delay/line/{line}/{from_station}/{to_station}')
 async def get_stat_line_delay(line, from_station, to_station):
     """
     Returns:
