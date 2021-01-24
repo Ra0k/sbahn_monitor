@@ -130,25 +130,25 @@ def get_delay_stat(cur, over_type, time_interval, grouped_time, station_id=None)
 
     time_restriction = ''
     if time_interval == 'current_week':
-        time_restriction = 'created_at > now() - interval \'7 days\''
+        time_restriction = 'departure_time > now() - interval \'7 days\''
     if time_interval == 'previous_week':
-        time_restriction = 'created_at > now() - interval \'14 days\' and created_at < now() - interval \'7 days\''
+        time_restriction = 'departure_time > now() - interval \'14 days\' and departure_time < now() - interval \'7 days\''
     if time_interval == 'current_month':
-        time_restriction = 'created_at > now() - interval \'1 months\''
+        time_restriction = 'departure_time > now() - interval \'1 months\''
     if time_interval == 'previous_month':
-        time_restriction = 'created_at > now() - interval \'2 months\' and created_at < now() - interval \'1 months\' '
+        time_restriction = 'departure_time > now() - interval \'2 months\' and departure_time < now() - interval \'1 months\' '
 
     group_by_time = ''
     if grouped_time == 'hourly':
-        group_by_time = f"date_part('hour', created_at)::int"
+        group_by_time = f"date_part('hour', departure_time)::int"
     if grouped_time == 'weekday':
-        group_by_time = f"date_part('dow', created_at)::int"
+        group_by_time = f"date_part('dow', departure_time)::int"
     if grouped_time == 'daily':
-        group_by_time = f"date_trunc('day', created_at)::date"
+        group_by_time = f"date_trunc('day', departure_time)::date"
     if grouped_time == 'weekly':
-        group_by_time = f"date_trunc('week', created_at)::date"
+        group_by_time = f"date_trunc('week', departure_time)::date"
     if grouped_time == 'monthly':
-        group_by_time = f"date_trunc('month', created_at)::date"
+        group_by_time = f"date_trunc('month', departure_time)::date"
 
     add_coma = lambda x: x + ',' if x != '' else x
     add_asc = lambda x: x + ' asc,' if x != '' else x
