@@ -16,7 +16,8 @@ cur = conn.cursor()
 db_manager.create_departure_table(cur)
 db_manager.create_stations_table(cur)
 db_manager.create_lines_table(cur)
-
+db_manager.create_claims_table(cur)
+db_manager.create_reports_table(cur)
 
 # INSERT STATIONS
 

@@ -51,6 +51,25 @@ def create_lines_table(cur):
         );
         """)
 
+def create_claims_table(cur):
+    cur.execute("""
+        CREATE TABLE "public"."claims" (
+            "claim_id" int2 NOT NULL,
+            "text" varchar(254),
+            PRIMARY KEY ("claim_id")
+        );
+        """)
+
+
+def create_reports_table(cur):
+    cur.execute("""
+        CREATE TABLE "public"."reports" (
+            "created_at" timestamp,
+            "station_id" varchar(32),
+            "claim_id" int2
+        );
+        """)
+
 
 def get_station_id(cur, station_name):
     cur.execute(
