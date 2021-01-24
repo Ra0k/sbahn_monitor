@@ -279,3 +279,183 @@ def get_historical_delay_stats(cur, line, from_station, to_station):
     else:
         avg_duration, avg_delay, n_delayed, n = results[0]
     return {'avg_duration': avg_duration, 'avg_delay': avg_delay, 'percen_delayed': n_delayed / n * 100}
+
+
+def get_claims(cur):
+    cur.execute(
+        sql.SQL("""
+        SELECT 
+            claim_id,
+            text
+        FROM claims;
+        """))
+
+    records = cur.fetchall()
+
+    claims = []
+    for record in records:
+        claim_id, text = record
+        claims.append({
+            'claim_id': claim_id,
+            'text': text
+        })
+
+    return claims
+
+
+def get_reports(cur):
+    cur.execute(
+        sql.SQL("""
+        select 
+            (s.period + interval '1 hour')::timestamp as period,
+            count(rep.claim_id) as reports
+        from
+            generate_series(
+                date_trunc('hour', now() - interval '24 hour'),
+                date_trunc('hour', now()),
+                '1 hour'
+            ) as s(period)
+            left join reports rep
+                on (rep.created_at > period and rep.created_at < period + interval '1 hour')
+        group by s.period
+        order by s.period desc
+        ;
+        """))
+
+    overall_records = cur.fetchall()
+
+    cur.execute(
+        sql.SQL("""
+        select 
+            (s.period + interval '1 hour')::timestamp as period,
+            rep.station_id,
+            stat.station_name,
+            count(rep.claim_id) as reports
+        from
+            generate_series(
+                date_trunc('hour', now() - interval '24 hour'),
+                date_trunc('hour', now()),
+                '1 hour'
+            ) as s(period)
+            left join reports rep
+                on (rep.created_at > period and rep.created_at < period + interval '1 hour')
+            left join stations stat
+                on (rep.station_id = stat.station_id)
+        group by s.period, rep.station_id, stat.station_name
+        order by s.period desc, count(*) - 1 desc
+        ;
+        """))
+
+    detailed_records = cur.fetchall()
+
+    reports = {}
+    for record in overall_records:
+        period, report_num = record
+
+        reports[period] = {
+            'period': period,
+            '#reports': report_num, 
+            'stations': []
+        }
+
+    for record in detailed_records:
+        period, station_id, station_name, report_num = record
+
+        if station_id is None: continue 
+        reports[period]['stations'].append({
+            'station_id': station_id, 
+            'station_name': station_name, 
+            'report_num': report_num
+        })
+
+    return reports
+
+
+def get_station_report(cur, station_id):
+    cur.execute(
+        sql.SQL("""
+        with base as (
+            select 
+                * 
+            from
+                claims as clm,
+                generate_series(
+                    date_trunc('hour', now() - interval '24 hour'),
+                    date_trunc('hour', now()),
+                    '1 hour'
+                ) as s(period)
+        )
+        select 
+            (b.period + interval '1 hour')::timestamp as period,
+            b.claim_id,
+            b.text,
+            count(rep.claim_id) as reports
+        from
+            base as b
+            left join reports rep
+                on ((rep.created_at > period and rep.created_at < period + interval '1 hour') and rep.station_id = %s and b.claim_id = rep.claim_id)
+        group by b.period, b.claim_id, b.text
+        order by b.period desc, count(*) - 1 desc
+        ;
+        """), (station_id,))
+
+    records = cur.fetchall()
+
+    report = {}
+    for record in records:
+        period, claim_id, claim_text, report_num = record
+
+        if period not in report:
+            report[period] = []
+
+        report[period].append({
+            'claim_id': claim_id,
+            'claim_text': claim_text,
+            'report_num': report_num
+        })
+
+    return report
+
+
+def add_station_report(cur, station_id, claim_id):
+    cur.execute(
+        sql.SQL("""
+        SELECT 
+            claim_id,
+            text
+        FROM claims
+        WHERE 
+            claim_id = %s;
+        """), (claim_id, ))
+
+    claim = cur.fetchone()
+    if not claim or len(claim) != 2:
+        return {'response': 'failed', 'response_code': 400}
+
+    cur.execute(
+        sql.SQL("""
+        SELECT 
+            station_id,
+            station_name
+        FROM stations
+        WHERE 
+            station_id = %s;
+        """), (station_id, ))
+
+    station = cur.fetchone()
+    if not station or len(station) != 2:
+        return {'response': 'failed', 'response_code': 400}
+
+    cur.execute(
+        """
+            INSERT INTO reports (
+                created_at,
+                station_id,
+                claim_id
+            ) VALUES (%s, %s, %s)
+        """, (
+            datetime.now().isoformat(), station_id, claim_id
+        )
+    )
+
+    return {'response': 'successful', 'response_code': 200}

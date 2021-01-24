@@ -40,6 +40,32 @@ async def get_stations():
     return db_manager.get_stations(cur)
 
 
+@app.get('/claims')
+async def get_claims():
+    cur = conn.cursor()
+    return db_manager.get_claims(cur)
+
+
+@app.get('/reports')
+async def get_reports():
+    cur = conn.cursor()
+    return db_manager.get_reports(cur)
+
+
+@app.get('/reports/station/{station_id}')
+async def get_station_reports(station_id):
+    cur = conn.cursor()
+    return db_manager.get_station_report(cur, station_id)
+
+
+@app.post('/reports/station/{station_id}/{claim_id}')
+async def get_station_reports(station_id, claim_id):
+    cur = conn.cursor()
+    response = db_manager.add_station_report(cur, station_id, claim_id)
+    conn.commit()
+    return response
+
+
 @app.get('/route/from/{from_station_id}/to/{to_station_id}')
 async def get_routes(from_station_id, to_station_id):
     return mvv_reader.find_route(from_station_id, to_station_id)
