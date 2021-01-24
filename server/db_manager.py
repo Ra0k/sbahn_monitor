@@ -115,7 +115,7 @@ def get_incoming_departures_by_station_id(cur, station_id):
     return departures
 
 
-def get_delay_stat(cur, over_type, time_interval, grouped_time):
+def get_delay_stat(cur, over_type, time_interval, grouped_time, station_id=None):
     if over_type == 'stations':
         target = 'station_name'
         group_by = 'station_name'
@@ -123,6 +123,10 @@ def get_delay_stat(cur, over_type, time_interval, grouped_time):
     if over_type == 'all':
         target = "null"
         group_by = ''
+
+    station_restriction = ''
+    if station_id is not None:
+        station_restriction = f"s.station_id = '{station_id}'"
 
     time_restriction = ''
     if time_interval == 'current_week':
@@ -190,7 +194,7 @@ def get_delay_stat(cur, over_type, time_interval, grouped_time):
         FROM
             departures d
         LEFT JOIN stations s ON (d.station = s.station_id)
-        {gen_where(time_restriction)}
+        {gen_where(time_restriction, station_restriction)}
         {gen_group_by(group_by_time, group_by)}
         {gen_order_by(group_by_time, group_by)}
         ;"""))
@@ -238,7 +242,7 @@ def get_delay_stat(cur, over_type, time_interval, grouped_time):
             if target != 'null':
                 delay[target] = target_value
 
-            delays[grouped_time].append(delay)
+            delays.append(delay)
 
     return delays
 
