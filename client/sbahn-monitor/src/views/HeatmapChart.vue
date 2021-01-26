@@ -11,6 +11,10 @@ import axios from "axios";
 import Navbar from '../components/Navbar';
 import VueApexCharts from 'vue-apexcharts'
 
+
+// https://apexcharts.com/vue-chart-demos/heatmap-charts/color-range/
+
+
 export default {
     name: "General",
     components: {
@@ -96,7 +100,7 @@ export default {
       ],
     }
   },
-  
+
   methods: {
     generateData(count, yrange) {
       var i = 0;

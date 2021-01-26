@@ -1,14 +1,18 @@
 <template>
   <nav>
     <div class="menu-item">
-      <router-link to="/general">General</router-link>
+      <router-link to="/general">Charts Demo</router-link>
     </div>
     <div class="menu-item">
-      <router-link to="/about">Live stats</router-link>
+      <router-link to="/about">Another Chart</router-link>
     </div>
     <div class="menu-item">
-      <router-link to="/heatmap">Heatmap Chart with Color Range</router-link>
+      <router-link to="/heatmap">Heatmap Chart</router-link>
     </div>
+    <div class="menu-item">
+      <router-link to="/planYourTrip">Plan Your Trip</router-link>
+    </div>
+
 
 
   </nav>
