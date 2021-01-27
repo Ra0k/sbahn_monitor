@@ -7,7 +7,7 @@
     <Dropdown title="Time period" :items="times" />
 
     
-      <!-- <Dropdown title="Stations" :items="stations" />
+      <Dropdown title="Stations" :items="stations" />
       </nav>
     <h2>{{current.title}}</h2>
     <div class="row mt-5" v-if="this.all.length > 0">
