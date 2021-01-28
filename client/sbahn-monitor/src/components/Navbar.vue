@@ -10,7 +10,10 @@
       <router-link to="/heatmap">Heatmap Chart</router-link>
     </div>
     <div class="menu-item">
-      <router-link to="/planYourTrip">Plan Your Trip</router-link>
+      <router-link to="/Stats_Routing">StatsRouting</router-link>
+    </div>
+    <div class="menu-item">
+      <router-link to="/Routing">Routing</router-link>
     </div>
 
 

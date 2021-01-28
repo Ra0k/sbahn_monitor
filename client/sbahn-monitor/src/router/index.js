@@ -26,9 +26,15 @@ const routes = [
   },
 
   {
-    path: '/planYourTrip',
-    name: 'planYourTrip',
-    component: () => import(/* webpackChunkName: "about" */ '../views/PlanYourTrip.vue')
+    path: '/Stats_Routing',
+    name: 'RoutingStats',
+    component: () => import(/* webpackChunkName: "about" */ '../views/Stats_Routing.vue')
+
+  },
+  {
+    path: '/Routing',
+    name: 'Routing',
+    component: () => import(/* webpackChunkName: "about" */ '../views/Routing.vue')
 
   },
 
