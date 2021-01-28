@@ -1,13 +1,23 @@
 <template>
+
 <div>
-  <multiselect v-model="value" :options="options" placeholder="From..."></multiselect>
+
+  <multiselect v-model="value" :options="stationsList" placeholder="From..."></multiselect>
   <multiselect v-model="value" :options="options" placeholder="To..."></multiselect>
+
+
+  <p> {{ options }}  </p>
+
+  <p> {{ stationsList }}  </p>
+
 
   <p> From StationId: {{stationIdFrom}} </p>  
   <p> To StationId: {{stationIdTo}}</p> 
 
 
-  <p> data: {{ info.data }}  </p>
+  <p> {{ info2.data }}  </p>
+  <p> {{ info.data }}  </p>
+  
 
 </div>
 </template>
@@ -20,25 +30,36 @@ var stationIdFrom = 'de%3A09188%3A5410'
 var stationIdTo = 'de%3A09188%3A5400'
 
 var query = 'http://167.99.243.10:5000/route/from/'+stationIdFrom +'/to/' + stationIdTo
+var queryStations = 'http://167.99.243.10:5000/stations'
 
 
 export default{
-  components:{Multiselect},
+  components:{Multiselect,
+},
   data () {
     return {
       value: null,
       info: null,
+      info2: null,
       stationIdFrom: stationIdFrom,
       stationIdTo: stationIdTo,
-      options: ['list', 'of', 'options']
+      options: ['list', 'of', 'options'],
+      stations: null,
+      staionsList: []
     }
   },
   mounted () {
-    axios
-      .get(query)
+    axios.get(query)
+      .then(response => (this.info2 = response))
+
+    axios.get(queryStations)
       .then(response => (this.info = response))
+ 
+  },
 
-
+  created() {
+    axios.get(queryStations, {})
+      .then((response) => { this.stationsList = response.data.map(x => x.station_name) })
   }
 }
 </script>
@@ -68,4 +89,6 @@ nav .menu-item a {
   color: inherit;
   text-decoration: none;
 }
+
+
 </style>
