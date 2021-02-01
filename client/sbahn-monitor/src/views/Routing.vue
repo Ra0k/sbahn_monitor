@@ -2,22 +2,21 @@
 <!-- comment 
  -->
 <div>
-  <multiselect v-model="stationName1" :options="stationsList" placeholder="From..."></multiselect>
-  <multiselect v-model="stationName2" :options="stationsList" placeholder="To..."></multiselect>
+  <multiselect v-model="stationName1" :options="stationNames" placeholder="From..."></multiselect>
+  <multiselect v-model="stationName2" :options="stationNames" placeholder="To..."></multiselect>
+
+  <p> {{ stationName1 }} {{ stationId1 }}</p>
+  <p> {{ stationName2 }} {{ stationId2 }}  </p>
+
+  <p> We want to get the information from this query: {{  queryComplete }}</p>
+
+  <p> The response has the following form {{ info.data }}  </p>
 
 
-  <p> Name1:  {{ stationName1 }}  </p>
-  <p> {{ stationId1 }}  </p>
-
-  <p> Name2: {{ stationName2 }}  </p>
-  <p> {{ stationId2 }}  </p>
-
-
-
-
-  <p> {{ info2.data }}  </p>
-  <p> {{ info.data }}  </p>
-  
+<!-- comment 
+  <p> {{ query }}  <p>
+   <p> {{ info2.data }}  </p>
+-->
   
 
 </div>
@@ -27,11 +26,14 @@
 import axios from "axios";
 import Multiselect from 'vue-multiselect';
 
+
+
+//example stations
 var stationIdFrom = 'de%3A09177%3A3270'
 var stationIdTo = 'de%3A09162%3A910'
 
 
-
+//var query= 'http://167.99.243.10:5000/route/from/de%3A09162%3A1910/to/de%3A09177%3A3280'
 
 var query = 'http://167.99.243.10:5000/route/from/'+stationIdFrom +'/to/' + stationIdTo
 var queryStations = 'http://167.99.243.10:5000/stations'
@@ -48,36 +50,46 @@ var stationNames= [ "Allach", "Altenerding", "Altomünster", "Arnbach", "Aubing"
   "Obermenzing", "Oberschleißheim", "Olching", "Ostbahnhof München", "Ottenhofen", "Otterfing", "Ottobrunn", "Pasing", "Peiß", "Perlach", "Petershausen", "Planegg", "Poing", "Possenhofen", "Puchheim", "Pullach", "Pulling", "Riem", "Rosenheimer Platz", "Röhrmoos", "Sauerlach", "Schwabhausen", "Schöngeising", "Seefeld-Hechendorf", "Siemenswerke", "Solln", "St. Koloman", "St.-Martin-Straße", "Starnberg", "Starnberg Nord", "Steinebach", "Stockdorf", "Taufkirchen", "Trudering", "Tutzing", "Türkenfeld",
   "Unterföhring", "Unterhaching", "Untermenzing", "Unterschleißheim", "Vaterstetten", "Vierkirchen-Esterhofen", "Westkreuz", "Weßling", "Wolfratshausen", "Wächterhof", "Zorneding"]
 
-console.log(query)
-
-
 
 export default{
   components:{Multiselect,
 },
   data () {
     return {
+      query : query,
+      queryStart:'',
 
-      stationName1: '',
+      stationName1: null,
       stationName2: null,
       stationId1: '',
       stationId2: '',
       info: null,
       info2: null,
+      info3: null,
       stationIdFrom: stationIdFrom,
       stationIdTo: stationIdTo,
       stations: null,
       staionsList: [],
+      stationNames : ["Allach", "Altenerding", "Altomünster", "Arnbach", "Aubing", "Aufhausen", "Aying", "Bachern", "Baierbrunn", "Baldham", "Berg am Laim", "Buchenau", "Buchenhain", "Dachau", "Dachau Stadt", "Daglfing", "Deisenhofen", "Donnersbergerbrücke", "Dürrnhaar", "Ebenhausen-Schäftlarn", "Ebersberg", "Eching", "Eglharting", "Eichenau", "Englschalking", "Erding", "Erdweg", "Esting", "Fasanenpark", "Fasanerie", "Fasangarten", "Feldafing", "Feldkirchen", "Feldmoching", "Flughafen Besucherpark", "Flughafen München",
+          "Freiham", "Freising", "Furth", "Fürstenfeldbruck", "Gauting", "Geisenbrunn", "Geltendorf", "Germering-Unterpfaffenhofen", "Gernlinden", "Giesing", "Gilching-Argelsried", "Grafing", "Grafing Stadt", "Grafrath", "Gronsdorf", "Großhelfendorf", "Großhesselohe Isartalbahnhof", "Grub", "Gräfelfing", "Gröbenzell", "Haar", "Hackerbrücke", "Hallbergmoos", "Harras", "Harthaus", "Hauptbahnhof", "Hebertshausen", "Heimeranplatz", "Heimstetten", "Herrsching", "Hirschgarten", "Hohenbrunn",
+          "Hohenschäftlarn", "Holzkirchen", "Höhenkirchen-Siegertsbrunn", "Höllriegelskreuth", "Icking", "Isartor", "Ismaning", "Johanneskirchen", "Karlsfeld", "Karlsplatz", "Kirchseeon", "Kleinberghofen", "Kreuzstraße", "Laim", "Langwied", "Leienfelsstraße", "Leuchtenbergring", "Lochham", "Lochhausen", "Lohhof", "Maisach", "Malching", "Mammendorf", "Marienplatz", "Markt Indersdorf", "Markt Schwaben", "Mittersendling", "Moosach", "Neuaubing", "Neubiberg", "Neufahrn", "Neugilching", "Neuperlach Süd", "Niederroth",
+          "Obermenzing", "Oberschleißheim", "Olching", "Ostbahnhof München", "Ottenhofen", "Otterfing", "Ottobrunn", "Pasing", "Peiß", "Perlach", "Petershausen", "Planegg", "Poing", "Possenhofen", "Puchheim", "Pullach", "Pulling", "Riem", "Rosenheimer Platz", "Röhrmoos", "Sauerlach", "Schwabhausen", "Schöngeising", "Seefeld-Hechendorf", "Siemenswerke", "Solln", "St. Koloman", "St.-Martin-Straße", "Starnberg", "Starnberg Nord", "Steinebach", "Stockdorf", "Taufkirchen", "Trudering", "Tutzing", "Türkenfeld",
+          "Unterföhring", "Unterhaching", "Untermenzing", "Unterschleißheim", "Vaterstetten", "Vierkirchen-Esterhofen", "Westkreuz", "Weßling", "Wolfratshausen", "Wächterhof", "Zorneding"],
+
       stationIds: [], 
       id: 0,
     }
   },
+
+
   mounted () {
-    axios.get(query)
+  
+    axios.get('http://167.99.243.10:5000/route/from/'+ stationIdFrom +'/to/' + stationIdTo)
       .then(response => (this.info2 = response))
     axios.get(queryStations)
       .then(response => (this.info = response))
- 
+    axios.get(queryComplete)
+      .then(response => (this.info3 = response))  
   },
 
   created() {
@@ -91,12 +103,12 @@ export default{
        stationName1: function(value) {
          this.stationName1 = value
          this.stationId1 = encodeURIComponent(stationIds[stationNames.indexOf(value)])
+         this.queryStart = 'http://167.99.243.10:5000/route/from/' + encodeURIComponent(stationIds[stationNames.indexOf(value)]) + '/to/'
        },
        stationName2: function(value) {
          this.stationName2 = value
          this.stationId2 = encodeURIComponent(stationIds[stationNames.indexOf(value)])
-       },
-       
+         this.queryComplete =   'http://167.99.243.10:5000/route/from/'+ this.stationId1 + '/to/' +encodeURIComponent(stationIds[stationNames.indexOf(value)])       },
 
 }
 }
