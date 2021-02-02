@@ -19,7 +19,19 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0cd3dd19-1b57-4b49-8051-b005e20842d8" name="Default Changelist" comment="" />
+    <list default="true" id="0cd3dd19-1b57-4b49-8051-b005e20842d8" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/sbahn-monitor-vue-2-router/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/sbahn-monitor-vue-2-router/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/sbahn-monitor-vue-2-router/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/sbahn-monitor-vue-2-router/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/sbahn-monitor-vue-2-router/src/components/Navbar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/sbahn-monitor-vue-2-router/src/components/Navbar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/sbahn-monitor-vue-2-router/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/sbahn-monitor-vue-2-router/src/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/sbahn-monitor-vue-2-router/src/views/About.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/sbahn-monitor-vue-2-router/src/views/About.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/sbahn-monitor-vue-2-router/src/views/General.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/sbahn-monitor-vue-2-router/src/views/General.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/sbahn-monitor/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/sbahn-monitor/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/sbahn-monitor/src/views/Routing.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/sbahn-monitor/src/views/Routing.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/app.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -30,6 +42,7 @@
   </component>
   <component name="JupyterTrust" id="d1a8cdab-0c48-44ce-8e39-3d362c94fe0c" />
   <component name="ProjectId" id="1lLXzdKeA1j6ZmfUcViimYFvs0v" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -57,6 +70,7 @@
       <workItem from="1608337481114" duration="208000" />
       <workItem from="1608485325541" duration="2000000" />
       <workItem from="1608560373967" duration="6847000" />
+      <workItem from="1612270786862" duration="1095000" />
     </task>
     <servers />
   </component>
