@@ -9,7 +9,7 @@
   <p> {{ stationName2 }} {{ stationId2 }}  </p>
 
   <p> We want to get the information from this query: {{  queryComplete }}</p>
-
+  <button v-on:click="get(queryComplete)" >Get routing information</button>
   <p> The response has the following form {{ info.data }}  </p>
 
 
@@ -96,6 +96,11 @@ export default{
     axios.get(queryStations, {})
       .then((response) => { this.stationsList = response.data.map(x => x.station_name) })
   
+  },
+
+  methods: {
+    get: function(url) {alert(url)}
+
   },
 
   watch: {
