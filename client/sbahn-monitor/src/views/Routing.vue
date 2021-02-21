@@ -5,10 +5,12 @@
   <multiselect v-model="station1" :options="staionsList" placeholder="From..." label="station_name" track-by="station_name"></multiselect>
   <multiselect v-model="station2" :options="staionsList" placeholder="To..." label="station_name" track-by="station_name"></multiselect>
 
-  <p> We want to get the information from this query: {{  queryComplete }}</p>
-  <button v-on:click="get(queryComplete)" >Get routing information</button>
-  <p> The response has the following form {{ info3 }}  </p>
+  <p> The response has the following form {{ info3.data.routes }}</p>
+    <p> This is the query: {{  this.queryStats }} </p>
 
+    <p> This are stats information about station 1: </p>
+
+  <li>{{ stats }}</li>
 
 <!-- comment 
   <p> {{ query }}  <p>
@@ -23,12 +25,9 @@
 import axios from "axios";
 import Multiselect from 'vue-multiselect';
 
-
-
 //example stations
 var stationIdFrom = 'de%3A09177%3A3270'
 var stationIdTo = 'de%3A09162%3A910'
-
 
 //var query= 'http://167.99.243.10:5000/route/from/de%3A09162%3A1910/to/de%3A09177%3A3280'
 
@@ -55,6 +54,7 @@ export default{
   data () {
     return {
       query : query,
+      queryStats:'empty queryStats',
       queryStart:'',
       station1: '',
       station2: '',
@@ -65,6 +65,7 @@ export default{
       stationIdTo: stationIdTo,
       stations: null,
       staionsList: [],
+      stats: [],
       queryComplete: "",
       // stationNames : ["Allach", "Altenerding", "Altomünster", "Arnbach", "Aubing", "Aufhausen", "Aying", "Bachern", "Baierbrunn", "Baldham", "Berg am Laim", "Buchenau", "Buchenhain", "Dachau", "Dachau Stadt", "Daglfing", "Deisenhofen", "Donnersbergerbrücke", "Dürrnhaar", "Ebenhausen-Schäftlarn", "Ebersberg", "Eching", "Eglharting", "Eichenau", "Englschalking", "Erding", "Erdweg", "Esting", "Fasanenpark", "Fasanerie", "Fasangarten", "Feldafing", "Feldkirchen", "Feldmoching", "Flughafen Besucherpark", "Flughafen München",
       //     "Freiham", "Freising", "Furth", "Fürstenfeldbruck", "Gauting", "Geisenbrunn", "Geltendorf", "Germering-Unterpfaffenhofen", "Gernlinden", "Giesing", "Gilching-Argelsried", "Grafing", "Grafing Stadt", "Grafrath", "Gronsdorf", "Großhelfendorf", "Großhesselohe Isartalbahnhof", "Grub", "Gräfelfing", "Gröbenzell", "Haar", "Hackerbrücke", "Hallbergmoos", "Harras", "Harthaus", "Hauptbahnhof", "Hebertshausen", "Heimeranplatz", "Heimstetten", "Herrsching", "Hirschgarten", "Hohenbrunn",
@@ -86,6 +87,8 @@ export default{
       .then(response => (this.staionsList = response.data))
     axios.get(this.queryComplete)
       .then(response => (this.info3 = response))  
+   // axios.get(queryStats)
+   //  .then(response => (this.stats = response.data))
   },
 
   created() {
@@ -103,9 +106,11 @@ export default{
 
        station1: function() {
          if (this.station1['station_id'] != null & this.station2['station_id'] != null) {
-           this.queryComplete = 'http://167.99.243.10:5000/route/from/' + encodeURIComponent(this.station1['station_id']) + '/to/' +encodeURIComponent(this.station2['station_id'])
+           this.queryComplete = 'http://167.99.243.10:5000/route/from/' + encodeURIComponent(this.station1['station_id']) + '/to/' + encodeURIComponent(this.station2['station_id'])
          }
+         this.queryStats = 'http://167.99.243.10:5000/stats/delay/station/' + encodeURIComponent(this.station1['station_id']) + "/current_week/grouped/weekly"
        },
+      
        station2: function() {
          if (this.station1['station_id'] != null & this.station2['station_id'] != null) {
            this.queryComplete = 'http://167.99.243.10:5000/route/from/' + encodeURIComponent(this.station1['station_id']) + '/to/' +encodeURIComponent(this.station2['station_id'])
@@ -115,13 +120,17 @@ export default{
          axios.get(this.queryComplete).then(response => (this.info3 = response)) 
        },
 
+       queryStats: function() {
+         axios.get(this.queryStats).then(response => (this.stats = response))
+      }
+
 }
 }
 </script>
 
 
 <style src="vue-multiselect/dist/vue-multiselect.min.css">
-  /* ul{
+   ul{
     overflow: scroll;
     height: 300px;
   }
@@ -129,5 +138,5 @@ export default{
   li{
     list-style: none;
     list-style-type: none;
-  } */
+  } 
 </style>

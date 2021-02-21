@@ -25,6 +25,12 @@ export default {
 
   data: function() {
     return {
+      all: [],
+      ndelayed: [],
+      pdelayed: [],
+      avg_delay: [],
+      max_delay: [], 
+      hour_data: [],
       options: {
         chart: {
           id: 'vuechart-example'
@@ -38,45 +44,6 @@ export default {
         data: [30, 40, 45, 50, 49, 60, 70, 91]
       }]
     }
-  },
-
-/*
-  data() {
-    return {
-      all: [],
-      ndelayed: [],
-      ndelayedChartColors: {
-        borderColor: "#077187",
-        pointBorderColor: "#0E1428",
-        pointBackgroundColor: "#AFD6AC",
-        backgroundColor: "#74A57F"
-      },
-      allColors: {
-        borderColor: "#190B28",
-        pointBorderColor: "#190B28",
-        pointBackgroundColor: "#E55381",
-        backgroundColor: "#E55381"
-      },
-      chartOptions: {
-        responsive: true,
-        maintainAspectRatio: false,
-        scales: {
-        xAxes: [{
-          stacked: true,
-        }],
-        yAxes: [{
-          stacked: true,
-        }]
-        },
-        legend: {
-        display: false,
-        },
-      },
-      pdelayed: [],
-      avg_delay: [],
-      max_delay: [], 
-      hour_data: []
-    };
   },
 
   async created() {
@@ -112,7 +79,7 @@ export default {
 
 
     console.log(data);
-  }*/
+  }
 }
 </script>
 

@@ -93,20 +93,7 @@ export default {
       //           "Pasing", "Hirschgarten", "Hackerbrücke", 
       //           "Karlsplatz", "Isartor", "Ostbahnhof München", 
       //           "Daglfing", "Johanneskirchen", "Ismaning", "Flughafen Besucherpark" ], 
-      stations_drop: [
-        // {
-        //   title: 'Herrsching',
-        //   link: '#'
-        // }, 
-        // {
-        //   title: 'Steinebach',
-        //   link: '#'
-        // }, 
-        // {
-        //   title: 'Daglfing',
-        //   link: '#'
-        // }, 
-      ],
+
       times:[
         {
           title: 'hour',
