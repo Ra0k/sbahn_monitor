@@ -4,18 +4,27 @@
 <div>
   <multiselect v-model="station1" :options="staionsList" placeholder="From..." label="station_name" track-by="station_name"></multiselect>
   <multiselect v-model="station2" :options="staionsList" placeholder="To..." label="station_name" track-by="station_name"></multiselect>
+  
+  
+  <p> Connections: </p>
 
-  <p> The response has the following form {{ info3.data.routes }}</p>
-    <p> This is the query: {{  this.queryStats }} </p>
+ <li v-for="route in info3.data.routes" :key="route.connection"> 
+    {{ route.connections }}
+  </li>
 
-    <p> This are stats information about station 1: </p>
 
-  <li>{{ stats }}</li>
+  <p>{{ stats.data }}</p>
 
 <!-- comment 
-  <p> {{ query }}  <p>
-   <p> {{ info2.data }}  </p>
--->
+  <p> {{ info3.data }}</p>
+ -->
+
+
+ 
+
+
+
+
   
 
 </div>
@@ -108,7 +117,7 @@ export default{
          if (this.station1['station_id'] != null & this.station2['station_id'] != null) {
            this.queryComplete = 'http://167.99.243.10:5000/route/from/' + encodeURIComponent(this.station1['station_id']) + '/to/' + encodeURIComponent(this.station2['station_id'])
          }
-         this.queryStats = 'http://167.99.243.10:5000/stats/delay/station/' + encodeURIComponent(this.station1['station_id']) + "/current_week/grouped/weekly"
+        this.queryStats = 'http://167.99.243.10:5000/stats/delay/station/' + encodeURIComponent(this.station1['station_id']) + "/current_week/grouped/weekly"
        },
       
        station2: function() {
