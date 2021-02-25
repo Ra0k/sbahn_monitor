@@ -6,12 +6,14 @@
   <multiselect v-model="station2" :options="staionsList" placeholder="To..." label="station_name" track-by="station_name"></multiselect>
   
   
-  <p> Connections: </p>
+
+ <p> Connections: </p>
 
  <li v-for="route in info3.data.routes" :key="route.connection"> 
     {{ route.connections }}
   </li>
 
+  <p> Stats for Start-Station: </p>
 
   <p>{{ stats.data }}</p>
 
