@@ -49,6 +49,8 @@ def find_route(from_station_id, to_station_id):
             'connections': []
         }
         for part_connection in connection['connectionPartList']:
+            if part_connection.get('delay') is None:
+                part_connection['delay'] = 0
             connection = {
                 'departure': convert_timestamp(part_connection['departure']),
                 'departurePlatform': part_connection['departurePlatform'],
@@ -62,6 +64,8 @@ def find_route(from_station_id, to_station_id):
                 'inner_stops': []
             }
             for stop in part_connection['stops']:
+                if stop.get('delay') is None:
+                    stop['delay'] = 0
                 connection['inner_stops'].append({
                     'time': convert_timestamp(stop['time']),
                     'delay': stop['delay'],
