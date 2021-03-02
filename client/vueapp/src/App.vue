@@ -1,13 +1,27 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
+    <app-header />
+    <dropdown-selector />
     <router-view/>
+    <graph-cards />
+    <app-footer />
   </div>
 </template>
 
 <script>
+import AppHeader from '@/components/AppHeader.vue'
+import AppFooter from '@/components/AppFooter.vue'
+import DropdownSelector from '@/components/DropdownSelector.vue'
+import GraphCards from './components/GraphCards.vue'
+
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    AppHeader,
+    AppFooter,
+    DropdownSelector,
+    GraphCards
+  }
 }
 </script>
 
