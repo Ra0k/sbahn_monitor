@@ -7,27 +7,23 @@
   
   
 
- <p> Connections: </p>
 
- <li v-for="route in info3.data.routes" :key="route.connection"> 
-    {{ route.connections }}
+<!-- comment
+route.connections[0]["departure"]
+<p>{{ info3.data.routes}}</p>
+<p> {{routes}} </p>
+
+-->
+
+<br> <br>
+
+<p>{{stats.data}}</p>
+
+<br> <br>
+ <li v-for="route in info3.data.routes" :key="connections"> 
+    {{ route.connections[0] }}
   </li>
-
-  <p> Stats for Start-Station: </p>
-
-  <p>{{ stats.data }}</p>
-
-<!-- comment 
-  <p> {{ info3.data }}</p>
- -->
-
-
- 
-
-
-
-
-  
+   
 
 </div>
 </template>
@@ -77,6 +73,7 @@ export default{
       stations: null,
       staionsList: [],
       stats: [],
+      routes:[],
       queryComplete: "",
       // stationNames : ["Allach", "Altenerding", "Altomünster", "Arnbach", "Aubing", "Aufhausen", "Aying", "Bachern", "Baierbrunn", "Baldham", "Berg am Laim", "Buchenau", "Buchenhain", "Dachau", "Dachau Stadt", "Daglfing", "Deisenhofen", "Donnersbergerbrücke", "Dürrnhaar", "Ebenhausen-Schäftlarn", "Ebersberg", "Eching", "Eglharting", "Eichenau", "Englschalking", "Erding", "Erdweg", "Esting", "Fasanenpark", "Fasanerie", "Fasangarten", "Feldafing", "Feldkirchen", "Feldmoching", "Flughafen Besucherpark", "Flughafen München",
       //     "Freiham", "Freising", "Furth", "Fürstenfeldbruck", "Gauting", "Geisenbrunn", "Geltendorf", "Germering-Unterpfaffenhofen", "Gernlinden", "Giesing", "Gilching-Argelsried", "Grafing", "Grafing Stadt", "Grafrath", "Gronsdorf", "Großhelfendorf", "Großhesselohe Isartalbahnhof", "Grub", "Gräfelfing", "Gröbenzell", "Haar", "Hackerbrücke", "Hallbergmoos", "Harras", "Harthaus", "Hauptbahnhof", "Hebertshausen", "Heimeranplatz", "Heimstetten", "Herrsching", "Hirschgarten", "Hohenbrunn",
@@ -129,14 +126,27 @@ export default{
       },
       queryComplete: function() {
          axios.get(this.queryComplete).then(response => (this.info3 = response)) 
+         /*if (this.info3.route.connections["product"] = "SBAHN" {
+          this.routes
+          }*/
        },
-
        queryStats: function() {
          axios.get(this.queryStats).then(response => (this.stats = response))
+      },
+      info3: function(){
+        this.routes=this.info3.data.routes.filter( (x)=> {return x.connections[0].product = "SBAHN";  });
+
       }
 
 }
 }
+
+/*  
+var myArray = [{myNumber: 1, name: 'one'}, {myNumber: 3, name: 'tree'}, {myNumber: 6, name: 'six'}, {myNumber: 8, name: 'eight'}];
+var result = myArray.filter((x) => { return x.myNumber > 5; });
+console.log(result); // returns [ { myNumber: 6, name: 'six' }, { myNumber: 8, name: 'eight' } ]
+*/
+
 </script>
 
 
