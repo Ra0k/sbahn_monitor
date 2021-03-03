@@ -15,6 +15,9 @@
     <div class="menu-item">
       <router-link to="/Routing">Routing</router-link>
     </div>
+    <div class="menu-item">
+      <router-link to="/Alerts">Alerts</router-link>
+    </div>
 
 
 

@@ -37,6 +37,11 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/Routing.vue')
 
   },
+  {
+    path: '/alerts',
+    name: 'Alerts',
+    component: ()=> import('../views/AlertsInterface.vue')
+  }
 
 ]
 
