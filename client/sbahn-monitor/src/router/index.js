@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import General from '../views/General.vue'
-
+import AlertsInterface from '../views/AlertsInterface.vue'
 Vue.use(VueRouter)
 
 const routes = [
@@ -40,7 +40,7 @@ const routes = [
   {
     path: '/alerts',
     name: 'Alerts',
-    component: ()=> import('../views/AlertsInterface.vue')
+    component: AlertsInterface
   }
 
 ]
