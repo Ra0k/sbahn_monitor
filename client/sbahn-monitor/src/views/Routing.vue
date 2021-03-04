@@ -7,20 +7,23 @@
   
   
 <!-- comment
-route.connections[0]["departure"]
-<p>{{ info3.data.routes}}</p>
-<p> {{routes}} </p>
 
-routes containing only sbahns:
-<p>{{routes}}</p>
--->
 <br>  <br>
 <p>{{stats.data}}</p>
 all routes:
 <p>{{allroutes}}</p>
 <br> <br>
+routes containing only sbahns:
+<br> <br>
+<p>{{routes}}</p>
+-->
+
+<br> <br>
+
+Connections:
+
  <li v-for="route in routes" :key="connections"> 
-    {{ route.connections[0] }}
+    {{ route.connections }}
   </li>
 
 
