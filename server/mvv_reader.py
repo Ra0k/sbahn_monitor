@@ -31,47 +31,47 @@ def find_route(from_station_id, to_station_id):
         if num_locations > 0:
             break
 
-    connection_list = response['connectionList']
+    connection_list = response.get('connectionList', [])
     if connection_list == []:
         return {}
 
     response = {
-        'from': connection_list[0]['from'],
-        'to': connection_list[0]['to'],
+        'from': connection_list[0].get('from'),
+        'to': connection_list[0].get('to'),
         'routes': []
     }
     for connection in connection_list:
         route = {
-            'departure': convert_timestamp(connection['departure']),
-            'arrival': convert_timestamp(connection['arrival']),
-            'ring_from': connection['ringFrom'],
-            'ring_to': connection['ringTo'],
+            'departure': convert_timestamp(connection.get('departure')),
+            'arrival': convert_timestamp(connection.get('arrival')),
+            'ring_from': connection.get('ringFrom'),
+            'ring_to': connection.get('ringTo'),
             'connections': []
         }
-        for part_connection in connection['connectionPartList']:
+        for part_connection in connection.get('connectionPartList', []):
             if part_connection.get('delay') is None:
                 part_connection['delay'] = 0
             connection = {
-                'departure': convert_timestamp(part_connection['departure']),
-                'departurePlatform': part_connection['departurePlatform'],
-                'arrival': convert_timestamp(part_connection['arrival']),
-                'arrivalPlatform': part_connection['arrivalPlatform'],
-                'delay': part_connection['delay'],
-                'product': part_connection['product'],
-                'label': part_connection['label'],
-                'destination': part_connection['destination'],
-                'cancelled': part_connection['cancelled'],
+                'departure': convert_timestamp(part_connection.get('departure')),
+                'departurePlatform': part_connection.get('departurePlatform'),
+                'arrival': convert_timestamp(part_connection.get('arrival')),
+                'arrivalPlatform': part_connection.get('arrivalPlatform'),
+                'delay': part_connection.get('delay'),
+                'product': part_connection.get('product'),
+                'label': part_connection.get('label'),
+                'destination': part_connection.get('destination'),
+                'cancelled': part_connection.get('cancelled'),
                 'inner_stops': []
             }
-            for stop in part_connection['stops']:
+            for stop in part_connection.get('stops', []):
                 if stop.get('delay') is None:
                     stop['delay'] = 0
                 connection['inner_stops'].append({
-                    'time': convert_timestamp(stop['time']),
-                    'delay': stop['delay'],
-                    'station_city': stop['location']['place'],
-                    'station_name': stop['location']['name'],
-                    'station_id': stop['location']['id']
+                    'time': convert_timestamp(stop.get('time')),
+                    'delay': stop.get('delay'),
+                    'station_city': stop.get('location',{}).get('place'),
+                    'station_name': stop.get('location',{}).get('name'),
+                    'station_id': stop.get('location',{}).get('id')
                 })
             route['connections'].append(connection)
         response['routes'].append(route)
