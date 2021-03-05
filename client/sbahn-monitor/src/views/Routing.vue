@@ -3,10 +3,15 @@
  -->
 
 <div>
+  <br> <br>
+
   <multiselect v-model="station1" :options="staionsList" placeholder="From..." label="station_name" track-by="station_name"></multiselect>
   <multiselect v-model="station2" :options="staionsList" placeholder="To..." label="station_name" track-by="station_name"></multiselect>
-    
+
 <!-- comment
+   <b-alert show>Default Alert</b-alert>
+   <p>{{stats.data}}</p>
+
 <br>  <br>
 <p>{{stats.data}}</p>
 all routes:
@@ -15,26 +20,18 @@ all routes:
 routes containing only sbahns:
 <br> <br>
 <p>{{routes}}</p>
-
--->
-
-<br> <br>
-Connections:
-<br> <br>
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
 
  <li v-for="route in routes" :key="route.connections"> 
        {{route.connections}}
 </li>
 
-
-
+-->
 <br> <br>
 
-
-Table:
-<br> <br>
-
-<b-table :items="js" :fields="fields" striped responsive="sm">
+<div v-if="tableArray[0]"  class="text-center text-danger my-2">
+<b-table :items="js" :fields="fields" striped responsive="sm" :tbody-transition-props="transProps">
       <template #cell(show_details)="row">
         <b-button size="sm" @click="row.toggleDetails" class="mr-2">
           {{ row.detailsShowing ? 'Hide' : 'Show'}} Details
@@ -45,24 +42,38 @@ Table:
 
       <template #row-details="row">
         <b-card>
+
           <b-row class="mb-2">
-            <b-col sm="3" class="text-sm-right"><b>Age:</b></b-col>
-            <b-col>{{ row.item.age }}</b-col>
+            <b-col sm="3" class="text-sm-right"><b>Arrival:</b></b-col>
+            <b-col>{{ row.item.arrival }}</b-col>
+          </b-row>
+<!--
+
+            <b-row class="mb-2">
+            <b-col sm="3" class="text-sm-right"><b>InnerStops:</b></b-col>
+            <b-col>{{ row.item.InnerStops }}</b-col>
           </b-row>
 
           <b-row class="mb-2">
             <b-col sm="3" class="text-sm-right"><b>Is Active:</b></b-col>
             <b-col>{{ row.item.isActive }}</b-col>
           </b-row>
-
+-->
           <b-button size="sm" @click="row.toggleDetails">Hide Details</b-button>
         </b-card>
       </template>
   </b-table>
-
 <!-- https://bootstrap-vue.org/docs/components/table
  => Row details support
 -->
+<br> <br>
+<br> <br>
+<br> <br>
+
+<br> <br>
+
+</div>
+
 
 </div>
 
@@ -73,7 +84,9 @@ Table:
 import axios from "axios";
 import Multiselect from 'vue-multiselect';
 import { BTable } from 'bootstrap-vue'
-
+import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
 //example stations
 var stationIdFrom = 'de%3A09177%3A3270'
 var stationIdTo = 'de%3A09162%3A910'
@@ -103,7 +116,7 @@ export default{
       info: null,
       info2: null,
       info3: null,
-      js: [],
+     
       stationIdFrom: stationIdFrom,
       stationIdTo: stationIdTo,
       stations: null,
@@ -116,7 +129,7 @@ export default{
       departures: [],
       departurePlatform:[],
       delay:Array(),
-      fields: ['departure','departure platform','delay','arrival', 'arrival platform','show_details'],
+      fields: ['departure','departure platform','delay','Change(s)','show_details'],
       tableitems:[]
     
       }
@@ -170,29 +183,39 @@ export default{
       },
       
       info3: function(){
+        this.js=[]
+        this.allroutes=[]
+        this.routes=[]
+        this.array=[]
+        this.tableArray=[]
         this.allroutes=this.info3.data.routes
         this.routes=this.info3.data.routes.filter( x=> (x.connections.every(c=>c.product=="SBAHN")))
       
-      var i=0
-      while (this.routes[i]) {
-      this.array=[]
-      this.array.push(this.routes[i]["departure"])
-      this.array.push(this.routes[i].connections[0]["departurePlatform"]) 
-      this.array.push(this.routes[i].connections[0]["arrivalPlatform"])  
-      this.array.push(this.routes[i].connections[0]["delay"])   
-      this.array.push(this.routes[i].connections[0]["arrival"])   
-      this.tableArray.push(this.array)
+        var i=0
+        while (this.routes[i]) {
+        this.array=[]
+        this.array.push(this.routes[i]["departure"])
+        this.array.push(this.routes[i].connections[0]["departurePlatform"]) 
+        this.array.push(this.routes[i].connections[0]["arrivalPlatform"])  
+        this.array.push(this.routes[i].connections[0]["delay"])   
+        this.array.push(this.routes[i].connections[0]["arrival"])
+        this.array.push(this.routes[i].connections.length-1)
+        this.array.push(this.routes[i].connections[0]["inner_stops"])
+        this.tableArray.push(this.array)
 
-      this.js = this.tableArray.map(function (value,key){
-              return{
-                "departure":value[0],
-                "departure platform":value[1],
-                "arrival platform":value[2],
-                "delay":value[3],
-                "arrival":value[4]
-                }
-              })
-      i = i + 1; }
+        this.js = this.tableArray.map(function (value,key){
+                return{
+                  "departure":value[0],
+                  "departure platform":value[1],
+                  "arrival platform":value[2],
+                  "delay":value[3],
+                  "arrival":value[4],
+                  "Change(s)":value[5],
+                  "InnerStops":value[6]
+                  }
+                })
+
+        i = i + 1; }
 
       }
 
@@ -209,7 +232,7 @@ export default{
 
 
 <style src="vue-multiselect/dist/vue-multiselect.min.css">
-   ul{
+ /*  ul{
     overflow: scroll;
     height: 300px;
   }
@@ -217,5 +240,7 @@ export default{
   li{
     list-style: none;
     list-style-type: none;
-  } 
+  }
+
+  */ 
 </style>
