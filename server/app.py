@@ -23,7 +23,7 @@ app.add_middleware(
 )
 
 
-db_url = 'postgresql://root:rootpassword1234@167.99.243.10/sbahn'
+db_url = get_env('sbhan_db_conn_url')
 conn = db_manager.connect(db_url)
 
 STATION_IDS = [obj['station_id'] for obj in db_manager.get_stations(conn.cursor())]
