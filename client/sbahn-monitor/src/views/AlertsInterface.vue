@@ -24,8 +24,10 @@ export default{
         return {
             stationsList: [],
             stationsMap: [],
+            stationsData: [],
             selectedStation: '',
             claims: [],
+            claimsData: [],
             claimsMap: [],
             selectedClaim: '',
             disableButton: true
@@ -34,11 +36,17 @@ export default{
     },
     mounted() {
         axios.get('http://167.99.243.10:5000/claims')
-            .then(response => (this.claims =  response.data.map(function(a) { return a.text}) ))
-            .then(response => (this.claimsToMap(response.data)))
+            .then(response => (this.claimsData = response.data))
+
+        this.claims = this.claimsData.map(function(a) { return a.text})
+        this.claimsMap = this.claimsToMap(this.claimsData)
+
         axios.get('http://167.99.243.10:5000/stations')
-            .then(response => (this.stationsList =  response.data.map(function(a) { return a.station_name}) ))
-            .then(response => (stationsToMap(response.data)))
+            .then(response => (this.stationsData = response.data))
+        
+        this.stationsList =  this.stationsData.map(function(a) { return a.station_name})
+        this.stationsMap = this.stationsToMap(this.stationsData)
+
     },
     created(){
 
@@ -56,18 +64,19 @@ export default{
     //methods which can be used in things like event handlers
     methods: {
         claimsToMap: function(r) {
-            for (claim in r){
-                this.claimsMap.set(claim.text, claim.id)
-            } 
+            for (index in r){
+                this.claimsMap[r[index]['text']]= r[index]['id']
+            }
+            this.claimsToMap = r 
         },
         stationsToMap: function(r) {
-            for (station in r){
-                this.stationsMap.set(station.station_name, station.station_id)
+            for (index in r){
+                this.stationsMap[r[index]['station_name']] = r[index]['station_id']
             } 
         },
         submitClaim: function(event) {
-            var stationId = this.stationsMap.get(this.selectedStation)
-            var claimId = this.claimsMap.get(this.selectedClaim)
+            var stationId = this.stationsMap[this.selectedStation]
+            var claimId = this.claimsMap[this.selectedClaim]
             axios.post('http://167.99.243.10:5000/reports/station/'+stationId+'/'+claimId)
         }
     }
