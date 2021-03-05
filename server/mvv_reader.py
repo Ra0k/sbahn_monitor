@@ -4,11 +4,12 @@ from datetime import datetime, timedelta
 
 import requests
 import json
+import pytz
 
 
 URL_BASE = 'https://www.mvg.de/api'
 
-convert_timestamp = lambda x: datetime.fromtimestamp(x / 1e3)
+convert_timestamp = lambda x: datetime.fromtimestamp(x / 1e3, tz=pytz.timezone('CET'))
 
 #@raise_message('MVV API CALL: Find Route Failed')
 def find_route(from_station_id, to_station_id):
@@ -56,8 +57,7 @@ def find_route(from_station_id, to_station_id):
                 part_connection['delay'] = 0
             
             if first_part:
-                current_time = datetime.now()
-                print(current_time)
+                current_time = datetime.now(tz=pytz.timezone('CET'))
                 delayed_arrival = convert_timestamp(part_connection.get('departure')) + timedelta(minutes=part_connection.get('delay'))
                 if current_time > delayed_arrival: part_connection['delay'] = int(abs(current_time - delayed_arrival).seconds / 60)
 
