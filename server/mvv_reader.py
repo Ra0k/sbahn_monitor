@@ -1,6 +1,6 @@
 from pprint import pprint
 from utils import raise_message
-from datetime import datetime
+from datetime import datetime, timedelta
 
 import requests
 import json
@@ -48,9 +48,21 @@ def find_route(from_station_id, to_station_id):
             'ring_to': connection.get('ringTo'),
             'connections': []
         }
+
+        first_part = True
         for part_connection in connection.get('connectionPartList', []):
+            
             if part_connection.get('delay') is None:
                 part_connection['delay'] = 0
+            
+            if first_part:
+                current_time = datetime.now()
+                print(current_time)
+                delayed_arrival = convert_timestamp(part_connection.get('departure')) + timedelta(minutes=part_connection.get('delay'))
+                if current_time > delayed_arrival: part_connection['delay'] = int(abs(current_time - delayed_arrival).seconds / 60)
+
+                first_part = False
+
             connection = {
                 'departure': convert_timestamp(part_connection.get('departure')),
                 'departurePlatform': part_connection.get('departurePlatform'),
