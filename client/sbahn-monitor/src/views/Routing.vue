@@ -9,6 +9,14 @@
   <multiselect v-model="station2" :options="staionsList" placeholder="To..." label="station_name" track-by="station_name"></multiselect>
 
 <!-- comment
+
+TODO: 
+1.css style
+2. times departure
+3. show details
+4. stats, allerts
+
+
    <b-alert show>Default Alert</b-alert>
    <p>{{stats.data}}</p>
 
@@ -26,6 +34,7 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
  <li v-for="route in routes" :key="route.connections"> 
        {{route.connections}}
 </li>
+<p>{{info3.data}}</p>
 
 -->
 <br> <br>
@@ -129,7 +138,7 @@ export default{
       departures: [],
       departurePlatform:[],
       delay:Array(),
-      fields: ['departure','departure platform','delay','Change(s)','show_details'],
+      fields: ['Departure Time','departure platform','delay','Change(s)','show_details'],
       tableitems:[]
     
       }
@@ -205,7 +214,7 @@ export default{
 
         this.js = this.tableArray.map(function (value,key){
                 return{
-                  "departure":value[0],
+                  "Departure Time":value[0],
                   "departure platform":value[1],
                   "arrival platform":value[2],
                   "delay":value[3],
@@ -232,7 +241,7 @@ export default{
 
 
 <style src="vue-multiselect/dist/vue-multiselect.min.css">
- /*  ul{
+ ul{
     overflow: scroll;
     height: 300px;
   }
@@ -242,5 +251,5 @@ export default{
     list-style-type: none;
   }
 
-  */ 
+  
 </style>
