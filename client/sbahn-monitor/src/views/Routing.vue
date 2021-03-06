@@ -12,7 +12,6 @@
 
 TODO: 
 1.css style
-2. times departure
 3. show details
 4. stats, allerts
 
@@ -35,8 +34,11 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
        {{route.connections}}
 </li>
 <p>{{info3.data}}</p>
+<p>{{routes}}</p>
 
 -->
+
+
 <br> <br>
 
 <div v-if="tableArray[0]"  class="text-center text-danger my-2">
@@ -53,7 +55,7 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
         <b-card>
 
           <b-row class="mb-2">
-            <b-col sm="3" class="text-sm-right"><b>Arrival:</b></b-col>
+            <b-col sm="3" class="text-sm-right"><b>Arrival: </b></b-col>
             <b-col>{{ row.item.arrival }}</b-col>
           </b-row>
 <!--
@@ -68,7 +70,6 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
             <b-col>{{ row.item.isActive }}</b-col>
           </b-row>
 -->
-          <b-button size="sm" @click="row.toggleDetails">Hide Details</b-button>
         </b-card>
       </template>
   </b-table>
@@ -202,29 +203,38 @@ export default{
       
         var i=0
         while (this.routes[i]) {
-        this.array=[]
-        this.array.push(this.routes[i]["departure"])
-        this.array.push(this.routes[i].connections[0]["departurePlatform"]) 
-        this.array.push(this.routes[i].connections[0]["arrivalPlatform"])  
-        this.array.push(this.routes[i].connections[0]["delay"])   
-        this.array.push(this.routes[i].connections[0]["arrival"])
-        this.array.push(this.routes[i].connections.length-1)
-        this.array.push(this.routes[i].connections[0]["inner_stops"])
-        this.tableArray.push(this.array)
+          var j = this.routes[i].connections.length
 
-        this.js = this.tableArray.map(function (value,key){
-                return{
-                  "Departure Time":value[0],
-                  "departure platform":value[1],
-                  "arrival platform":value[2],
-                  "delay":value[3],
-                  "arrival":value[4],
-                  "Change(s)":value[5],
-                  "InnerStops":value[6]
-                  }
-                })
+          this.array=[]
+          this.array.push(this.routes[i]["departure"])
+          this.array.push(this.routes[i].connections[0]["departurePlatform"]) 
+          this.array.push(this.routes[i].connections[0]["arrivalPlatform"])  
+          this.array.push(this.routes[i].connections[0]["delay"])   
 
-        i = i + 1; }
+          if ( j <2) {
+              this.array.push(this.routes[i].connections[0]["arrival"])
+            } else {
+              this.array.push(this.routes[i].connections[1]["arrival"])
+            }
+          this.array.push(j-1)
+          this.array.push(this.routes[i].connections[0]["inner_stops"])
+          this.tableArray.push(this.array)
+      
+          
+          this.js = this.tableArray.map(function (value,key){
+                  return{
+                    "Departure Time":value[0].substring(11, 16),
+                    "departure platform":value[1],
+                    "arrival platform":value[2],
+                    "delay":value[3],
+                    "arrival":value[4].substring(11, 16),
+                    "Change(s)":value[5],
+                    "InnerStops":value[6]
+                    }
+                  })
+          
+          i = i + 1; }
+        
 
       }
 
