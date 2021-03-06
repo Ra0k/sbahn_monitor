@@ -5,8 +5,11 @@
         <form>
             <button :disabled="stationAndClaimFilled" v-on:click="submitClaim">Submit </button>
         </form>
-        <p>
-        </p>
+        <ul id="example-1">
+        <li v-for="item in generalReports" :key="item.period">
+            {{ item.period }}
+        </li>
+        </ul>
     </div>
 </template>
 
@@ -31,6 +34,8 @@ export default{
             claimsMap: [],
             selectedClaim: '',
             disableButton: true,
+            generalReports: [],
+            stationReports: []
 
         }
     },
@@ -42,7 +47,7 @@ export default{
         var cdata = this.claimsData
         var index 
         for (index in cdata){
-            this.claimsMap[cdata[index]['text']]= cdata[index]['id']
+            this.claimsMap[cdata[index]['text']]= cdata[index]['claim_id']
         }
 
         const stationsResponse = await axios.get('http://167.99.243.10:5000/stations')
@@ -50,9 +55,13 @@ export default{
         this.stations = this.stationsData.map(function (a) {return a.station_name})
         
         var sdata = this.stationsData
-        for (index in sdata){
-            this.stationsMap[sdata[index]['station_name']] = sdata[index]['station_id']
+        var sindex
+        for (sindex in sdata){
+            this.stationsMap[sdata[sindex]['station_name']] = sdata[sindex]['station_id']
         }
+
+        const generalReports = await axios.get('http://167.99.243.10:5000/reports')
+        this.generalReports = generalReports.data
 
     },
     // computed values which will be automatically recalculated on updates
@@ -74,15 +83,16 @@ export default{
     },
     //methods which can be used in things like event handlers
     methods: {
-        submitClaim: function(event) {
-            var stationId = this.selectedStationId
-            var claimId = this.selectedClaimId
-            console.log(this.selectedStationId, claimId)
-            //var claimId = this.genClaimsMap()[this.selectedClaim]
-            //console.log(this.selectedStation, this.selectedClaim)
-            //console.log(this.stationsMap, this.claimsMap)
-            //console.log('http://167.99.243.10:5000/reports/station/'+stationId+'/'+claimId)
-            //axios.post('http://167.99.243.10:5000/reports/station/'+stationId+'/'+claimId)
+        submitClaim: async function(event) {
+            var stationId = encodeURIComponent(this.selectedStationId)
+            var claimId = encodeURIComponent(this.selectedClaimId)
+            console.log('http://167.99.243.10:5000/reports/station/'+stationId+'/'+claimId)
+            var resp = await axios.post('http://167.99.243.10:5000/reports/station/'+stationId+'/'+claimId)
+            if (resp.status == 200) {
+                alert('Successfully submitted claim')
+            }else{
+                alert('Please try again')
+            }
         }
     }
 }
