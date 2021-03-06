@@ -1,15 +1,24 @@
 <template>
     <div>
-        <multiselect v-model="selectedStation" :options="stations" placeholder="Station"/>
-        <multiselect v-model="selectedClaim" :options="claims" placeholder="Claim"/>
-        <form>
-            <button :disabled="stationAndClaimFilled" v-on:click="submitClaim">Submit </button>
-        </form>
-        <ul id="example-1">
-        <li v-for="item in generalReports" :key="item.period">
-            {{ item.period }}
-        </li>
-        </ul>
+        <v-card>
+            <v-container pa-0>
+                <v-row no-gutters>
+                    <v-card class="pa-2">
+                        <multiselect v-model="selectedStation" :options="stations" placeholder="Station"/>
+                        <multiselect v-model="selectedClaim" :options="claims" placeholder="Claim"/>
+                        <form>
+                            <button :disabled="stationAndClaimFilled" v-on:click="submitClaim">Submit </button>
+                        </form>
+                    </v-card>
+                </v-row>
+                <v-row>
+                    <v-container v-for="item in generalReports" :key="item.period">
+                        <v-row class="pa-2">{{ item.period }}</v-row>
+                    </v-container>
+                </v-row>
+            </v-container>
+        </v-card>
+
     </div>
 </template>
 
