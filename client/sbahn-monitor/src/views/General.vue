@@ -1,8 +1,8 @@
 <template>
 
   <div>
-      <apexchart width="500" type="bar" :options="options" :series="series"></apexchart>
-      <apexchart width="500" type="line" :options="options" :series="series"></apexchart>
+      <apexchart width="500" type="bar" :options="options_bar" :series="series_bar"></apexchart>
+      <apexchart width="500" type="line" :options="options_line" :series="series_line"></apexchart>
 
   </div>
    
@@ -31,8 +31,10 @@ export default {
       avg_delay: [],
       max_delay: [], 
       hour_data: [],
-      options: null,
-      series: null,
+      options_line: null,
+      series_line: null,
+      options_bar: null,
+      series_bar: null
     }
   },
 
@@ -66,7 +68,7 @@ export default {
               this.max_delay.map(d => d.total) ]
               };
 
-    this.options = {
+    this.options_line = {
         chart: {
           id: 'vuechart-example'
         },
@@ -75,9 +77,24 @@ export default {
         }
       };
     
-    this.series = [{
+    this.series_line = [{
         name: 'series-1',
         data: this.hour_data.total[0]
+      }]
+
+    
+    this.options_bar = {
+        chart: {
+          id: 'vuechart-example'
+        },
+        xaxis: {
+          categories: this.hour_data.i
+        }
+      };
+    
+    this.series_bar = [{
+        name: 'series-1',
+        data: this.hour_data.total[1]
       }]
 
 
