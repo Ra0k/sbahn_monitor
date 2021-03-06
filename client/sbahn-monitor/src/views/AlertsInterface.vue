@@ -1,12 +1,11 @@
 <template>
     <div>
-        <multiselect v-model="selectedStation" :options="stationsList" placeholder="Station"/>
+        <multiselect v-model="selectedStation" :options="stations" placeholder="Station"/>
         <multiselect v-model="selectedClaim" :options="claims" placeholder="Claim"/>
         <form>
             <button :disabled="stationAndClaimFilled" v-on:click="submitClaim">Submit </button>
         </form>
         <p>
-            {{this.claimsMap}}
         </p>
     </div>
 </template>
@@ -17,12 +16,13 @@ import Multiselect from 'vue-multiselect';
 
 
 export default{
+    name: "AlertsInterface",
     components:{
         Multiselect,
     },
     data() {
         return {
-            stationsList: [],
+            stations: [],
             stationsMap: [],
             stationsData: [],
             selectedStation: '',
@@ -30,54 +30,59 @@ export default{
             claimsData: [],
             claimsMap: [],
             selectedClaim: '',
-            disableButton: true
+            disableButton: true,
 
         }
     },
-    mounted() {
-        axios.get('http://167.99.243.10:5000/claims')
-            .then(response => (this.claimsData = response.data))
-
+    async created() {
+        const claimsResponse = await axios.get('http://167.99.243.10:5000/claims')
+        this.claimsData = claimsResponse.data
         this.claims = this.claimsData.map(function(a) { return a.text})
-        this.claimsMap = this.claimsToMap(this.claimsData)
 
-        axios.get('http://167.99.243.10:5000/stations')
-            .then(response => (this.stationsData = response.data))
+        var cdata = this.claimsData
+        var index 
+        for (index in cdata){
+            this.claimsMap[cdata[index]['text']]= cdata[index]['id']
+        }
+
+        const stationsResponse = await axios.get('http://167.99.243.10:5000/stations')
+        this.stationsData = stationsResponse.data
+        this.stations = this.stationsData.map(function (a) {return a.station_name})
         
-        this.stationsList =  this.stationsData.map(function(a) { return a.station_name})
-        this.stationsMap = this.stationsToMap(this.stationsData)
-
-    },
-    created(){
+        var sdata = this.stationsData
+        for (index in sdata){
+            this.stationsMap[sdata[index]['station_name']] = sdata[index]['station_id']
+        }
 
     },
     // computed values which will be automatically recalculated on updates
     computed: {
-        stationAndClaimFilled() {
+        stationAndClaimFilled: function() {
             if (this.selectedStation != '' && this.selectedClaim != ''){
                 return false
             }else{
                 return true
             }
+        },
+        selectedStationId: function(){
+            return this.stationsMap[this.selectedStation]
+        },
+        selectedClaimId: function() {
+            return this.claimsMap[this.selectedClaim]
         }
+
     },
     //methods which can be used in things like event handlers
     methods: {
-        claimsToMap: function(r) {
-            for (index in r){
-                this.claimsMap[r[index]['text']]= r[index]['id']
-            }
-            this.claimsToMap = r 
-        },
-        stationsToMap: function(r) {
-            for (index in r){
-                this.stationsMap[r[index]['station_name']] = r[index]['station_id']
-            } 
-        },
         submitClaim: function(event) {
-            var stationId = this.stationsMap[this.selectedStation]
-            var claimId = this.claimsMap[this.selectedClaim]
-            axios.post('http://167.99.243.10:5000/reports/station/'+stationId+'/'+claimId)
+            var stationId = this.selectedStationId
+            var claimId = this.selectedClaimId
+            console.log(this.selectedStationId, claimId)
+            //var claimId = this.genClaimsMap()[this.selectedClaim]
+            //console.log(this.selectedStation, this.selectedClaim)
+            //console.log(this.stationsMap, this.claimsMap)
+            //console.log('http://167.99.243.10:5000/reports/station/'+stationId+'/'+claimId)
+            //axios.post('http://167.99.243.10:5000/reports/station/'+stationId+'/'+claimId)
         }
     }
 }
