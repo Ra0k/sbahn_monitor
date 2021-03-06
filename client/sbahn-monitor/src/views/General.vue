@@ -31,24 +31,14 @@ export default {
       avg_delay: [],
       max_delay: [], 
       hour_data: [],
-      options: {
-        chart: {
-          id: 'vuechart-example'
-        },
-        xaxis: {
-          categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998]
-        }
-      },
-      series: [{
-        name: 'series-1',
-        data: [30, 40, 45, 50, 49, 60, 70, 91]
-      }]
+      options: null,
+      series: null,
     }
   },
 
   async created() {
     const { data } = await axios.get(
-      "http://127.0.0.1:8000/stats/delay/all/current_week/grouped/hourly"
+      "http://167.99.243.10:5000/stats/delay/all/current_week/grouped/hourly"
     );
 
     var i = 0;
@@ -76,9 +66,22 @@ export default {
               this.max_delay.map(d => d.total) ]
               };
 
+    this.options = {
+        chart: {
+          id: 'vuechart-example'
+        },
+        xaxis: {
+          categories: this.hour_data.i
+        }
+      };
+    
+    this.series = [{
+        name: 'series-1',
+        data: this.hour_data.total[0]
+      }]
 
 
-    console.log(data);
+    console.log(this.hour_data.total[0]);
   }
 }
 </script>

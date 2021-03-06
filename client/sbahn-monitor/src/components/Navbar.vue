@@ -30,34 +30,7 @@ export default {
   },
   data () {
     return {
-      lines: [
-        {
-          title: 'S4',
-          link: '#'
-        },
-        {
-          title: 'S4',
-          link:'#'
-        },
-        {
-          title: 'S8',
-          link: '#'
-        }
-      ],
-      stations: [
-        {
-          title: 'TODO',
-          link: '#'
-        },
-        {
-          title: 'TODO',
-          link:'#'
-        },
-        {
-          title: 'TODO',
-          link: '#'
-        }
-      ]
+
     }
   }
 }
