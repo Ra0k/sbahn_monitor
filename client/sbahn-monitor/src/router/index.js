@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import General from '../views/General.vue'
 import Statistics from '../views/Statistics.vue'
 import AlertsInterface from '../views/AlertsInterface.vue'
 
