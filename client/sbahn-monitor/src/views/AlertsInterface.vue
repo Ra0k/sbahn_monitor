@@ -3,28 +3,30 @@
         <multiselect v-model="selectedStation" :options="stations" placeholder="Select station" :allow-empty="true"/>
         <multiselect v-model="selectedClaim" :options="claims" placeholder="Select issue" :allow-empty="true"/>
         <form>
-            <button :disabled="stationAndClaimFilled" v-on:click="submitClaim">Submit </button>
+            <b-button :disabled="stationAndClaimFilled" v-on:click="submitClaim">Submit </b-button>
         </form>
-        <b-card :style="{display: (selectedStation != '' && selectedStation != null) ? 'contents' : 'none'}">
-                <b-table :items="selectedStationReports" :fields="stationFields" visiblity:inherit>
-                </b-table>
+        <b-card :style="{display: (selectedStation != '' && selectedStation != null) ? 'contents' : 'none'}" :title='selectStationTitle'>
+            <b-table :items="selectedStationReports" :fields="stationFields" visiblity:inherit>
+            </b-table>
         </b-card>
-        <!-- <b-table hover striped :items="generalReports" :fields="generalReportsFields" :style="{visibility: selectedStation == '' ? 'visible' : 'hidden'}"> -->
-        <b-table hover striped :items="generalReports" :fields="generalReportsFields">
-            <template #cell(show_details)="row">
-                <b-button size="sm" @click="row.toggleDetails" class="mr-2" :disabled="row.item['#reports'] == 0">
-                {{ row.detailsShowing ? 'Hide' : 'Show'}} Details
-                </b-button>
-            </template>
+        <b-card title='Recently Reported Issues:'>
+            <b-table hover striped :items="visibleReports" :fields="generalReportsFields">
+                <template #cell(show_details)="row">
+                    <b-button size="sm" @click="row.toggleDetails" class="mr-2" :disabled="row.item['#reports'] == 0">
+                    {{ row.detailsShowing ? 'Hide' : 'Show'}} Details
+                    </b-button>
+                </template>
 
-            <template #row-details="row">
-                <b-card>
-                    <b-table :items="row.item.stations" :fields="generalReportsFieldsDetails">
-                    </b-table>
-                    <!-- <b-button size="sm" @click="row.toggleDetails">Hide Details</b-button> -->
-                </b-card>
-            </template>
-        </b-table>
+                <template #row-details="row">
+                    <b-card>
+                        <b-table :items="row.item.stations" :fields="generalReportsFieldsDetails">
+                        </b-table>
+                        <!-- <b-button size="sm" @click="row.toggleDetails">Hide Details</b-button> -->
+                    </b-card>
+                </template>
+            </b-table>
+            <b-button v-on:click="incrementVisibleReports" :disabled="disableShowMore">Show More</b-button>
+        </b-card>
     </div>
 </template>
 
@@ -52,6 +54,7 @@ export default{
             claimsMap: [],
             selectedClaim: '',
             disableButton: true,
+            nGeneralReports: 5,
             generalReports: [],
             generalReportsFields: [
                 {key: 'period', label: 'Timestamp'}, 
@@ -66,8 +69,8 @@ export default{
             stationFields: [
                 {key: 'claim_text', label: 'Issue'},
                 {key: 'report_num', label: 'Number of Reported Issues'}
-            ]
-
+            ],
+            nSubmissions: 0
         }
     },
     async created() {
@@ -89,13 +92,11 @@ export default{
             this.stationsMap[sdata[sindex]['station_name']] = sdata[sindex]['station_id']
         }
 
-        const generalReports = await axios.get('http://167.99.243.10:5000/reports')
-        var grdata = generalReports.data
+        const resp = await axios.get('http://167.99.243.10:5000/reports')
+        var grdata = resp.data
         for (var key in grdata){
             this.generalReports.push(grdata[key])
         }
-
-
     },
     // computed values which will be automatically recalculated on updates
     computed: {
@@ -112,10 +113,37 @@ export default{
         selectedClaimId: function() {
             return this.claimsMap[this.selectedClaim]
         },
+        selectStationTitle(){
+            return 'Reported Issues at: '+this.selectedStation+' (in last hour)'
+        },
+        visibleReports(){
+            if (this.generalReports == null){
+                return []
+            }else{
+                return this.generalReports.slice(0, this.nGeneralReports)
+            }
+        },
+        disableShowMore(){
+            if (this.generalReports == null){
+                return true
+            }else{
+                this.nGeneralReports == this.generalReports.length
+            }
+        }
+    },
+    watch: {
+        nSubmissions: async function () {
+            const resp = await axios.get('http://167.99.243.10:5000/reports')
+            var grdata = resp.data
+            this.generalReports = []
+            for (var key in grdata){
+                this.generalReports.push(grdata[key])
+            }
+        }
     },
     asyncComputed: {
         selectedStationReports: async function(){
-            if (this.selectedStation != '' && this.selectedStation != null){
+            if (this.selectedStation != '' && this.selectedStation != null && this.nSubmissions >= 0){
                 var stationId = encodeURIComponent(this.selectedStationId)
                 console.log('http://167.99.243.10:5000/reports/station/'+stationId)
                 var resp = await axios.get('http://167.99.243.10:5000/reports/station/'+stationId)
@@ -125,7 +153,8 @@ export default{
                 var latestReports = []
             }
             return latestReports
-        }
+        },
+
     },
     //methods which can be used in things like event handlers
     methods: {
@@ -139,7 +168,11 @@ export default{
             }else{
                 alert('Please try again')
             }
-
+            this.nSubmissions += 1
+        },
+        incrementVisibleReports: function(){
+            var n = this.generalReports.length          
+            this.nGeneralReports = Math.min(this.nGeneralReports + 5, n)
         }
     }
 }
