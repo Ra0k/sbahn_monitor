@@ -38,7 +38,7 @@ import axios from "axios";
 import Multiselect from 'vue-multiselect';
 import { BTable } from 'bootstrap-vue'
 import { BButton } from 'bootstrap-vue'
-
+import { BCard } from 'bootstrap-vue'
 // import 'bootstrap/dist/css/bootstrap.css'
 // import 'bootstrap-vue/dist/bootstrap-vue.css'
 //example stations
@@ -55,7 +55,8 @@ export default{
   components:{
     Multiselect,
     'b-table' : BTable,
-    'b-button' : BButton
+    'b-button' : BButton,
+    'b-card': BCard
 },
   data () {
     return {
