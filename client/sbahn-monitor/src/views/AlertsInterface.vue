@@ -58,6 +58,25 @@ export default{
 
         const generalReports = await axios.get('http://167.99.243.10:5000/reports')
         this.generalReports = generalReports.data
+            disableButton: true
+
+        }
+    },
+    mounted() {
+        axios.get('http://167.99.243.10:5000/claims')
+            .then(response => (this.claimsData = response.data))
+
+        this.claims = this.claimsData.map(function(a) { return a.text})
+        this.claimsMap = this.claimsToMap(this.claimsData)
+
+        axios.get('http://167.99.243.10:5000/stations')
+            .then(response => (this.stationsData = response.data))
+        
+        this.stationsList =  this.stationsData.map(function(a) { return a.station_name})
+        this.stationsMap = this.stationsToMap(this.stationsData)
+
+    },
+    created(){
 
     },
     // computed values which will be automatically recalculated on updates

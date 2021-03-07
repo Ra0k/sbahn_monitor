@@ -1,8 +1,8 @@
 <template>
 
   <div>
-      <apexchart width="500" type="bar" :options="options" :series="series"></apexchart>
-      <apexchart width="500" type="line" :options="options" :series="series"></apexchart>
+      <apexchart width="500" type="bar" :options="options_bar" :series="series_bar"></apexchart>
+      <apexchart width="500" type="line" :options="options_line" :series="series_line"></apexchart>
 
   </div>
    
@@ -31,24 +31,16 @@ export default {
       avg_delay: [],
       max_delay: [], 
       hour_data: [],
-      options: {
-        chart: {
-          id: 'vuechart-example'
-        },
-        xaxis: {
-          categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998]
-        }
-      },
-      series: [{
-        name: 'series-1',
-        data: [30, 40, 45, 50, 49, 60, 70, 91]
-      }]
+      options_line: null,
+      series_line: null,
+      options_bar: null,
+      series_bar: null
     }
   },
 
   async created() {
     const { data } = await axios.get(
-      "http://127.0.0.1:8000/stats/delay/all/current_week/grouped/hourly"
+      "http://167.99.243.10:5000/stats/delay/all/current_week/grouped/hourly"
     );
 
     var i = 0;
@@ -76,9 +68,37 @@ export default {
               this.max_delay.map(d => d.total) ]
               };
 
+    this.options_line = {
+        chart: {
+          id: 'vuechart-example'
+        },
+        xaxis: {
+          categories: this.hour_data.i
+        }
+      };
+    
+    this.series_line = [{
+        name: 'series-1',
+        data: this.hour_data.total[0]
+      }]
+
+    
+    this.options_bar = {
+        chart: {
+          id: 'vuechart-example'
+        },
+        xaxis: {
+          categories: this.hour_data.i
+        }
+      };
+    
+    this.series_bar = [{
+        name: 'series-1',
+        data: this.hour_data.total[1]
+      }]
 
 
-    console.log(data);
+    console.log(this.hour_data.total[0]);
   }
 }
 </script>
