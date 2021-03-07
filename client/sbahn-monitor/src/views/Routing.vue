@@ -10,14 +10,17 @@
         <b-button size="sm" @click="row.toggleDetails" class="mr-2">
           {{ row.detailsShowing ? 'Hide' : 'Show'}} Details
         </b-button>
+ 
       </template>
 
       <template #row-details="row">
         <b-card>
 
           <b-row class="mb-2">
-            <b-col sm="3" class="text-sm-right"><b>Arrival: </b></b-col>
-            <b-col>{{ row.item.arrival }}</b-col>
+            <p><b-col sm="3" class="text-sm-right"><b>Arrival: </b></b-col>
+            <b-col>{{ row.item.arrival   }}</b-col>
+            </p><b-col sm="3" class="text-sm-right"><b>Arrival Platform: </b></b-col>
+            <b-col>{{ row.item.arrivalPlatform }}</b-col>
           </b-row>
 
         </b-card>
@@ -34,6 +37,8 @@
 import axios from "axios";
 import Multiselect from 'vue-multiselect';
 import { BTable } from 'bootstrap-vue'
+import { BButton } from 'bootstrap-vue'
+
 // import 'bootstrap/dist/css/bootstrap.css'
 // import 'bootstrap-vue/dist/bootstrap-vue.css'
 //example stations
@@ -49,7 +54,8 @@ var queryStations = 'http://167.99.243.10:5000/stations'
 export default{
   components:{
     Multiselect,
-    'b-table' : BTable
+    'b-table' : BTable,
+    'b-button' : BButton
 },
   data () {
     return {
@@ -147,13 +153,17 @@ export default{
           this.array=[]
           this.array.push(this.routes[i]["departure"])
           this.array.push(this.routes[i].connections[0]["departurePlatform"]) 
-          this.array.push(this.routes[i].connections[0]["arrivalPlatform"])  
           this.array.push(this.routes[i].connections[0]["delay"])   
 
           if ( j <2) {
               this.array.push(this.routes[i].connections[0]["arrival"])
+              this.array.push(this.routes[i].connections[0]["arrivalPlatform"])
+
+              
             } else {
               this.array.push(this.routes[i].connections[1]["arrival"])
+              this.array.push(this.routes[i].connections[1]["arrivalPlatform"])
+
             }
           this.array.push(j-1)
           this.array.push(this.routes[i].connections[0]["inner_stops"])
@@ -164,9 +174,9 @@ export default{
                   return{
                     "Departure Time":value[0].substring(11, 16),
                     "departure platform":value[1],
-                    "arrival platform":value[2],
-                    "delay":value[3],
-                    "arrival":value[4].substring(11, 16),
+                    "delay":value[2],
+                    "arrival":value[3].substring(11, 16),
+                    "arrivalPlatform":value[4],
                     "Change(s)":value[5],
                     "InnerStops":value[6]
                     }
