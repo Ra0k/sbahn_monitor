@@ -1,54 +1,15 @@
 <template>
-<!-- comment 
- -->
 
 <div>
-  <br> <br>
-
-  <multiselect v-model="station1" :options="staionsList" placeholder="From..." label="station_name" track-by="station_name"></multiselect>
+  <multiselect v-model="station1" :options="staionsList" placeholder="From..." label="station_name" track-by="station_name"> width='75%'</multiselect>
   <multiselect v-model="station2" :options="staionsList" placeholder="To..." label="station_name" track-by="station_name"></multiselect>
 
-<!-- comment
-
-TODO: 
-1.css style
-3. show details
-4. stats, allerts
-
-
-   <b-alert show>Default Alert</b-alert>
-   <p>{{stats.data}}</p>
-
-<br>  <br>
-<p>{{stats.data}}</p>
-all routes:
-<p>{{allroutes}}</p>
-<br> <br>
-routes containing only sbahns:
-<br> <br>
-<p>{{routes}}</p>
-import 'bootstrap/dist/css/bootstrap.css'
-import 'bootstrap-vue/dist/bootstrap-vue.css'
-
- <li v-for="route in routes" :key="route.connections"> 
-       {{route.connections}}
-</li>
-<p>{{info3.data}}</p>
-<p>{{routes}}</p>
-
--->
-
-
-<br> <br>
-
-<div v-if="tableArray[0]"  class="text-center text-danger my-2">
-<b-table :items="js" :fields="fields" striped responsive="sm" :tbody-transition-props="transProps">
+  <div v-if="tableArray[0]"  class="text-center text-danger my-2">
+    <b-table :items="js" :fields="fields" striped responsive="sm" :tbody-transition-props="transProps">
       <template #cell(show_details)="row">
         <b-button size="sm" @click="row.toggleDetails" class="mr-2">
           {{ row.detailsShowing ? 'Hide' : 'Show'}} Details
         </b-button>
-
-
       </template>
 
       <template #row-details="row">
@@ -58,32 +19,11 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
             <b-col sm="3" class="text-sm-right"><b>Arrival: </b></b-col>
             <b-col>{{ row.item.arrival }}</b-col>
           </b-row>
-<!--
 
-            <b-row class="mb-2">
-            <b-col sm="3" class="text-sm-right"><b>InnerStops:</b></b-col>
-            <b-col>{{ row.item.InnerStops }}</b-col>
-          </b-row>
-
-          <b-row class="mb-2">
-            <b-col sm="3" class="text-sm-right"><b>Is Active:</b></b-col>
-            <b-col>{{ row.item.isActive }}</b-col>
-          </b-row>
--->
         </b-card>
       </template>
-  </b-table>
-<!-- https://bootstrap-vue.org/docs/components/table
- => Row details support
--->
-<br> <br>
-<br> <br>
-<br> <br>
-
-<br> <br>
-
-</div>
-
+    </b-table>  
+  </div>
 
 </div>
 
@@ -94,9 +34,8 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 import axios from "axios";
 import Multiselect from 'vue-multiselect';
 import { BTable } from 'bootstrap-vue'
-import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
-import 'bootstrap/dist/css/bootstrap.css'
-import 'bootstrap-vue/dist/bootstrap-vue.css'
+// import 'bootstrap/dist/css/bootstrap.css'
+// import 'bootstrap-vue/dist/bootstrap-vue.css'
 //example stations
 var stationIdFrom = 'de%3A09177%3A3270'
 var stationIdTo = 'de%3A09162%3A910'
@@ -250,7 +189,7 @@ export default{
 </script>
 
 
-<style src="vue-multiselect/dist/vue-multiselect.min.css">
+<style src="bootstrap/dist/css/bootstrap.min.css"> */
  ul{
     overflow: scroll;
     height: 300px;
@@ -261,5 +200,11 @@ export default{
     list-style-type: none;
   }
 
-  
+  .multiselect {
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+    display: inline;
+  }
+
 </style>

@@ -23,8 +23,6 @@
 </template>
 
 <script>
-// @ is an alias to /src
-import axios from "axios";
 import Dropdown from '../components/Dropdown';
 import VueApexCharts from 'vue-apexcharts'
 
@@ -33,7 +31,6 @@ export default {
   components: {
     Dropdown, 
     VueApexCharts
-
 
   },
 

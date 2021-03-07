@@ -1,14 +1,14 @@
 <template>
-  <header>
-      <div class="row mt-5">
+  <div>
+      <!-- <div class="row mt-5">
         <div class="col">
           <h1 class="text">S-BAHN MONITOR</h1>
         </div>
-      </div>
+      </div> -->
       <Navbar />
       <router-view/>
 
-  </header>
+  </div>
 
 </template>
 
