@@ -3,6 +3,7 @@
   <div>
       <!-- <apexchart width="500" type="bar" :options="options_bar" :series="series_bar"></apexchart> -->
       <multiselect v-model="line" :options="linesList" placeholder="Pick a line..." label="line_name" track-by="line_name"></multiselect>
+      <multiselect v-model="station" :options="stationsList" placeholder="Pick a station..." label="station_name" track-by="station_name"></multiselect>
       <!-- <multiselect v-model="station2" :options="staionsList" placeholder="Pick a station..." label="station_name" track-by="station_name"></multiselect> -->
 
       <apexchart width="500" type="line" :options="options_line" :series="series_line"></apexchart>
@@ -51,6 +52,7 @@ export default {
           text: 'HeatMap Chart (Single color)'
         },
       },
+      heatMapStats = [],
       linesList: ['S1', 'S2', 'S3', 'S4', 'S5', 'S6', 'S7', 'S8', 'S20'],
       series: [{
           name: 'Metric1',
@@ -197,8 +199,42 @@ export default {
 
 
     console.log(this.hour_data.total[0]);
+  },
+
+
+  watch: {
+       line: function() {
+         this.queryGetStations = 'http://167.99.243.10:5000/line/'+ this.line +'/stations'
+      },
+
+       station: function() {
+        this.queryStats = 'http://167.99.243.10:5000/stats/delay/station/' + encodeURIComponent(this.station1['station_id']) + "/current_week/grouped/weekly"
+       },
+      
+
+      queryComplete: function() {
+         axios.get(this.queryComplete).then(response => (this.info3 = response)) 
+       },
+
+       queryStats: function() {
+         axios.get(this.queryStats).then(response => (this.stats = response))
+      },
+
+      queryGetStations: function() {
+         this.heatMapStats = [];
+         axios.get(this.queryGetStations).then(response => (this.station_list = response))
+         this.queryStats = 'http://167.99.243.10:5000/stats/delay/station/' + encodeURIComponent(this.station1['station_id']) + "/current_week/grouped/weekly"
+       
+         var i;
+         for (i = 0; i < this.station_list.length; i++) {
+          axios.get(this.queryGetStations).then(response => (this.heatMapStats.append(response)))
+         }
+      },
+      
+      
   }
-}
+
+    }
 </script>
 
 <style>

@@ -46,7 +46,7 @@ var stationIdTo = 'de%3A09162%3A910'
 
 //var query= 'http://167.99.243.10:5000/route/from/de%3A09162%3A1910/to/de%3A09177%3A3280'
 
-var query = 'http://167.99.243.10:5000/route/from/'+stationIdFrom +'/to/' + stationIdTo
+var query = 'http://167.99.243.10:5000/route/from/' + stationIdFrom + '/to/' + stationIdTo
 var queryStations = 'http://167.99.243.10:5000/stations'
 
 
