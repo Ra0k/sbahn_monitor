@@ -1,10 +1,8 @@
 <template>
 
   <div>
-      <!-- <apexchart width="500" type="bar" :options="options_bar" :series="series_bar"></apexchart> -->
       <multiselect v-model="line" :options="linesList" placeholder="Pick a line..." label="line_name" track-by="line_name"></multiselect>
       <multiselect v-model="station" :options="stationsList" placeholder="Pick a station..." label="station_name" track-by="station_name"></multiselect>
-      <!-- <multiselect v-model="station2" :options="staionsList" placeholder="Pick a station..." label="station_name" track-by="station_name"></multiselect> -->
 
       <apexchart width="500" type="line" :options="options_line" :series="series_line"></apexchart>
       <apexchart type="heatmap" height="350" :options="chartOptions" :series="series"></apexchart>
@@ -52,7 +50,7 @@ export default {
           text: 'HeatMap Chart (Single color)'
         },
       },
-      heatMapStats = [],
+      heatMapStats : [],
       linesList: ['S1', 'S2', 'S3', 'S4', 'S5', 'S6', 'S7', 'S8', 'S20'],
       series: [{
           name: 'Metric1',
