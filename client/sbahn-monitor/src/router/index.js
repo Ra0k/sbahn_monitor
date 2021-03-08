@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Statistics from '../views/Statistics.vue'
-import AlertsInterface from '../views/AlertsInterface.vue'
+import AlertsInterface from '../views/UserAlerts.vue'
 
 Vue.use(VueRouter)
 

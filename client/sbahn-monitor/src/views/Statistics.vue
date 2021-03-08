@@ -1,9 +1,12 @@
 <template>
 
   <div>
-      <apexchart width="500" type="bar" :options="options_bar" :series="series_bar"></apexchart>
-      <apexchart width="500" type="line" :options="options_line" :series="series_line"></apexchart>
+      <!-- <apexchart width="500" type="bar" :options="options_bar" :series="series_bar"></apexchart> -->
+      <multiselect v-model="line" :options="linesList" placeholder="Pick a line..." label="line_name" track-by="line_name"></multiselect>
+      <!-- <multiselect v-model="station2" :options="staionsList" placeholder="Pick a station..." label="station_name" track-by="station_name"></multiselect> -->
 
+      <apexchart width="500" type="line" :options="options_line" :series="series_line"></apexchart>
+      <apexchart type="heatmap" height="350" :options="chartOptions" :series="series"></apexchart>
   </div>
    
 </template>
@@ -25,6 +28,7 @@ export default {
 
   data: function() {
     return {
+      line: null,
       all: [],
       ndelayed: [],
       pdelayed: [],
@@ -34,7 +38,101 @@ export default {
       options_line: null,
       series_line: null,
       options_bar: null,
-      series_bar: null
+      series_bar: null,
+      chartOptions: {
+        dataLabels: {
+          enabled: false
+        },
+        colors: ["#008FFB"],
+        xaxis: {
+          type: 'category',
+        },
+        title: {
+          text: 'HeatMap Chart (Single color)'
+        },
+      },
+      linesList: ['S1', 'S2', 'S3', 'S4', 'S5', 'S6', 'S7', 'S8', 'S20'],
+      series: [{
+          name: 'Metric1',
+          data: this.generateData(20, {
+            min: 0,
+            max: 90
+          })
+        },
+        {
+          name: 'Metric2',
+          data: this.generateData(20, {
+            min: 0,
+            max: 90
+          })
+        },
+        {
+          name: 'Metric3',
+          data: this.generateData(20, {
+            min: 0,
+            max: 90
+          })
+        },
+        {
+          name: 'Metric4',
+          data: this.generateData(20, {
+            min: 0,
+            max: 90
+          })
+        },
+        {
+          name: 'Metric5',
+          data: this.generateData(20, {
+            min: 0,
+            max: 90
+          })
+        },
+        {
+          name: 'Metric6',
+          data: this.generateData(20, {
+            min: 0,
+            max: 90
+          })
+        },
+        {
+          name: 'Metric7',
+          data: this.generateData(20, {
+            min: 0,
+            max: 90
+          })
+        },
+        {
+          name: 'Metric8',
+          data: this.generateData(20, {
+            min: 0,
+            max: 90
+          })
+        },
+        {
+          name: 'Metric9',
+          data: this.generateData(20, {
+            min: 0,
+            max: 90
+          })
+        }
+      ],
+    }
+  },
+
+  methods: {
+    generateData(count, yrange) {
+      var i = 0;
+      var series = [];
+      while (i < count) {
+        var x = (i + 1).toString();
+        var y = Math.floor(Math.random() * (yrange.max - yrange.min + 1)) + yrange.min;
+        series.push({
+          x: x,
+          y: y
+        });
+        i++;
+      }
+      return series;
     }
   },
 

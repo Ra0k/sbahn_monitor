@@ -1,7 +1,7 @@
 <template>
 
 <div>
-  <multiselect v-model="station1" :options="staionsList" placeholder="From..." label="station_name" track-by="station_name"> width='75%'</multiselect>
+  <multiselect v-model="station1" :options="staionsList" placeholder="From..." label="station_name" track-by="station_name"></multiselect>
   <multiselect v-model="station2" :options="staionsList" placeholder="To..." label="station_name" track-by="station_name"></multiselect>
 
   <div v-if="tableArray[0]"  class="text-center text-danger my-2">
@@ -39,8 +39,7 @@ import Multiselect from 'vue-multiselect';
 import { BTable } from 'bootstrap-vue'
 import { BButton } from 'bootstrap-vue'
 import { BCard } from 'bootstrap-vue'
-// import 'bootstrap/dist/css/bootstrap.css'
-// import 'bootstrap-vue/dist/bootstrap-vue.css'
+
 //example stations
 var stationIdFrom = 'de%3A09177%3A3270'
 var stationIdTo = 'de%3A09162%3A910'
