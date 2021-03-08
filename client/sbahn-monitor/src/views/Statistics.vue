@@ -14,20 +14,22 @@
 import axios from "axios";
 import Navbar from '../components/Navbar';
 import VueApexCharts from 'vue-apexcharts'
+import Multiselect from 'vue-multiselect';
 
 
 export default {
   name: "General",
   components: {
     Navbar,
-    VueApexCharts
-
+    VueApexCharts,
+    Multiselect
   },
   
 
   data: function() {
     return {
-      line: null,
+      line: '',
+      station: '',
       all: [],
       ndelayed: [],
       pdelayed: [],
@@ -52,6 +54,7 @@ export default {
       },
       heatMapStats : [],
       linesList: ['S1', 'S2', 'S3', 'S4', 'S5', 'S6', 'S7', 'S8', 'S20'],
+      stationsList: [],
       series: [{
           name: 'Metric1',
           data: this.generateData(20, {
@@ -220,13 +223,14 @@ export default {
 
       queryGetStations: function() {
          this.heatMapStats = [];
-         axios.get(this.queryGetStations).then(response => (this.station_list = response))
-         this.queryStats = 'http://167.99.243.10:5000/stats/delay/station/' + encodeURIComponent(this.station1['station_id']) + "/current_week/grouped/weekly"
-       
+         axios.get(this.queryGetStations).then(response => (this.stationsList = response))
+         
          var i;
          for (i = 0; i < this.station_list.length; i++) {
-          axios.get(this.queryGetStations).then(response => (this.heatMapStats.append(response)))
+           this.queryGetGroupedForStation = 'http://167.99.243.10:5000/stats/delay/station/' + encodeURIComponent(this.stationsList[i]['station_id']) + "/current_week/grouped/daily"
+           axios.get(this.queryGetGroupedForStation).then(response => (this.heatMapStats.append(response)))
          }
+         console.log(heatMapStats)
       },
       
       
