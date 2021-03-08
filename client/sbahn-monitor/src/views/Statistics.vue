@@ -4,26 +4,37 @@
       <multiselect v-model="line" :options="linesList" placeholder="Pick a line..." ></multiselect>
       <multiselect v-model="station" :options="stationsList" placeholder="Pick a station..." label="station_name" track-by="station_name"></multiselect>
 
-      <apexchart width="500" type="line" :options="options_line" :series="series_line"></apexchart>
-    
-    
-      <apexchart type="heatmap" height="350" :options="chartOptions" :series="series"></apexchart>
-
-      <div class="card-body">
-        <h5 class="card-title">Real-time delay</h5>
-        <p class="card-text"></p>
-        <!-- <a href="#" class="btn btn-primary">Refresh</a> -->
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-body">
+              <apexchart type="line" :options="options_line" :series="series_line"></apexchart>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-body">
+              <apexchart type="heatmap" height="350" :options="chartOptions" :series="series"></apexchart>
+            </div>
+          </div>
+        </div>
+      <div class="col-sm-6">
+      <div class="card text-white bg-warning mb-3" style="max-width: 18rem;">
+        <div class="card-header">Real-time delay on {{this.station["station_name"]}}</div>
+        <div class="card-body">
+          <h5 class="card-title">Warning card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
       </div>
+      </div>
+</div>
       
-      <!-- <vue-speedometer
-          :maxSegmentLabels="12"
-          :segments="3"
-          :value="470"
-          :segmentColors='["tomato", "gold", "limegreen"]'
-          needleColor="lightgreen"
-      /> -->
-    
-    </div>
+<apexchart type="heatmap" height="350" :options="chartOptions" :series="series"></apexchart>
+  
+</div>
+
+
    
 </template>
 
@@ -264,8 +275,39 @@ export default {
 
 html, body {
   font-family: 'Quicksand', sans-serif;
+  height: 100%;
 } 
 
+div.card {
+  height: 100%;
+}
+
+#left-col {
+  height: 100%;
+}
+
+#right-col {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+#right-card-container {
+  flex: 1;
+}
+
+#right-card-content {
+  height: 100%;
+  width: 100%;
+  background: red;
+}
+
+#right-bottom-element {
+  background: blue;
+  display: inline-block;
+  height: 100px; 
+  width: 100%;
+}
 
 * {
   box-sizing: border-box;
