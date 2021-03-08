@@ -7,6 +7,12 @@
                 <b-button :disabled="stationAndClaimFilled" v-on:click="submitClaim">Submit </b-button>
             </form>
             <b-card :style="{display: (selectedStation != '' && selectedStation != null) ? 'contents' : 'none'}" :title='selectStationTitle'>
+                <div :style="{display: noIssues ? 'contents' : 'none'}">
+                    <b-button variant='success'>No Issues Reported</b-button>
+                </div>
+                <div :style="{display: someIssues ? 'contents' : 'none'}" >
+                    <b-button variant='danger'>Warning! Issues Reported</b-button>
+                </div>
                 <b-table :items="selectedStationReports" :fields="stationFields" visiblity:inherit>
                 </b-table>
             </b-card>
@@ -132,6 +138,30 @@ export default{
                 return true
             }else{
                 this.nGeneralReports == this.generalReports.length
+            }
+        },
+        noIssues(){
+            var nIssues = 0
+            for (var cat in this.selectedStationReports) {
+                nIssues += this.selectedStationReports[cat].report_num
+            }
+            if (this.selectedStation != '' && this.selectedStation != null && nIssues == 0){
+                console.log('true')
+                return true
+            }else{
+                return false
+            }
+        },
+        someIssues(){
+            var nIssues = 0
+            for (var cat in this.selectedStationReports) {
+                nIssues += this.selectedStationReports[cat].report_num
+            }
+            if (this.selectedStation != '' && this.selectedStation != null && nIssues > 0){
+                console.log('true')
+                return true
+            }else{
+                return false
             }
         }
     },
