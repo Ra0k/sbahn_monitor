@@ -3,6 +3,7 @@ from fastapi import FastAPI, HTTPException
 import db_manager
 import mvv_reader
 from validators import Station, Line
+from utils import get_env
 
 
 from fastapi.middleware.cors import CORSMiddleware
@@ -24,7 +25,7 @@ app.add_middleware(
 )
 
 
-db_url = 'postgresql://root:rootpassword1234@167.99.243.10/sbahn'
+db_url = get_env('sbhan_db_conn_url')
 conn = db_manager.connect(db_url)
 
 STATION_IDS = [obj['station_id'] for obj in db_manager.get_stations(conn.cursor())]
@@ -63,7 +64,8 @@ async def get_station_reports(station_id):
 async def get_station_reports(station_id, claim_id):
     cur = conn.cursor()
     response = db_manager.add_station_report(cur, station_id, claim_id)
-    conn.commit()
+    if response['response'] == 'successful':
+        conn.commit()
     return response
 
 
