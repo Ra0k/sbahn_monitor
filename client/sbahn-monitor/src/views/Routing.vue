@@ -199,7 +199,7 @@ export default{
 </script>
 
 
-<style src="bootstrap/dist/css/bootstrap.min.css"> */
+<style src="bootstrap/dist/css/bootstrap.min.css">
  ul{
     overflow: scroll;
     height: 300px;

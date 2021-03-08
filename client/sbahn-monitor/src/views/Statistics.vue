@@ -1,12 +1,29 @@
 <template>
 
   <div>
-      <multiselect v-model="line" :options="linesList" placeholder="Pick a line..." label="line_name" track-by="line_name"></multiselect>
+      <multiselect v-model="line" :options="linesList" placeholder="Pick a line..." ></multiselect>
       <multiselect v-model="station" :options="stationsList" placeholder="Pick a station..." label="station_name" track-by="station_name"></multiselect>
 
       <apexchart width="500" type="line" :options="options_line" :series="series_line"></apexchart>
+    
+    
       <apexchart type="heatmap" height="350" :options="chartOptions" :series="series"></apexchart>
-  </div>
+
+      <div class="card-body">
+        <h5 class="card-title">Real-time delay</h5>
+        <p class="card-text"></p>
+        <!-- <a href="#" class="btn btn-primary">Refresh</a> -->
+      </div>
+      
+      <!-- <vue-speedometer
+          :maxSegmentLabels="12"
+          :segments="3"
+          :value="470"
+          :segmentColors='["tomato", "gold", "limegreen"]'
+          needleColor="lightgreen"
+      /> -->
+    
+    </div>
    
 </template>
 
@@ -15,6 +32,7 @@ import axios from "axios";
 import Navbar from '../components/Navbar';
 import VueApexCharts from 'vue-apexcharts'
 import Multiselect from 'vue-multiselect';
+import VueSpeedometer from "vue-speedometer";
 
 
 export default {
@@ -22,14 +40,15 @@ export default {
   components: {
     Navbar,
     VueApexCharts,
-    Multiselect
+    Multiselect, 
+    VueSpeedometer
   },
-  
 
   data: function() {
     return {
       line: '',
       station: '',
+      queryGetStations:'',
       all: [],
       ndelayed: [],
       pdelayed: [],
@@ -53,7 +72,7 @@ export default {
         },
       },
       heatMapStats : [],
-      linesList: ['S1', 'S2', 'S3', 'S4', 'S5', 'S6', 'S7', 'S8', 'S20'],
+      linesList: ['S1', 'S2', 'S3', 'S4', 'S6', 'S7', 'S8', 'S20'],
       stationsList: [],
       series: [{
           name: 'Metric1',
@@ -199,47 +218,48 @@ export default {
       }]
 
 
-    console.log(this.hour_data.total[0]);
+    // console.log(this.hour_data.total[0]);
   },
 
 
   watch: {
        line: function() {
-         this.queryGetStations = 'http://167.99.243.10:5000/line/'+ this.line +'/stations'
+         this.queryGetStations = 'http://167.99.243.10:5000/line/' + this.line + '/stations'
+         
       },
 
        station: function() {
-        this.queryStats = 'http://167.99.243.10:5000/stats/delay/station/' + encodeURIComponent(this.station1['station_id']) + "/current_week/grouped/weekly"
-       },
-      
+        this.queryStats = 'http://167.99.243.10:5000/stats/delay/station/' + encodeURIComponent(this.station['station_id']) + "/current_week/grouped/weekly"
 
-      queryComplete: function() {
-         axios.get(this.queryComplete).then(response => (this.info3 = response)) 
        },
 
-       queryStats: function() {
-         axios.get(this.queryStats).then(response => (this.stats = response))
-      },
+      // queryComplete: function() {
+      //    axios.get(this.queryComplete).then(response => (this.info3 = response)) 
+      //  },
+
+      // queryStats: function() {
+      //    axios.get(this.queryStats).then(response => (this.stats = response))
+      // },
 
       queryGetStations: function() {
+         console.log(this.queryGetStations)
          this.heatMapStats = [];
-         axios.get(this.queryGetStations).then(response => (this.stationsList = response))
-         
+         axios.get(this.queryGetStations).then(response => (this.stationsList = response['data'][response['data']['tracks'][0]]))
+         console.log(this.stationsList)
          var i;
-         for (i = 0; i < this.station_list.length; i++) {
+         for (i = 0; i < this.stationsList.length; i++) {
            this.queryGetGroupedForStation = 'http://167.99.243.10:5000/stats/delay/station/' + encodeURIComponent(this.stationsList[i]['station_id']) + "/current_week/grouped/daily"
+           console.log(Date.prototype.getDate())
            axios.get(this.queryGetGroupedForStation).then(response => (this.heatMapStats.append(response)))
          }
-         console.log(heatMapStats)
+         
       },
-      
-      
   }
 
     }
 </script>
 
-<style>
+<style src="bootstrap/dist/css/bootstrap.min.css">
   @import url('https://fonts.googleapis.com/css?family=Quicksand');
 
 html, body {
