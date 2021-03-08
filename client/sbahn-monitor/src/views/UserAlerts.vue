@@ -1,13 +1,15 @@
 <template>
     <div>
-        <multiselect v-model="selectedStation" :options="stations" placeholder="Select station" :allow-empty="true"/>
-        <multiselect v-model="selectedClaim" :options="claims" placeholder="Select issue" :allow-empty="true"/>
-        <form>
-            <b-button :disabled="stationAndClaimFilled" v-on:click="submitClaim">Submit </b-button>
-        </form>
-        <b-card :style="{display: (selectedStation != '' && selectedStation != null) ? 'contents' : 'none'}" :title='selectStationTitle'>
-            <b-table :items="selectedStationReports" :fields="stationFields" visiblity:inherit>
-            </b-table>
+        <b-card title="Select a station for more detailed information or to submit a report">
+            <multiselect v-model="selectedStation" :options="stations" placeholder="Select station" :allow-empty="true"/>
+            <multiselect v-model="selectedClaim" :options="claims" placeholder="Select issue" :allow-empty="true"/>
+            <form>
+                <b-button :disabled="stationAndClaimFilled" v-on:click="submitClaim">Submit </b-button>
+            </form>
+            <b-card :style="{display: (selectedStation != '' && selectedStation != null) ? 'contents' : 'none'}" :title='selectStationTitle'>
+                <b-table :items="selectedStationReports" :fields="stationFields" visiblity:inherit>
+                </b-table>
+            </b-card>
         </b-card>
         <b-card title='Recently Reported Issues:'>
             <b-table hover striped :items="visibleReports" :fields="generalReportsFields">
@@ -95,6 +97,8 @@ export default{
         const resp = await axios.get('http://167.99.243.10:5000/reports')
         var grdata = resp.data
         for (var key in grdata){
+            var tmp = grdata[key]
+            tmp['period'] = tmp['period'].substring(11, 16)
             this.generalReports.push(grdata[key])
         }
     },
