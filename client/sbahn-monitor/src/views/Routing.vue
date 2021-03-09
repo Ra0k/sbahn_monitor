@@ -1,35 +1,44 @@
 <template>
+	<div>
+		<div class="card">
+			<div class="card-header">Choose stations to plan the route</div>
+			<div class="card-body">
+				<multiselect v-model="station1" :options="staionsList" placeholder="From..." label="station_name" track-by="station_name"></multiselect>
+				<multiselect v-model="station2" :options="staionsList" placeholder="To..." label="station_name" track-by="station_name"></multiselect>
+			</div>
+		</div>
 
-<div>
-  <multiselect v-model="station1" :options="staionsList" placeholder="From..." label="station_name" track-by="station_name"></multiselect>
-  <multiselect v-model="station2" :options="staionsList" placeholder="To..." label="station_name" track-by="station_name"></multiselect>
-
-  <div v-if="tableArray[0]"  class="text-center text-danger my-2">
-    <b-table :items="js" :fields="fields" striped responsive="sm" :tbody-transition-props="transProps">
-      <template #cell(show_details)="row">
-        <b-button size="sm" @click="row.toggleDetails" class="mr-2">
+		<div class="card border-info mb-3">
+			<div class="card-header">Departure info</div>
+			<div class="card-body">
+				<div v-if="tableArray[0]"  class="text-center text-danger my-2">
+					<b-table :items="js" :fields="fields" striped responsive="sm" :tbody-transition-props="transProps">
+						<template #cell(show_details)="row">
+							<b-button size="sm" @click="row.toggleDetails" class="mr-2">
           {{ row.detailsShowing ? 'Hide' : 'Show'}} Details
         </b-button>
- 
-      </template>
-
-      <template #row-details="row">
-        <b-card>
-
-          <b-row class="mb-2">
-            <p><b-col sm="3" class="text-sm-right"><b>Arrival: </b></b-col>
-            <b-col>{{ row.item.arrival   }}</b-col>
-            </p><b-col sm="3" class="text-sm-right"><b>Arrival Platform: </b></b-col>
-            <b-col>{{ row.item.arrivalPlatform }}</b-col>
-          </b-row>
-
-        </b-card>
-      </template>
-    </b-table>  
-  </div>
-
-</div>
-
+						</template>
+						<template #row-details="row">
+							<b-card>
+								<b-row class="mb-2">
+									<p>
+										<b-col sm="3" class="text-sm-right">
+											<b>Arrival: </b>
+										</b-col>
+										<b-col>{{ row.item.arrival   }}</b-col>
+									</p>
+									<b-col sm="3" class="text-sm-right">
+										<b>Arrival Platform: </b>
+									</b-col>
+									<b-col>{{ row.item.arrivalPlatform }}</b-col>
+								</b-row>
+							</b-card>
+						</template>
+					</b-table>
+				</div>
+			</div>
+		</div>
+	</div>
 </template>
 
 
@@ -46,7 +55,7 @@ var stationIdTo = 'de%3A09162%3A910'
 
 //var query= 'http://167.99.243.10:5000/route/from/de%3A09162%3A1910/to/de%3A09177%3A3280'
 
-var query = 'http://167.99.243.10:5000/route/from/'+stationIdFrom +'/to/' + stationIdTo
+var query = 'http://167.99.243.10:5000/route/from/' + stationIdFrom + '/to/' + stationIdTo
 var queryStations = 'http://167.99.243.10:5000/stations'
 
 
@@ -199,7 +208,7 @@ export default{
 </script>
 
 
-<style src="bootstrap/dist/css/bootstrap.min.css"> */
+<style src="bootstrap/dist/css/bootstrap.min.css">
  ul{
     overflow: scroll;
     height: 300px;
