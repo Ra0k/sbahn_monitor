@@ -7,13 +7,12 @@
 				<multiselect v-model="line" :options="linesList" placeholder="Pick a line..." ></multiselect>
         <multiselect v-model="station" :options="stationsList" placeholder="Pick a station..." label="station_name" track-by="station_name"></multiselect>
       </div>
-		</div>
       <div class="row">
          <div class="col-sm-6">
             <div class="card">
                <div class="card-header">Trains delayed by hour</div>
                <div class="card-body">
-                  <apexchart type="bar" :options="options_line" :series="series_line"></apexchart>
+                  <apexchart type="bar" :options="options_bar" :series="series_bar"></apexchart>
                </div>
             </div>
          </div>
@@ -25,15 +24,29 @@
                </div>
             </div>
          </div>
-<!--          <div class="col-sm-6">
-            <div class="card text-white bg-warning mb-3" style="max-width: 18rem;">
-               <div class="card-header">Real-time delay on {{this.station["station_name"]}}</div>
+      </div>
+    <p></p>
+
+    <div class="row">
+        
+         <div class="col-sm-6">
+            <div class="card mb-3">
+               <div class="card-header">Average delay (mins) on {{this.station["station_name"]}} during this week</div>
                <div class="card-body">
-                  <h5 class="card-title">Warning card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <apexchart type="line" height="350" :options="options_line" :series="series_line"></apexchart>
                </div>
             </div>
-         </div> -->
+         </div>
+         <div class="col-sm-6">
+            <div class="card border-info mb-3" style="max-width: 18rem;">
+               <div class="card-header">Real-time delay on {{this.station["station_name"]}}</div>
+               <div class="card-body">
+                  <h5 class="card-title">{{this.delayNow}} mins</h5>
+               </div>
+            </div>
+         </div>
+
+		</div>
       </div>
       <!-- <apexchart type="heatmap" h
          eight="350" :options="chartOptions" :series="series"></apexchart> -->
@@ -60,18 +73,31 @@ export default {
     data: function() {
         return {
             line: '[Choose the line!]',
-            station: '',
+            station: '[Choose the line!]',
+            delayNow: 0,
+            card_bg: 'bg-success',
             queryGetStations: '',
+            queryDelayNow: '',
+
+
             all: [],
             ndelayed: [],
             pdelayed: [],
             avg_delay: [],
             max_delay: [],
             hour_data: [],
-            options_line: null,
-            series_line: null,
             options_bar: null,
             series_bar: null,
+
+            station_all: [],
+            station_ndelayed: [],
+            station_pdelayed: [],
+            station_avg_delay: [],
+            station_max_delay: [],
+            station_week_data: [],
+            options_line: null,
+            series_line: null,
+
             chartOptions: {
                 dataLabels: {
                     enabled: false
@@ -153,7 +179,7 @@ export default {
             ]
         };
 
-        this.options_line = {
+        this.options_bar = {
             chart: {
                 id: 'vuechart-example'
             },
@@ -171,7 +197,7 @@ export default {
 
         };
 
-        this.series_line = [{
+        this.series_bar = [{
             name: 'Delays',
             data: this.hour_data.total[0]
         }]
@@ -202,9 +228,77 @@ export default {
         },
 
         station: function() {
-            this.queryStats = 'http://167.99.243.10:5000/stats/delay/station/' + encodeURIComponent(this.station['station_id']) + "/current_week/grouped/weekly"
+            this.queryDelayNow = 'http://167.99.243.10:5000/stats/delay/station/' + encodeURIComponent(this.station['station_id']) + "/current_week/grouped/daily"
+
 
         },
+
+        queryDelayNow: async function() {
+
+            var response = await axios.get(this.queryDelayNow)
+            this.delayNow = response['data']['2021-03-09'][0]['avg_delay'].toPrecision(2)
+
+            var delayWeek = response['data']
+            var dates_for_week = ['2021-03-03', '2021-03-04', '2021-03-05', '2021-03-06', '2021-03-07', '2021-03-08', '2021-03-09']
+
+            var i = 0;
+        while (dates_for_week[i]) {
+            this.station_all.push({
+                i: dates_for_week[i],
+                total: delayWeek[dates_for_week[i]][0]["#all"]
+            });
+            this.station_ndelayed.push({
+                i: dates_for_week[i],
+                total: delayWeek[dates_for_week[i]][0]["#delayed"]
+            });
+            this.station_pdelayed.push({
+                i: dates_for_week[i],
+                total: delayWeek[dates_for_week[i]][0]["%delayed"]
+            });
+            this.station_avg_delay.push({
+                i: dates_for_week[i],
+                total: delayWeek[dates_for_week[i]][0]["avg_delay"].toPrecision(2)
+            });
+            this.station_max_delay.push({
+                i: dates_for_week[i],
+                total: delayWeek[dates_for_week[i]][0]["max_delay"]
+            });
+            i = i + 1;
+        }
+
+        this.station_week_data = {
+            labels: ["Delayed", "All"],
+            backgroundColors: ["#E55381", "#74A57F"],
+            borderColors: ["#190B28", "#077187"],
+            pointBorderColors: ["#190B28", "#0E1428"],
+            pointBackgroundColors: ["#E55381", "#AFD6AC"],
+            i: this.station_all.map(d => d.i),
+            total: [this.station_ndelayed.map(d => d.total),
+                this.station_all.map(d => d.total),
+                this.station_pdelayed.map(d => d.total),
+                this.station_avg_delay.map(d => d.total),
+                this.station_max_delay.map(d => d.total)
+            ]
+        };
+
+         this.options_line = {
+            chart: {
+                id: 'vuechart-example'
+            },
+            colors: ['#66DA26'],
+            xaxis: {
+                categories: this.station_week_data.i
+            }
+        };
+
+        this.series_line = [{
+            name: 'series-1',
+            data: this.station_week_data.total[3]
+        }]
+        console.log(this.options_line)
+
+        },
+    
 
         queryGetStations: async function() {
 
@@ -237,7 +331,6 @@ export default {
                     name: stationName,
                     data: delaysArray
                 })
-
             }
 
         },
@@ -258,6 +351,8 @@ html, body {
 
 div.card {
 	height: 100%;
+  position: relative;
+  margin: auto;
 }
 
 #left-col {
