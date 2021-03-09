@@ -1,14 +1,15 @@
 from pprint import pprint
 from utils import raise_message
-from datetime import datetime
+from datetime import datetime, timedelta
 
 import requests
 import json
+import pytz
 
 
 URL_BASE = 'https://www.mvg.de/api'
 
-convert_timestamp = lambda x: datetime.fromtimestamp(x / 1e3)
+convert_timestamp = lambda x: datetime.fromtimestamp(x / 1e3, tz=pytz.timezone('CET'))
 
 #@raise_message('MVV API CALL: Find Route Failed')
 def find_route(from_station_id, to_station_id):
@@ -31,43 +32,58 @@ def find_route(from_station_id, to_station_id):
         if num_locations > 0:
             break
 
-    connection_list = response['connectionList']
+    connection_list = response.get('connectionList', [])
     if connection_list == []:
         return {}
 
     response = {
-        'from': connection_list[0]['from'],
-        'to': connection_list[0]['to'],
+        'from': connection_list[0].get('from'),
+        'to': connection_list[0].get('to'),
         'routes': []
     }
     for connection in connection_list:
         route = {
-            'departure': convert_timestamp(connection['departure']),
-            'arrival': convert_timestamp(connection['arrival']),
-            'ring_from': connection['ringFrom'],
-            'ring_to': connection['ringTo'],
+            'departure': convert_timestamp(connection.get('departure')),
+            'arrival': convert_timestamp(connection.get('arrival')),
+            'ring_from': connection.get('ringFrom'),
+            'ring_to': connection.get('ringTo'),
             'connections': []
         }
-        for part_connection in connection['connectionPartList']:
+
+        first_part = True
+        for part_connection in connection.get('connectionPartList', []):
+            
+            if part_connection.get('delay') is None:
+                part_connection['delay'] = 0
+            
+            if first_part:
+                current_time = datetime.now(tz=pytz.timezone('CET'))
+                delayed_arrival = convert_timestamp(part_connection.get('departure')) + timedelta(minutes=part_connection.get('delay'))
+                if current_time > delayed_arrival: part_connection['delay'] = int(abs(current_time - delayed_arrival).seconds / 60)
+
+                first_part = False
+
             connection = {
-                'departure': convert_timestamp(part_connection['departure']),
-                'departurePlatform': part_connection['departurePlatform'],
-                'arrival': convert_timestamp(part_connection['arrival']),
-                'arrivalPlatform': part_connection['arrivalPlatform'],
-                'delay': part_connection['delay'],
-                'product': part_connection['product'],
-                'label': part_connection['label'],
-                'destination': part_connection['destination'],
-                'cancelled': part_connection['cancelled'],
+                'departure': convert_timestamp(part_connection.get('departure')),
+                'departurePlatform': part_connection.get('departurePlatform'),
+                'arrival': convert_timestamp(part_connection.get('arrival')),
+                'arrivalPlatform': part_connection.get('arrivalPlatform'),
+                'delay': part_connection.get('delay'),
+                'product': part_connection.get('product'),
+                'label': part_connection.get('label'),
+                'destination': part_connection.get('destination'),
+                'cancelled': part_connection.get('cancelled'),
                 'inner_stops': []
             }
-            for stop in part_connection['stops']:
+            for stop in part_connection.get('stops', []):
+                if stop.get('delay') is None:
+                    stop['delay'] = 0
                 connection['inner_stops'].append({
-                    'time': convert_timestamp(stop['time']),
-                    'delay': stop['delay'],
-                    'station_city': stop['location']['place'],
-                    'station_name': stop['location']['name'],
-                    'station_id': stop['location']['id']
+                    'time': convert_timestamp(stop.get('time')),
+                    'delay': stop.get('delay'),
+                    'station_city': stop.get('location',{}).get('place'),
+                    'station_name': stop.get('location',{}).get('name'),
+                    'station_id': stop.get('location',{}).get('id')
                 })
             route['connections'].append(connection)
         response['routes'].append(route)
