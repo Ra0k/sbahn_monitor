@@ -3,7 +3,9 @@ import App from './App.vue'
 import router from './router'
 
 import VueApexCharts from 'vue-apexcharts'
+import AsyncComputed from 'vue-async-computed'
 
+Vue.use(AsyncComputed)
 
 Vue.config.productionTip = false
 

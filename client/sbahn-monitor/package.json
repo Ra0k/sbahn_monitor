@@ -15,13 +15,15 @@
     "sass-loader": "^10.1.0",
     "vue": "^2.6.11",
     "vue-apexcharts": "^1.6.0",
+    "vue-async-computed": "^3.9.0",
     "vue-chartjs": "^3.5.1",
     "vue-grid-responsive": "^0.2.0",
     "vue-multiselect": "^2.1.6",
     "vue-quick-chat": "^1.2.6",
     "vue-router": "^3.2.0",
     "vue-speedometer": "^1.8.0",
-    "vue2-google-maps": "^0.10.7"
+    "vue2-google-maps": "^0.10.7",
+    "vuetify": "^2.4.5"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",

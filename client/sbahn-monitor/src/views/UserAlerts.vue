@@ -42,6 +42,7 @@
 import axios from "axios";
 import Multiselect from 'vue-multiselect';
 import { BTable, BButton, BCard } from 'bootstrap-vue'
+
 export default{
     name: "AlertsInterface",
     components:{
@@ -84,10 +85,12 @@ export default{
         const claimsResponse = await axios.get('http://167.99.243.10:5000/claims')
         this.claimsData = claimsResponse.data
         this.claims = this.claimsData.map(function(a) { return a.text})
+
         var cdata = this.claimsData
         for (var index in cdata){
             this.claimsMap[cdata[index]['text']]= cdata[index]['claim_id']
         }
+
         const stationsResponse = await axios.get('http://167.99.243.10:5000/stations')
         this.stationsData = stationsResponse.data
         this.stations = this.stationsData.map(function (a) {return a.station_name})
@@ -96,6 +99,7 @@ export default{
         for (var sindex in sdata){
             this.stationsMap[sdata[sindex]['station_name']] = sdata[sindex]['station_id']
         }
+
         const resp = await axios.get('http://167.99.243.10:5000/reports')
         var grdata = resp.data
         for (var key in grdata){
@@ -184,6 +188,7 @@ export default{
             }
             return latestReports
         },
+
     },
     //methods which can be used in things like event handlers
     methods: {
@@ -212,6 +217,7 @@ export default{
     overflow: scroll;
     height: 300px;
   }
+
   li{
     list-style: none;
     list-style-type: none;
