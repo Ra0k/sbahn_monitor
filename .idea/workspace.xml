@@ -19,19 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0cd3dd19-1b57-4b49-8051-b005e20842d8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/sbahn-monitor-vue-2-router/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/sbahn-monitor-vue-2-router/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/sbahn-monitor-vue-2-router/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/sbahn-monitor-vue-2-router/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/sbahn-monitor-vue-2-router/src/components/Navbar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/sbahn-monitor-vue-2-router/src/components/Navbar.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/sbahn-monitor-vue-2-router/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/sbahn-monitor-vue-2-router/src/router/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/sbahn-monitor-vue-2-router/src/views/About.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/sbahn-monitor-vue-2-router/src/views/About.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/sbahn-monitor-vue-2-router/src/views/General.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/sbahn-monitor-vue-2-router/src/views/General.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/sbahn-monitor/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/sbahn-monitor/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/sbahn-monitor/src/views/Routing.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/sbahn-monitor/src/views/Routing.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/app.py" afterDir="false" />
-    </list>
+    <list default="true" id="0cd3dd19-1b57-4b49-8051-b005e20842d8" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -48,6 +36,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="postgresql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -71,6 +60,7 @@
       <workItem from="1608485325541" duration="2000000" />
       <workItem from="1608560373967" duration="6847000" />
       <workItem from="1612270786862" duration="1095000" />
+      <workItem from="1615276250440" duration="2090000" />
     </task>
     <servers />
   </component>
@@ -98,10 +88,11 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="110" y="283" key="#SQL_Dialects/0.0.1440.900@0.0.1440.900" timestamp="1607944033535" />
-    <state x="184" y="109" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1607950730274">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state x="594" y="225" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1615276921327">
+      <screen x="48" y="25" width="1392" height="875" />
     </state>
     <state x="184" y="109" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.900@0.0.1440.900" timestamp="1607950730274" />
+    <state x="594" y="225" key="#com.intellij.execution.impl.EditConfigurationsDialog/48.25.1392.875@48.25.1392.875" timestamp="1615276921327" />
     <state x="641" y="177" key="FileChooserDialogImpl" timestamp="1607421352654">
       <screen x="43" y="25" width="1397" height="875" />
     </state>
