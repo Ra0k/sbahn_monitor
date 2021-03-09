@@ -11,7 +11,7 @@
       <div class="row">
          <div class="col-sm-6">
             <div class="card">
-               <div class="card-header">How many trains were delayed this year on sertain day time?</div>
+               <div class="card-header">Trains delayed by hour</div>
                <div class="card-body">
                   <apexchart type="bar" :options="options_line" :series="series_line"></apexchart>
                </div>
@@ -19,13 +19,13 @@
          </div>
          <div class="col-sm-6">
             <div class="card">
-               <div class="card-header">Current week delay percentage heatmap for line {{this.line}}</div>
+               <div class="card-header">Percentage of trains delayed for line {{this.line}} over last week</div>
                <div class="card-body">
                   <apexchart type="heatmap" height="350" :options="chartOptions" :series="seriesHeatMap"></apexchart>
                </div>
             </div>
          </div>
-         <div class="col-sm-6">
+<!--          <div class="col-sm-6">
             <div class="card text-white bg-warning mb-3" style="max-width: 18rem;">
                <div class="card-header">Real-time delay on {{this.station["station_name"]}}</div>
                <div class="card-body">
@@ -33,7 +33,7 @@
                   <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                </div>
             </div>
-         </div>
+         </div> -->
       </div>
       <!-- <apexchart type="heatmap" h
          eight="350" :options="chartOptions" :series="series"></apexchart> -->
@@ -46,7 +46,7 @@ import Navbar from '../components/Navbar';
 import VueApexCharts from 'vue-apexcharts'
 import Multiselect from 'vue-multiselect';
 import VueSpeedometer from "vue-speedometer";
-
+var moment = require('moment');
 
 export default {
     name: "General",
@@ -158,12 +158,21 @@ export default {
                 id: 'vuechart-example'
             },
             xaxis: {
-                categories: this.hour_data.i
-            }
+                categories: this.hour_data.i,
+                title: {text: 'Hour of Day'},
+
+            },
+            tooltip: {
+                formatter: function(val, opts) {
+                    return val + "..."
+                }
+            },
+            dataLabels: {enabled: false}
+
         };
 
         this.series_line = [{
-            name: 'series-1',
+            name: 'Delays',
             data: this.hour_data.total[0]
         }]
 
@@ -183,7 +192,6 @@ export default {
         }]
 
 
-        // console.log(this.hour_data.total[0]);
     },
 
 
@@ -212,19 +220,17 @@ export default {
                 orderedStations[this.stationsList[i]['order']] = [station_name, station_id]
             }
 
-            console.log(orderedStations[1][0])
 
             for (i = 1; i < orderedStations.length + 1; i++) {
 
                 this.queryGetGroupedForStation = 'http://167.99.243.10:5000/stats/delay/station/' + encodeURIComponent(orderedStations[i][1]) + "/current_week/grouped/daily"
 
-                //  console.log(this.queryGetGroupedForStation)
                 var response = await axios.get(this.queryGetGroupedForStation)
                 var stationName = orderedStations[i][0]
                 var delaysArray = []
                 var heatMapStats_ = response.data
                 Object.keys(heatMapStats_).forEach(function(key) {
-                    delaysArray.push(heatMapStats_[key][0]["%delayed"])
+                    delaysArray.push({x:moment(key).format('dddd'), y:heatMapStats_[key][0]["%delayed"]})
                 })
                 
                 this.seriesHeatMap.push({
@@ -232,7 +238,6 @@ export default {
                     data: delaysArray
                 })
 
-                 console.log(this.seriesHeatMap)
             }
 
         },
